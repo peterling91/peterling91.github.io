@@ -1,0 +1,97 @@
+@layer components {
+  .audio-player {
+    @apply relative
+    flex
+    gap-5
+    max-w-[36.5rem]
+    py-4
+    pl-5
+    pr-8
+    mt-6
+    rounded-full
+    border-2
+    border-neutral-300/50
+    bg-white
+    shadow-md
+    xl:mt-8
+    xl:pl-6
+    xl:pr-9;
+  }
+
+  .audio-player-inner {
+    @apply flex
+    flex-col
+    justify-center
+    w-full
+    gap-2;
+  }
+
+  .audio-player-title {
+    @apply w-full
+    line-clamp-1
+    xl:text-[1.25rem];
+  }
+
+  .audio-bar-container {
+    @apply flex 
+    items-center
+    w-full 
+    h-2
+    gap-2;
+  }
+
+  .audio-bar {
+    @apply w-full;
+  }
+
+  .duration {
+    @apply inline-block
+    whitespace-nowrap
+    font-semibold
+    text-xs;
+  }
+
+  input[type="range"] {
+    @apply w-full
+    h-2
+    transition-opacity
+    duration-200
+    rounded-lg
+    appearance-none
+    bg-primary-50
+    outline-none;
+  }
+
+  /* Removes the default style for the thumb for WebKit browsers */
+  input[type="range"]::-webkit-slider-thumb {
+    @apply appearance-none;
+  }
+
+  /* Removes the default style for the thumb for Mozilla browsers */
+  input[type="range"]::-moz-range-thumb {
+    @apply border-0
+    h-0
+    w-0
+    bg-transparent;
+  }
+
+  input[type="range"]::-moz-range-track,
+  input[type="range"]::-moz-range-progress,
+  input[type="range"]::-ms-thumb,
+  input[type="range"]::-ms-fill-lower,
+  input[type="range"]::-ms-fill-upper {
+    @apply bg-primary-500
+    rounded-lg;
+  }
+
+  input[type="range"]::-moz-range-track,
+  input[type="range"]::-moz-range-progress,
+  input[type="range"]::-ms-thumb {
+    @apply h-2;
+  }
+
+  input[type="range"]::-ms-thumb {
+    @apply w-[0.0625rem]
+    border-none;
+  }
+}

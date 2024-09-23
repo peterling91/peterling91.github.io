@@ -1,0 +1,445 @@
+@layer base {
+  .display-1,
+  .display-2,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6,
+  span,
+  p,
+  .paragraph-1,
+  .paragraph-2,
+  .paragraph-3 {
+    @apply break-words;
+
+    word-break: break-word;
+  }
+
+  /*========================================
+    Display headings
+  ========================================*/
+  .display-1,
+  .display-2 {
+    @apply font-display
+    font-bold
+    leading-normal;
+  }
+
+  .display-1 {
+    @apply text-[3.125rem]
+    sm:text-display-1;
+  }
+
+  .display-2 {
+    @apply text-[3.125rem]
+    sm:text-display-2;
+  }
+
+  /*========================================
+    Headings
+  ========================================*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    @apply font-bold
+    leading-tight;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    @apply font-heading;
+  }
+
+  h1,
+  .h1 {
+    @apply font-display
+    text-h1-sm
+    sm:text-h1;
+  }
+
+  h2,
+  .h2 {
+    @apply font-display
+    text-h2-sm
+    sm:text-h2;
+  }
+
+  h3,
+  .h3 {
+    @apply text-h3-sm
+    sm:text-h3;
+  }
+
+  h4,
+  .h4 {
+    @apply text-h4-sm
+    sm:text-h4;
+  }
+
+  h5,
+  .h5 {
+    @apply text-h5-sm
+    sm:text-h5;
+  }
+
+  h6,
+  .h6 {
+    @apply text-h6-sm
+    sm:text-h6;
+  }
+
+  /*========================================
+    Paragraphs
+  ========================================*/
+  .paragraph-1,
+  .paragraph-2,
+  .paragraph-3 {
+    @apply font-sans
+    text-neutral-800;
+  }
+
+  .paragraph-1 {
+    @apply text-lg 
+    leading-tight
+    sm:leading-loose;
+  }
+
+  p,
+  .paragraph-2 {
+    @apply text-base
+    leading-normal
+    sm:leading-loose;
+  }
+
+  .paragraph-3 {
+    @apply text-sm
+    leading-normal;
+  }
+
+  /*========================================
+    Caption
+  ========================================*/
+  .caption {
+    @apply font-sans
+    text-sm
+    font-bold
+    uppercase
+    leading-normal
+    tracking-widest;
+  }
+
+  /*========================================
+    Outlined text
+  ========================================*/
+  .text-outline {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.125rem;
+    -webkit-text-stroke-color: theme("colors.neutral.700");
+  }
+
+  @media (max-width: 639.98px) {
+    .text-outline {
+      -webkit-text-stroke-width: 0.0625rem;
+    }
+  }
+
+  .outline-white {
+    -webkit-text-stroke-color: theme("colors.white");
+  }
+
+  .outline-neutral {
+    -webkit-text-stroke-color: theme("colors.neutral.500");
+  }
+
+  /*========================================
+    Spacing
+  ========================================*/
+  .display-1 + p,
+  .display-2 + p,
+  h1 + p,
+  h2 + p,
+  h3 + p,
+  h4 + p,
+  h5 + p,
+  h6 + p,
+  .h1 + p,
+  .h2 + p,
+  .h3 + p,
+  .h4 + p,
+  .h5 + p,
+  .h6 + p,
+  .caption + p,
+  .display-1 + .caption,
+  .display-2 + .caption,
+  h1 + .caption,
+  h2 + .caption,
+  h3 + .caption,
+  h4 + .caption,
+  h5 + .caption,
+  h6 + .caption,
+  .h1 + .caption,
+  .h2 + .caption,
+  .h3 + .caption,
+  .h4 + .caption,
+  .h5 + .caption,
+  .h6 + .caption,
+  ul + .caption,
+  ol + .caption,
+  .caption + .caption {
+    @apply mt-2 sm:mt-4;
+  }
+
+  p + .display-1,
+  p + .display-2,
+  p + h1,
+  p + h2,
+  p + h3,
+  p + h4,
+  p + h5,
+  p + h6,
+  p + .h1,
+  p + .h2,
+  p + .h3,
+  p + .h4,
+  p + .h5,
+  p + .h6,
+  p + .caption,
+  p + ul,
+  p + ol,
+  h1 + ul,
+  h2 + ul,
+  h3 + ul,
+  h4 + ul,
+  h5 + ul,
+  h6 + ul,
+  .h1 + ul,
+  .h2 + ul,
+  .h3 + ul,
+  .h4 + ul,
+  .h5 + ul,
+  .h6 + ul,
+  h1 + ol,
+  h2 + ol,
+  h3 + ol,
+  h4 + ol,
+  h5 + ol,
+  h6 + ol,
+  .h1 + ol,
+  .h2 + ol,
+  .h3 + ol,
+  .h4 + ol,
+  .h5 + ol,
+  .h6 + ol,
+  .caption + ul,
+  .caption + ol,
+  ul + ul,
+  ul + ol,
+  ol + ol,
+  ol + ul {
+    @apply mt-4;
+  }
+
+  ul + h1,
+  ul + h2,
+  ul + h3,
+  ul + h4,
+  ul + h5,
+  ul + h6,
+  ul + .h1,
+  ul + .h2,
+  ul + .h3,
+  ul + .h4,
+  ul + .h5,
+  ul + .h6,
+  ol + h1,
+  ol + h2,
+  ol + h3,
+  ol + h4,
+  ol + h5,
+  ol + h6,
+  ol + .h1,
+  ol + .h2,
+  ol + .h3,
+  ol + .h4,
+  ol + .h5,
+  ol + .h6,
+  table + h1,
+  table + h2,
+  table + h3,
+  table + h4,
+  table + h5,
+  table + h6,
+  table + .h1,
+  table + .h2,
+  table + .h3,
+  table + .h4,
+  table + .h5,
+  table + .h6,
+  .table-responsive + h1,
+  .table-responsive + h2,
+  .table-responsive + h3,
+  .table-responsive + h4,
+  .table-responsive + h5,
+  .table-responsive + h6,
+  .table-responsive + .h1,
+  .table-responsive + .h2,
+  .table-responsive + .h3,
+  .table-responsive + .h4,
+  .table-responsive + .h5,
+  .table-responsive + .h6 {
+    @apply !mt-6;
+  }
+}
+
+@layer components {
+  /*========================================
+    Title with icons
+  ========================================*/
+  .icon-title {
+    @apply flex
+    flex-col
+    max-sm:space-y-2
+    sm:flex-row
+    sm:space-x-4;
+  }
+
+  .icon-title-icon {
+    @apply inline-flex
+    h-7
+    sm:items-center
+    sm:justify-center
+    sm:h-8
+    sm:mt-1;
+  }
+
+  .icon-title-icon img {
+    @apply h-full
+    max-w-none;
+  }
+
+  /*========================================
+    FMO / graduation cursive text
+  ========================================*/
+  .fmo-grad-text {
+    @apply font-cursive
+    leading-normal
+    text-[2.6875rem]
+    drop-shadow-text
+    !font-light
+    sm:text-[5.625rem];
+  }
+
+  .fmo-grad-sub-text {
+    @apply font-bold
+    text-h3-sm
+    leading-tight
+    sm:text-h3;
+  }
+
+  .fmo-grad-text + .fmo-grad-sub-text {
+    @apply !mt-2;
+  }
+}
+
+@layer utilities {
+  /*========================================
+    Bold to style text
+  ========================================*/
+  .bold-to-red > strong,
+  .bold-to-red > b {
+    @apply text-secondary-600;
+
+    font-weight: inherit;
+  }
+
+  .bold-to-blue > strong,
+  .bold-to-blue > b {
+    @apply text-primary-500;
+
+    font-weight: inherit;
+  }
+
+  .bold-to-green > strong,
+  .bold-to-green > b {
+    @apply text-pcm-green;
+
+    font-weight: inherit;
+  }
+
+  .emphasize-to-green > em,
+  .emphasize-to-green > i {
+    @apply text-pcm-green
+    not-italic;
+
+    font-weight: inherit;
+  }
+
+  .bold-to-outline > strong,
+  .bold-to-outline > b {
+    @apply text-transparent;
+
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 0.125rem;
+    -webkit-text-stroke-color: theme("colors.neutral.700");
+  }
+
+  .text-white.bold-to-outline > strong,
+  .text-white.bold-to-outline > b,
+  .page-banner.v4 .bold-to-outline > strong,
+  .page-banner.v4 .bold-to-outline > b,
+  .text-banner .bold-to-outline > strong,
+  .text-banner .bold-to-outline > b {
+    -webkit-text-stroke-color: theme("colors.white");
+  }
+
+  .text-neutral-500.bold-to-outline > strong,
+  .text-neutral-500.bold-to-outline > b {
+    -webkit-text-stroke-color: theme("colors.neutral.500");
+  }
+
+  .text-primary-500.bold-to-outline > strong,
+  .text-primary-500.bold-to-outline > b {
+    -webkit-text-stroke-color: theme("colors.primary.500");
+  }
+
+  .text-secondary-600.bold-to-outline > strong,
+  .text-secondary-600.bold-to-outline > b {
+    -webkit-text-stroke-color: theme("colors.secondary.600");
+  }
+
+  /* Updated for sustainability */
+  .text-primary-700.bold-to-outline > strong,
+  .text-primary-700.bold-to-outline > b {
+    -webkit-text-stroke-color: theme("colors.primary.700");
+  }
+
+  @media (max-width: 689.98px) {
+    .bold-to-outline > strong,
+    .bold-to-outline > b {
+      -webkit-text-stroke-width: 0.0625rem;
+    }
+  }
+}

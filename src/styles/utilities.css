@@ -1,0 +1,46 @@
+@layer base {
+  hr {
+    @apply border-t
+    border-neutral-200;
+  }
+}
+
+@layer utilities {
+  /* Visually hidden text still 'visible' to screen reader */
+  .visually-hidden {
+    @apply !absolute
+    !w-[0.0625rem]
+    !h-[0.0625rem]
+    !p-0
+    !overflow-hidden
+    !whitespace-nowrap
+    !border-0;
+
+    clip: rect(0, 0, 0, 0) !important;
+  }
+
+  .bg-grey {
+    @apply bg-neutral-50;
+  }
+
+  .bg-primary {
+    @apply bg-primary-600;
+  }
+
+  .image-square {
+    @apply !aspect-square;
+  }
+}
+
+.scroll-fixed-item {
+  @apply will-change-transform;
+}
+
+.no-transition {
+  @apply !transition-none
+  !duration-0;
+}
+
+.no-scroll {
+  @apply !overflow-hidden;
+}

@@ -1,0 +1,21 @@
+@layer components {
+  .parallax-image {
+    @apply flex;
+  }
+
+  .parallax-image-item {
+    @apply block
+    w-full
+    max-w-[50%]
+    -mr-6
+    last:mr-0
+    only:max-w-none
+    only:mr-0
+    md:mr-6;
+  }
+
+  .parallax-image-item img,
+  .parallax-image-item video {
+    @apply w-full;
+  }
+}

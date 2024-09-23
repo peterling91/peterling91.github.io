@@ -1,0 +1,45 @@
+@layer components {
+  .pagination {
+    @apply flex
+    flex-wrap
+    w-full
+    justify-center
+    space-x-1;
+  }
+
+  .pagination-link {
+    @apply inline-flex
+    items-center
+    justify-center
+    w-8
+    h-8
+    rounded-full
+    font-semibold
+    text-primary-500
+    no-underline
+    transition-colors
+    duration-200;
+  }
+
+  i.pagination-link {
+    @apply inline-flex;
+  }
+
+  .pagination-item[aria-current="page"] .pagination-link {
+    @apply bg-primary-500
+    font-bold
+    text-white;
+  }
+
+  .pagination-item.disabled .pagination-link {
+    @apply text-neutral-300;
+  }
+
+  @media (hover: hover) {
+    .pagination-item:not([aria-current="page"]):not(.disabled)
+      .pagination-link {
+      @apply [&:not([disabled])]:hover:text-primary-500
+      [&:not([disabled])]:hover:bg-primary-50;
+    }
+  }
+}

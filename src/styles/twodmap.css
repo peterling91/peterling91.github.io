@@ -1,0 +1,344 @@
+.two-d-svg.cls-1,
+.two-d-svg.cls-2 {
+  @apply fill-none;
+}
+
+.two-d-svg.cls-3 {
+  clip-path: url(#clippath);
+}
+
+.two-d-svg.cls-4 {
+  @apply fill-[#cee1f6];
+}
+
+.two-d-svg.cls-5 {
+  @apply fill-[#b1b5c9];
+}
+
+.two-d-svg.cls-6 {
+  @apply fill-secondary-600;
+}
+
+.two-d-svg.cls-7,
+.two-d-svg.cls-8,
+.two-d-svg.cls-9,
+.two-d-svg.cls-10 {
+  @apply fill-neutral-100;
+}
+
+.two-d-svg.cls-11 {
+  @apply fill-neutral-600;
+}
+
+.two-d-svg.cls-12 {
+  @apply fill-neutral-500;
+}
+
+.two-d-svg.cls-13 {
+  @apply fill-primary-300/30;
+}
+
+.two-d-svg.cls-13,
+.two-d-svg.cls-14 {
+  isolation: isolate;
+}
+
+.two-d-svg.cls-14 {
+  @apply fill-[#efd491] stroke-[#c6c9d8] opacity-50;
+}
+
+.two-d-svg.cls-14,
+.two-d-svg.cls-8,
+.two-d-svg.cls-9,
+.two-d-svg.cls-15,
+.two-d-svg.cls-16,
+.two-d-svg.cls-17,
+.two-d-svg.cls-18,
+.two-d-svg.cls-19,
+.two-d-svg.cls-20 {
+  stroke-miterlimit: 10;
+}
+
+.two-d-svg.cls-8,
+.two-d-svg.cls-10,
+.two-d-svg.cls-2,
+.two-d-svg.cls-15,
+.two-d-svg.cls-16,
+.two-d-svg.cls-17,
+.two-d-svg.cls-18,
+.two-d-svg.cls-19,
+.two-d-svg.cls-20 {
+  @apply stroke-[#b1b5c9];
+}
+
+.two-d-svg.cls-9 {
+  @apply stroke-[#c7cad9];
+}
+
+.two-d-svg.cls-21 {
+  @apply fill-[#dddddd];
+
+  fill-rule: evenodd;
+}
+
+.two-d-svg.cls-15 {
+  fill: rgba(0, 93, 164, 0.2);
+}
+
+.two-d-svg.cls-16 {
+  fill: rgba(98, 156, 81, 0.2);
+}
+
+.two-d-svg.cls-17 {
+  fill: rgba(106, 40, 138, 0.2);
+}
+
+.two-d-svg.cls-18 {
+  fill: rgba(41, 172, 166, 0.2);
+}
+
+.two-d-svg.cls-19 {
+  fill: rgba(177, 15, 31, 0.2);
+}
+
+.two-d-svg.cls-20 {
+  fill: rgba(224, 102, 60, 0.2);
+}
+
+.nyp-map {
+  @apply min-w-[min(100vw,_2560px)] /* Upper boundary limit */
+  mx-auto /* Upper boundary limit */
+  relative
+  z-0
+  bg-[#F3F3F7];
+}
+
+.zoom-button {
+  @apply absolute
+  top-auto
+  bottom-26
+  right-4
+  flex
+  flex-col
+  h-max
+  rounded-lg
+  shadow-lg
+  overflow-hidden
+  z-30
+  lg:bottom-6
+  lg:right-5;
+}
+
+#zoom-in,
+#zoom-out {
+  @apply p-5
+  bg-white
+  cursor-pointer
+  w-10
+  h-10
+  min-w-[2.5rem]
+  min-h-[2.5rem];
+}
+
+#zoom-in {
+  @apply border-b border-neutral-200;
+}
+
+@media (hover: hover) {
+  #zoom-in:hover,
+  #zoom-out:hover {
+    @apply bg-neutral-200;
+  }
+}
+
+.map-marker {
+  @apply cursor-pointer relative transition-all duration-300;
+}
+
+.map-marker.active .marker-border-1 {
+  @apply fill-white;
+}
+
+@media (hover: hover) {
+  .map-marker:hover .marker-border-1 {
+    @apply fill-white;
+  }
+}
+
+.marker-letter-text {
+  @apply absolute
+  text-xs
+  font-bold
+  leading-[1]
+  text-center;
+}
+
+.marker-letter-tooltip-text {
+  @apply absolute
+  text-sm
+  font-semibold
+  leading-tight
+  text-center
+  text-neutral-800;
+}
+
+.map-marker.active .marker-letter,
+.map-marker.active .marker-letter-text {
+  @apply fill-white;
+}
+
+.map-marker.active .marker-background {
+  @apply fill-secondary-600;
+}
+
+@media (hover: hover) {
+  .map-marker:hover .marker-letter,
+  .map-marker:hover .marker-letter-text {
+    @apply fill-white;
+  }
+
+  .map-marker:hover .marker-background {
+    @apply fill-secondary-600;
+  }
+}
+
+.map-marker {
+  @apply relative;
+}
+
+.ct-map {
+  @apply font-sans py-[0.375rem] px-3 bg-white rounded text-neutral-700 text-sm font-bold leading-5 text-center w-[fit-content] shadow-lg;
+}
+
+#two-map-container {
+  @apply overflow-hidden 
+  relative 
+  !p-0;
+  /* mt-[4.25rem]; */ /* Fix - 01 May 2024 - commented line to remove empty gap after navbar fix */
+}
+
+#two-map-container svg {
+  @apply block overflow-hidden;
+}
+
+.modal.zoom-modal {
+  @apply hidden
+  absolute /* Upper boundary limit */
+  w-[min(100vw,_2560px)] /* Upper boundary limit */
+  right-0
+  top-17
+  rounded-none
+  z-[810]
+  h-[33.6875rem]
+  overflow-auto
+  shadow-xl
+  lg:w-[30%]
+  lg:right-4
+  lg:top-[6.375rem]
+  lg:rounded-lg;
+}
+
+/* UAT fixes (internal tracker) - Issue 37 */
+.zoom-modal .modal-content {
+  @apply h-full
+   bg-white
+   p-6
+   w-full
+   absolute
+   overflow-hidden
+   overflow-y-scroll;
+}
+
+.zoom-modal .close {
+  @apply text-neutral-600 float-right text-[1.75rem] font-bold;
+}
+
+@media (hover: hover) {
+  .zoom-modal .close:hover {
+    @apply text-neutral-800 cursor-pointer no-underline;
+  }
+}
+
+.zoom-modal h2 {
+  @apply font-sans text-xl font-bold leading-8 mb-2;
+}
+
+.zoom-modal ul {
+  @apply grid gap-2;
+}
+
+.zoom-modal ul li:first-child {
+  @apply font-sans pt-6 pb-2 px-0 text-sm font-normal leading-5 border-b border-neutral-200;
+}
+
+.zoom-modal ul li {
+  @apply font-sans py-2 px-0 text-sm font-normal leading-5 border-b border-neutral-200;
+}
+
+.zoom-modal label {
+  @apply font-sans text-primary-500 text-xs font-bold leading-3 py-2 px-0 block;
+}
+
+.zoom-modal .close {
+  @apply absolute top-[0.625rem] right-6;
+}
+
+.tooltip-box {
+  @apply opacity-0
+  transition-all
+  duration-300;
+}
+
+.map-marker.active .tooltip-box {
+  @apply opacity-100;
+}
+
+@media (hover: hover) {
+  .map-marker:hover .tooltip-box {
+    @apply opacity-100;
+  }
+}
+
+.map-button-section {
+  @apply p-4
+  absolute
+  top-auto
+  left-0
+  bottom-0
+  bg-white
+  z-20
+  flex
+  justify-center
+  items-center
+  w-full
+  lg:bg-transparent
+  lg:w-fit
+  lg:mx-auto;
+}
+
+.map-button {
+  @apply max-lg:w-full;
+}
+
+.med-map-guide {
+  @apply absolute
+  top-[4.25rem]
+  flex
+  justify-center
+  items-center 
+  w-full
+  h-[5.625rem]
+  p-6
+  bg-white
+  z-20 
+  shadow-sm
+  lg:hidden;
+}
+
+.med-map-guide p {
+  @apply text-sm font-normal leading-5 gap-4 mb-0;
+}
+
+.med-map-guide img {
+  @apply pt-4;
+}

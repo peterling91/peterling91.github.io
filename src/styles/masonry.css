@@ -1,0 +1,152 @@
+@layer components {
+  .masonry {
+    @apply grid
+    gap-6
+    grid-cols-3
+    grid-rows-[repeat(8,_minmax(0,_1fr))]
+    items-stretch
+    justify-items-stretch
+    w-max
+    min-w-[min(100vw,_2560px)] /* Upper boundary limit */
+    mx-auto
+    overflow-hidden
+    sm:gap-[2.625rem]
+    md:gap-[3.375rem];
+  }
+
+  .masonry-item {
+    @apply relative
+    flex
+    items-center
+    justify-center
+    w-[min(calc(33.333333vw_-_1rem),_calc(853.333333px_-_1rem))] /* Upper boundary limit */
+    h-full
+    min-h-full
+    overflow-hidden
+    will-change-transform
+    origin-center
+    justify-self-stretch
+    sm:w-[min(calc(33.333333vw_-_1.75rem),_calc(853.333333px_-_1.75rem))] /* Upper boundary limit */
+    md:w-[min(calc(33.333333vw_-_2.25rem),_calc(853.333333px_-_2.25rem))]; /* Upper boundary limit */
+  }
+
+  .masonry-item img,
+  .masonry-item video {
+    @apply w-full
+    h-full
+    object-cover
+    !object-top;
+  }
+
+  /*  Row 2, Image 2 (center image)
+    -------------------
+          |     |
+    -------------------
+          |  x  |
+          |-----|
+          |     |
+    ------------------ */
+  .masonry-item:nth-child(1n) {
+    @apply row-start-4
+    row-end-7
+    col-start-2
+    col-end-3
+    min-h-0;
+  }
+
+  /* Row 1, Image 1
+    -------------------
+       x  |     |
+    -------------------
+          |     |
+          |-----|
+          |     |
+    ------------------ */
+  .masonry-item:nth-child(2n) {
+    @apply row-start-1
+    row-end-5
+    col-start-1
+    col-end-2
+    origin-bottom-right;
+  }
+
+  /* Row 1, Image 2
+    -------------------
+          |  x  |
+    ------------------
+          |     |
+          |-----|
+          |     |
+    ------------------ */
+  .masonry-item:nth-child(3n) {
+    @apply row-start-1
+    row-end-4
+    col-start-2
+    col-end-3
+    origin-bottom;
+  }
+
+  /* Row 1, Image 3
+    -------------------
+          |     |  x
+    -------------------
+          |     |
+          |-----|
+          |     |
+    ------------------ */
+  .masonry-item:nth-child(4n) {
+    @apply row-start-1
+    row-end-4
+    col-start-3
+    col-end-4
+    origin-bottom-left;
+  }
+
+  /* Row 2, Image 1
+    -------------------
+          |     |  
+    -------------------
+          |     |
+       x  |-----|
+          |     |
+    ------------------ */
+  .masonry-item:nth-child(5n) {
+    @apply row-start-5
+    row-end-[9]
+    col-start-1
+    col-end-2
+    origin-top-right;
+  }
+
+  /* Row 3, Image 2
+    -------------------
+          |     |  
+    -------------------
+          |     |
+          |-----|
+          |  x  |
+    ------------------ */
+  .masonry-item:nth-child(6n) {
+    @apply row-start-7
+    row-end-[9]
+    col-start-2
+    col-end-3
+    origin-top;
+  }
+
+  /* Row 2, Image 3
+    -------------------
+          |     |  
+    -------------------
+          |     |
+          |-----|  x
+          |     |
+    ------------------ */
+  .masonry-item:nth-child(7n) {
+    @apply row-start-4
+    row-end-[9]
+    col-start-3
+    col-end-4
+    origin-top-left;
+  }
+}

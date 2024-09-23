@@ -1,0 +1,64 @@
+@layer components {
+  .breadcrumb > ol {
+    @apply flex
+    flex-wrap
+    items-center
+    text-xs
+    sm:text-sm;
+  }
+
+  .breadcrumb-item {
+    @apply max-w-full
+    inline-block;
+  }
+
+  .breadcrumb-item a,
+  .breadcrumb-item span {
+    @apply inline-block
+    max-w-full
+    font-semibold
+    whitespace-nowrap
+    text-ellipsis
+    overflow-hidden;
+  }
+
+  .breadcrumb-white .breadcrumb-item a,
+  .breadcrumb-white .breadcrumb-item span {
+    @apply text-white;
+  }
+
+  @media (hover: hover) {
+    .breadcrumb-white .breadcrumb-item a {
+      @apply [&:not([disabled])]:hover:text-white/80;
+    }
+
+    .breadcrumb-item a {
+      @apply [&:not([disabled])]:hover:text-primary-400;
+    }
+  }
+
+  .breadcrumb-item a {
+    @apply text-primary-500
+    
+    after:inline-block
+    after:relative
+    after:w-3
+    after:h-3
+    after:top-[0.125rem]
+    after:mx-2
+    after:content-[""]
+    after:bg-contain
+    after:bg-no-repeat
+    after:bg-center
+    sm:after:w-3.5
+    sm:after:h-3.5;
+  }
+
+  .breadcrumb a::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' fill='%231D1E24' viewBox='0 0 320 512'%3E%3Cpath d='M305 239c9.4 9.4 9.4 24.6 0 33.9L113 465c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l175-175L79 81c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L305 239z'/%3E%3C/svg%3E");
+  }
+
+  .breadcrumb.breadcrumb-white a::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' fill='%23fff' viewBox='0 0 320 512'%3E%3Cpath d='M305 239c9.4 9.4 9.4 24.6 0 33.9L113 465c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l175-175L79 81c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L305 239z'/%3E%3C/svg%3E");
+  }
+}

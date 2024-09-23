@@ -1,0 +1,64 @@
+@layer base {
+  body {
+    @apply w-full
+    max-w-[100vw]
+    font-sans
+    text-base
+    text-neutral-700
+    tracking-normal
+    overflow-x-hidden; /* Fix - 01 May 2024 - added line to prevent horizontal scroll */
+  }
+
+  /* Fix - 29 Apr 2024 Scroll fix
+     Updated .main-container */
+  .main-container {
+    @apply relative
+    w-full
+    max-w-[min(100vw,_2560px)] /* Upper boundary limit */
+    mx-auto /* Upper boundary limit */;
+  }
+
+  .main-container
+    > section:not(.social-media-bar):not(.listing-section):not(.we-go):not(
+      .side-nav-content-wrapper
+    ),
+  section.scroll-fixed {
+    @apply w-full
+    max-w-[min(100vw,_2560px)] /* Upper boundary limit */
+    mx-auto /* Upper boundary limit */
+    overflow-hidden;
+  }
+
+  .scroll-fixed + *,
+  section {
+    @apply relative
+    z-40;
+  }
+
+  .scroll-fixed {
+    @apply max-w-[min(100vw,_2560px)] /* Upper boundary limit */
+    mx-auto /* Upper boundary limit */
+    overflow-hidden
+    z-30;
+  }
+}
+
+html.lenis {
+  @apply h-auto;
+}
+
+.lenis.lenis-smooth {
+  @apply !scroll-auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  @apply overscroll-contain;
+}
+
+.lenis.lenis-stopped {
+  @apply overflow-hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  @apply pointer-events-none;
+}

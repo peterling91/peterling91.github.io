@@ -1,0 +1,153 @@
+@layer components {
+  /*========================================
+    Base
+  ========================================*/
+  .filter {
+    @apply hidden
+    w-full
+    rounded-xl
+    shadow-md
+    lg:block;
+  }
+
+  .filter-toggle-button {
+    @apply inline-flex
+    min-w-[4.5rem]
+    h-13
+    lg:hidden;
+  }
+  .filter-wrapper ~ .side-nav-content {
+    @apply max-lg:pt-6;
+  }
+
+  /*========================================
+    Header
+  ========================================*/
+  .filter-header {
+    @apply flex
+    items-center
+    px-6
+    py-4
+    border-b
+    border-neutral-100;
+  }
+
+  .filter-header-content {
+    @apply flex
+    items-center
+    grow;
+  }
+
+  .filter-header-icon {
+    @apply text-secondary-500
+    mr-1;
+  }
+
+  .filter-header-title {
+    @apply font-bold;
+  }
+
+  /*========================================
+    Options
+  ========================================*/
+  .filter-options {
+    @apply px-6;
+  }
+
+  .filter-options-category {
+    @apply py-6
+    border-b
+    border-neutral-100
+    last:border-b-0;
+  }
+
+  .filter-options-search {
+    @apply pt-6;
+  }
+
+  .filter-options-header {
+    @apply flex
+    items-center
+    justify-between
+    w-full;
+  }
+
+  .filter-options-header-label {
+    @apply font-bold
+    text-neutral-800;
+  }
+
+  .filter-options-header-icon {
+    @apply text-primary-500
+    px-2
+    ml-2
+    transition-transform
+    duration-200;
+  }
+
+  .filter-options-header[aria-expanded="true"] .filter-options-header-icon {
+    @apply rotate-180;
+  }
+
+  .filter-options-header
+    + .filter-options-fields-wrapper
+    .filter-options-fields {
+    @apply mt-4;
+  }
+
+  .filter-options-fields-wrapper {
+    @apply block
+    overflow-visible
+    transition-all
+    duration-500;
+  }
+
+  .filter-options-fields-wrapper.hide {
+    @apply hidden
+    overflow-hidden;
+  }
+
+  .filter-options-fields-wrapper.expanding,
+  .filter-options-fields-wrapper.collapsing {
+    @apply !block
+    !overflow-hidden;
+  }
+
+  .filter-options-fields {
+    @apply flex
+    flex-col;
+  }
+
+  .filter-options-fields > * {
+    @apply mb-4
+    last:mb-0;
+  }
+
+  /*========================================
+    Counter
+  ========================================*/
+  .badge.filter-counter {
+    @apply hidden;
+  }
+
+  .badge.filter-counter.show {
+    @apply inline-block;
+  }
+
+  /*========================================
+    Inside dialog
+  ========================================*/
+  dialog .filter {
+    @apply block
+    border-0
+    shadow-none;
+  }
+
+  dialog .filter-options {
+    @apply px-0;
+  }
+
+  dialog .filter-options-category:first-child .filter-header {
+    @apply pt-0;
+  }
+}

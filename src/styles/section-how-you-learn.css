@@ -1,0 +1,3679 @@
+:root {
+  --zoom: 1;
+  --zoom-pcm: 1;
+}
+
+@layer components {
+  /*========================================
+  Intro
+========================================*/
+  .how-you-learn-intro {
+    @apply relative
+    bg-primary-600
+    px-6
+    transition-all
+    duration-600
+    z-20
+    overflow-hidden;
+  }
+
+  .how-you-learn-intro-button {
+    @apply min-w-[13.25rem];
+  }
+
+  .how-you-learn-intro .text-banner-wrapper-content {
+    @apply space-y-8
+    pt-[6rem]
+    pb-[9.75rem];
+  }
+
+  .how-you-learn-intro .text-banner-description {
+    @apply max-w-container;
+  }
+
+  .how-you-learn-intro.text-banner * + button,
+  .how-you-learn-intro.text-banner * + .button,
+  .how-you-learn-intro.text-banner * + .button-primary,
+  .how-you-learn-intro.text-banner * + .button-secondary,
+  .how-you-learn-intro.text-banner * + .button-tertiary,
+  .how-you-learn-intro.text-banner * + .button-grey,
+  .how-you-learn-intro.text-banner * + .button-grey-dark,
+  .how-you-learn-intro.text-banner * + .button-ghost-primary,
+  .how-you-learn-intro.text-banner * + .button-ghost-secondary,
+  .how-you-learn-intro.text-banner * + .button-ghost-tertiary,
+  .how-you-learn-intro.text-banner * + .button-ghost-grey,
+  .how-you-learn-intro.text-banner * + .button-white-primary,
+  .how-you-learn-intro.text-banner * + .button-white-secondary,
+  .how-you-learn-intro.text-banner * + .button-white-tertiary,
+  .how-you-learn-intro.text-banner * + .button-white-grey,
+  .how-you-learn-intro.text-banner * + .button-white-ghost-primary,
+  .how-you-learn-intro.text-banner * + .button-white-ghost-secondary,
+  .how-you-learn-intro.text-banner * + .button-white-ghost-tertiary,
+  .how-you-learn-intro.text-banner * + .button-white-ghost-grey,
+  .how-you-learn-intro.text-banner * + .button-text-primary,
+  .how-you-learn-intro.text-banner * + .button-text-secondary,
+  .how-you-learn-intro.text-banner * + .button-text-tertiary,
+  .how-you-learn-intro.text-banner * + .button-text-grey,
+  .how-you-learn-intro.text-banner * + .button-text-white {
+    @apply !mt-8;
+  }
+
+  .how-you-learn-intro.text-banner
+    .how-you-learn-intro-button
+    + .how-you-learn-intro-button {
+    @apply !mt-4;
+  }
+
+  .how-you-learn-intro .breadcrumb {
+    @apply relative
+    w-full
+    max-w-container-full-sm
+    mx-auto
+    pt-10
+    z-10;
+  }
+
+  .how-you-learn-intro .text-banner-image > img,
+  .how-you-learn-intro .text-banner-image > video {
+    @apply object-bottom;
+  }
+
+  .loader-tile {
+    @apply absolute
+    top-0
+    left-0
+    w-0
+    h-1/5
+    bg-pcm
+    transition-all
+    duration-500
+    z-30;
+  }
+
+  .loader-tile:nth-of-type(2) {
+    @apply top-[20%]
+    delay-200;
+  }
+
+  .loader-tile:nth-of-type(3) {
+    @apply top-[40%]
+    delay-[400ms];
+  }
+
+  .loader-tile:nth-of-type(4) {
+    @apply top-[60%]
+    delay-[600ms];
+  }
+
+  .loader-tile:nth-of-type(5) {
+    @apply top-[80%]
+    delay-[800ms];
+  }
+
+  /*========================================
+    Sections
+  ========================================*/
+  .how-you-learn {
+    @apply hidden
+    mb-1
+    lg:block;
+  }
+
+  .how-you-learn-mobile {
+    @apply w-full
+    max-w-[100vw]
+    block
+    lg:hidden;
+  }
+
+  .how-you-learn-comic-panel {
+    @apply w-full;
+  }
+
+  .how-you-learn-comic-panel img {
+    @apply w-full;
+  }
+
+  .how-you-learn-section,
+  .how-you-learn-intro {
+    @apply w-full
+    max-w-[100vw]
+    overflow-hidden
+    h-full;
+  }
+
+  .how-you-learn-section {
+    @apply hidden
+    flex-col
+    items-stretch
+    pt-10
+    bg-repeat
+    bg-left-top
+    bg-pcm
+    opacity-0
+    transition-all
+    duration-300;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 92 92' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='92' height='92' fill='%23F3EDE2'/%3E%3Cpath d='M92 22H0V24H92V22Z' fill='%23393C47' fill-opacity='0.08'/%3E%3Cpath d='M92 68H0V70H92V68Z' fill='%23393C47' fill-opacity='0.08'/%3E%3Cpath d='M70 0H68V92H70V0Z' fill='%23393C47' fill-opacity='0.08'/%3E%3Cpath d='M24 0H22V92H24V0Z' fill='%23393C47' fill-opacity='0.08'/%3E%3C/svg%3E%0A");
+    background-size: 5.75rem;
+  }
+
+  .how-you-learn-wrapper {
+    @apply relative
+    flex
+    flex-col
+    grow
+    items-center
+    justify-between
+    w-full
+    min-h-full
+    max-w-container-full-p
+    mx-auto
+    px-6
+    text-center
+    overflow-visible;
+  }
+
+  .how-you-learn-content {
+    @apply relative
+    flex
+    flex-col
+    justify-center
+    /* max-w-[69.5rem] */
+    px-[3rem]
+    /* py-[3.5rem] */
+    mx-auto
+    space-y-4
+    origin-top
+    transition-all
+    duration-400;
+
+    max-width: calc(69.5rem * var(--zoom-pcm));
+  }
+
+  .how-you-learn-content.max-w-pcm {
+    max-width: calc(71rem * var(--zoom-pcm));
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-content
+    > *:not(.no-animate):not(.how-you-learn-arrow),
+  .how-you-learn-section[data-pcm-slide-new-info]
+    .how-you-learn-content
+    > *:not(.no-animate):not(.how-you-learn-arrow) {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-content .h1,
+  .how-you-learn-content .h2,
+  .how-you-learn-content .h3,
+  .how-you-learn-content .h4,
+  .how-you-learn-content .h5,
+  .how-you-learn-content .h6,
+  .how-you-learn-content .paragraph-1,
+  .how-you-learn-content .paragraph-2,
+  .how-you-learn-content .paragraph-3 {
+    @apply font-display
+    text-neutral-700;
+  }
+
+  .how-you-learn-content .paragraph-1 {
+    /* @apply text-lg; */
+
+    font-size: max(1.125rem, calc(1.125rem * var(--zoom-pcm)));
+  }
+
+  .how-you-learn-content p,
+  .how-you-learn-content .paragraph-2 {
+    /* @apply text-base; */
+
+    font-size: max(1rem, calc(1rem * var(--zoom-pcm)));
+  }
+
+  .how-you-learn-content .paragraph-3 {
+    /* @apply text-sm; */
+
+    font-size: max(0.875rem, calc(0.875rem * var(--zoom-pcm)));
+  }
+
+  .how-you-learn-content h1,
+  .how-you-learn-content .h1 {
+    /* @apply text-h1-sm
+    sm:text-h1; */
+
+    font-size: max(2rem, calc(2rem * var(--zoom-pcm)));
+  }
+
+  @media (min-width: 640px) {
+    .how-you-learn-content h1,
+    .how-you-learn-content .h1 {
+      font-size: max(3.625rem, calc(3.625rem * var(--zoom-pcm)));
+    }
+  }
+
+  .how-you-learn-content h2,
+  .how-you-learn-content .h2 {
+    /* @apply text-h2-sm
+    sm:text-h2; */
+
+    font-size: max(1.625rem, calc(1.625rem * var(--zoom-pcm)));
+  }
+
+  @media (min-width: 640px) {
+    .how-you-learn-content h2,
+    .how-you-learn-content .h2 {
+      font-size: max(3.5rem, calc(3.5rem * var(--zoom-pcm)));
+    }
+  }
+
+  .how-you-learn-content h3,
+  .how-you-learn-content .h3 {
+    /* @apply text-h3-sm
+    sm:text-h3; */
+
+    font-size: max(1.625rem, calc(1.625rem * var(--zoom-pcm)));
+  }
+
+  @media (min-width: 640px) {
+    .how-you-learn-content h3,
+    .how-you-learn-content .h3 {
+      font-size: max(3rem, calc(3rem * var(--zoom-pcm)));
+    }
+  }
+
+  .how-you-learn-content h4,
+  .how-you-learn-content .h4 {
+    /* @apply text-h4-sm
+    sm:text-h4; */
+
+    font-size: max(1.5rem, calc(1.5rem * var(--zoom-pcm)));
+  }
+
+  @media (min-width: 640px) {
+    .how-you-learn-content h4,
+    .how-you-learn-content .h4 {
+      font-size: max(2.5rem, calc(2.5rem * var(--zoom-pcm)));
+    }
+  }
+
+  .how-you-learn-content h5,
+  .how-you-learn-content .h5 {
+    /* @apply text-h5-sm
+    sm:text-h5; */
+
+    font-size: max(1.375rem, calc(1.375rem * var(--zoom-pcm)));
+  }
+
+  @media (min-width: 640px) {
+    .how-you-learn-content h5,
+    .how-you-learn-content .h5 {
+      font-size: max(2rem, calc(2rem * var(--zoom-pcm)));
+    }
+  }
+
+  .how-you-learn-content h6,
+  .how-you-learn-content .h6 {
+    /* @apply text-h6-sm
+    sm:text-h6; */
+
+    font-size: max(1.25rem, calc(1.25rem * var(--zoom-pcm)));
+  }
+
+  @media (min-width: 640px) {
+    .how-you-learn-content h6,
+    .how-you-learn-content .h6 {
+      font-size: max(1.5rem, calc(1.5rem * var(--zoom-pcm)));
+    }
+  }
+
+  .how-you-learn-empty {
+    @apply grow
+    mt-[2.25rem]
+    /* min-h-[18.1875rem] */
+    min-h-[16.6875rem];
+  }
+
+  /*========================================
+    prev, pause button
+  ========================================*/
+  .how-you-learn-prev-wrapper {
+    @apply hidden
+    fixed
+    top-[6.75rem]
+    /* w-full
+    max-w-container-full-p */
+    px-6
+    mx-auto
+    opacity-0
+    z-40;
+  }
+
+  .how-you-learn-prev-label {
+    @apply opacity-0
+    text-primary-500
+    font-semibold
+    drop-shadow-text-how-you-learn
+    transition-opacity
+    duration-200;
+  }
+
+  .how-you-learn-prev .how-you-learn-prev-button {
+    @apply w-8
+    max-w-[2rem]
+    min-w-[2rem]
+    h-8;
+  }
+
+  @media (hover: hover) {
+    .how-you-learn-prev:hover .how-you-learn-prev-button {
+      @apply bg-primary-50
+      shadow-lg;
+    }
+
+    .how-you-learn-prev:hover .how-you-learn-prev-label {
+      @apply opacity-100;
+    }
+  }
+
+  /*========================================
+    Instruction
+  ========================================*/
+  .how-you-learn-instruction,
+  .how-you-learn-instruction-overlay {
+    @apply relative
+    flex
+    items-start
+    shrink-0
+    p-8
+    gap-4
+    bg-white
+    border
+    border-neutral-200
+    rounded-2xl
+    shadow-lg
+    text-left
+    font-semibold
+    overflow-hidden
+    z-40
+    transition-all
+    duration-400;
+  }
+
+  .how-you-learn-wrapper > * + .how-you-learn-instruction {
+    @apply absolute
+    origin-bottom
+    bottom-0;
+
+    transform: scale(var(--zoom-pcm));
+  }
+
+  .how-you-learn-instruction-overlay {
+    @apply origin-top;
+
+    transform: scale(var(--zoom-pcm));
+  }
+
+  .how-you-learn-instruction,
+  .how-you-learn-instruction.paragraph-1,
+  .how-you-learn-instruction.paragraph-2,
+  .how-you-learn-instruction.paragraph-3,
+  .how-you-learn-instruction-overlay,
+  .how-you-learn-instruction-overlay.paragraph-1,
+  .how-you-learn-instruction-overlay.paragraph-2,
+  .how-you-learn-instruction-overlay.paragraph-3 {
+    @apply text-primary-700;
+  }
+
+  .how-you-learn-wrapper > .how-you-learn-instruction {
+    @apply mb-10
+    first:origin-top;
+  }
+
+  .how-you-learn-section[data-pcm-slide-stop] .how-you-learn-instruction,
+  .how-you-learn-section[data-pcm-slide-stop]
+    .how-you-learn-instruction-overlay,
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-instruction,
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-instruction-overlay,
+  .how-you-learn-section[data-pcm-slide-new-info] .how-you-learn-instruction,
+  .how-you-learn-section[data-pcm-slide-new-info]
+    .how-you-learn-instruction-overlay {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-instruction button,
+  .how-you-learn-instruction-overlay button,
+  [data-pcm-button-next] {
+    @apply mt-0
+    ml-0
+    cursor-pointer;
+  }
+
+  .how-you-learn-instruction-overlay {
+    @apply absolute
+    top-[20rem]
+    right-8
+    max-w-[34rem]
+    py-6
+    mx-auto
+    origin-top
+    -rotate-[7.56deg]
+    xl:right-[6rem]
+    xl:top-[19.5rem];
+  }
+
+  .how-you-learn-pencils + .how-you-learn-instruction-overlay {
+    @apply top-[14rem]
+    xl:top-[16rem]
+    xl:right-18;
+  }
+
+  .how-you-learn-instruction-content {
+    @apply w-full
+    font-normal
+    space-y-4;
+  }
+
+  .how-you-learn-instruction-buttons {
+    @apply pt-4;
+  }
+
+  .how-you-learn-instruction-content .how-you-learn-instruction-buttons,
+  .how-you-learn-instruction-buttons-right {
+    @apply flex
+    flex-wrap
+    justify-end
+    gap-4;
+  }
+
+  .how-you-learn-instruction-buttons-left {
+    @apply grow
+    gap-4;
+  }
+
+  /* Instruction arrow */
+  .how-you-learn-arrow {
+    @apply absolute
+    -bottom-[6.5rem]
+    right-0
+    w-24
+    -rotate-[150.29deg]
+    transition-all
+    duration-400
+    lg:w-[7.5rem]
+    lg:right-8;
+  }
+
+  .how-you-learn-arrow.how-you-learn-arrow-books {
+    @apply -bottom-[8rem];
+  }
+
+  .how-you-learn-section[data-pcm-slide-stop] .how-you-learn-arrow,
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-arrow,
+  .how-you-learn-section[data-pcm-slide-new-info] .how-you-learn-arrow {
+    @apply opacity-0;
+  }
+
+  /* Background icon overlay */
+  .how-you-learn-instruction-icon {
+    @apply absolute
+    -top-3
+    left-0
+    h-[calc(100%_-_0.75rem)]
+    min-h-[7.5rem];
+  }
+
+  .how-you-learn-instruction-icon-person {
+    @apply top-auto
+    -bottom-3;
+  }
+
+  .how-you-learn-instruction-icon-thinking {
+    @apply -left-2;
+  }
+
+  .how-you-learn-instruction-icon-question {
+    @apply left-3;
+  }
+
+  /*========================================
+    Books
+  ========================================*/
+  .how-you-learn-books {
+    @apply relative
+    flex
+    justify-around
+    items-start
+    grow
+    w-full
+    max-w-[60rem]
+    pb-6
+    mx-auto
+    mb-12
+    /* min-h-[18.1875rem] */
+    origin-top
+    transition-all
+    duration-400;
+
+    transform: scale(var(--zoom-pcm));
+    /* padding-top: calc(1.5rem * var(--zoom-pcm)); */
+    /* margin-top: calc(1.5rem * var(--zoom));
+    max-width: calc(60rem * (1 / var(--zoom)));
+    padding-bottom: calc(1.5rem * (1 / var(--zoom)));
+    margin-bottom: calc(3rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-book {
+    @apply box-border
+    inline-flex
+    items-center
+    justify-start
+    shrink-0
+    relative
+    w-auto
+    max-w-[18.125rem]
+    -ml-[5.5rem]
+    /* min-w-[18.125rem] */
+    /* h-[18.1875rem]] */
+    min-h-[16.1875rem]
+    transition-all
+    duration-300;
+
+    /* max-width: calc(18.125rem * (1 / var(--zoom)));
+    margin-left: calc(-5.5rem * (1 / var(--zoom)));
+    min-height: calc(16.1875rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-book {
+    @apply scale-0;
+  }
+
+  button.how-you-learn-book * + * {
+    @apply ml-0;
+  }
+
+  .how-you-learn-book-cover {
+    @apply absolute
+    left-[min(4.1875rem,_40%)]
+    -bottom-[1.5rem]
+    w-full
+    /* max-w-[9.75rem]  */
+    h-[14.625rem]
+    /* max-h-[calc(100vh_-_26rem)] */
+    z-30
+    transition-opacity
+    duration-300;
+
+    /* height: calc(14.625rem * (1 / var(--zoom)));
+    left: min(calc(4.1875rem * (1 / var(--zoom))), 40%);
+    bottom: calc(-1.5rem * (1 / var(--zoom))); */
+  }
+
+  .hide-book .how-you-learn-book-cover {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-book-cover img {
+    @apply w-auto
+    h-full;
+  }
+
+  .how-you-learn-book-cover-title {
+    @apply absolute
+    inline-block
+    w-[100%]
+    p-1
+    bottom-[71%]
+    right-[min(5rem,_60%)]
+    -rotate-90
+    origin-top-right
+    text-[1.35em]
+    text-white
+    text-left
+    font-semibold
+    leading-none
+    whitespace-nowrap
+    text-ellipsis
+    overflow-hidden;
+
+    /* padding: calc(0.25rem * (1 / var(--zoom)));
+    right: min(calc(5rem * (1 / var(--zoom))), 60%);
+    font-size: calc(1.35em * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-book-base {
+    @apply relative
+    left-[min(3.1875rem,_31%)]
+    top-[3rem]
+    w-auto
+    /* max-w-[11.75rem] */
+    min-h-[16.6875rem]
+    /* max-h-[calc(100vh_-_24rem)] */
+    z-10
+    transition-opacity
+    duration-300;
+
+    /* min-height: calc(16.6875rem * (1 / var(--zoom)));
+    top: calc(3rem * (1 / var(--zoom)));
+    left: min(calc(3.1875rem * (1 / var(--zoom))), 31%); */
+  }
+
+  .hide-book .how-you-learn-book-base {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-book-pages {
+    @apply absolute
+    top-0
+    left-[min(6.1875rem,_50%)]
+    /* w-[13.0625rem] */
+    w-auto
+    h-[16.9375rem]
+    /* max-h-[calc(100vh_-_22rem)] */
+    /* w-[calc(100%_+_3rem)] */
+    opacity-0
+    z-20
+    transition-all
+    duration-300
+    will-change-transform;
+
+    /* height: calc(16.9375rem * (1 / var(--zoom)));
+    left: min(calc(6.1875rem * (1 / var(--zoom))), 50%); */
+  }
+
+  .show-page .how-you-learn-book-pages {
+    @apply opacity-100;
+  }
+
+  /*========================================
+    Pencils
+  ========================================*/
+  .how-you-learn-pencils {
+    @apply relative
+    flex
+    flex-col
+    items-center
+    grow
+    shrink-0
+    w-full
+    max-w-container
+    /* min-h-[18.1875rem] */
+    min-h-[16.6875rem]
+    pt-12
+    px-6
+    mx-auto
+    /* mt-[0.90625rem] */
+    mb-[7.4375rem]
+    -translate-y-6
+    space-y-4
+    origin-top
+    transition-all
+    duration-400;
+
+    transform: scale(var(--zoom-pcm));
+    /*  translateY(calc(-1.5rem * (1 / var(--zoom))));
+    min-height: calc(16.6875rem * (1 / var(--zoom)));
+    padding-top: calc(3rem * (1 / var(--zoom)));
+    padding-left: calc(1.5rem * (1 / var(--zoom)));
+    padding-right: calc(1.5rem * (1 / var(--zoom)));
+    margin-top: calc(0.90625rem * (1 / var(--zoom)));
+    margin-bottom: calc(5rem * (1 / var(--zoom)));
+    column-gap: calc(1rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-pencil {
+    @apply relative;
+  }
+
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-pencil {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-pencil {
+    @apply opacity-0
+    translate-x-[50%];
+  }
+
+  .how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-pencil.purple {
+    @apply -translate-x-[50%];
+  }
+
+  .how-you-learn-pencil img {
+    @apply w-[22.1875rem]
+    max-w-full;
+
+    /* width: calc(22.1875rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-pencil-label {
+    @apply absolute
+    left-0
+    top-0
+    inline-flex
+    items-center
+    justify-center
+    w-[22.1875rem]
+    max-w-full
+    h-full
+    pl-[5rem]
+    pr-[3rem]
+    m-0
+    text-[1.3em]
+    text-white
+    font-bold
+    whitespace-nowrap
+    text-ellipsis
+    overflow-hidden;
+
+    /* width: calc(22.1875rem * (1 / var(--zoom)));
+    padding-left: calc(5rem * (1 / var(--zoom)));
+    padding-right: calc(3rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-pencil.purple .how-you-learn-pencil-label {
+    @apply pl-[3rem]
+    pr-[5rem];
+
+    /* padding-left: calc(3rem * (1 / var(--zoom)));
+    padding-right: calc(5rem * (1 / var(--zoom))); */
+  }
+
+  /*========================================
+    Furnance
+  ========================================*/
+  .how-you-learn-furnance-wrapper {
+    @apply relative
+    overflow-visible
+    origin-bottom
+    z-30
+
+    before:content-[""]
+    before:block
+    before:absolute
+    before:top-[6.75rem]
+    before:right-[8.3125rem]
+    before:w-[0.1875rem]
+    before:h-5
+    before:bg-secondary-500
+    before:z-10;
+
+    transform: scale(var(--zoom-pcm));
+  }
+
+  /* .how-you-learn-furnance-wrapper::before {
+    top: calc(6.75rem * (1 / var(--zoom)));
+    right: calc(8.3125rem * (1 / var(--zoom)));
+    width: calc(0.1875rem * (1 / var(--zoom)));
+    height: calc(1.25rem * (1 / var(--zoom)));
+  } */
+
+  .furnance-on::before {
+    animation: furnance-needle-tremble 1500ms linear infinite;
+  }
+
+  @keyframes furnance-needle-tremble {
+    0% {
+      transform: translate(0, 0);
+    }
+    15% {
+      transform: translate(-0.5rem, 0.75rem);
+    }
+    19% {
+      transform: translate(-1rem, 0.625rem);
+    }
+    23% {
+      transform: translate(-1.5rem, 0.75rem);
+    }
+    45% {
+      transform: translate(0, 0.75rem);
+    }
+    60% {
+      transform: translate(2rem, 0);
+    }
+    64% {
+      transform: translate(1.5rem, 0.125rem);
+    }
+    68% {
+      transform: translate(1rem, 0);
+    }
+    100% {
+      transform: translateY(0, 0);
+    }
+  }
+
+  .how-you-learn-furnance,
+  .how-you-learn-furnance-on {
+    @apply relative
+    w-[38rem]
+    min-w-[38rem]
+    h-[11.8125rem]
+    z-[4];
+
+    /* width: calc(38rem * (1 / var(--zoom)));
+    min-width: calc(38rem * (1 / var(--zoom)));
+    height: calc(11.8125rem * (1 / var(--zoom))); */
+  }
+
+  .furnance-on .how-you-learn-furnance,
+  .furnance-on .how-you-learn-furnance-on,
+  .furnance-on .how-you-learn-furnance-label {
+    animation: furnance-tremble 1500ms linear infinite;
+  }
+
+  @keyframes furnance-tremble {
+    0% {
+      transform: translateY(0);
+    }
+    15% {
+      transform: translateY(0.75rem);
+    }
+    19% {
+      transform: translateY(0.625rem);
+    }
+    23% {
+      transform: translateY(0.75rem);
+    }
+    45% {
+      transform: translateY(0.75rem);
+    }
+    60% {
+      transform: translateY(0);
+    }
+    64% {
+      transform: translateY(0.125rem);
+    }
+    68% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .how-you-learn-furnance-on {
+    @apply absolute
+    bottom-0
+    right-0
+    z-[5]
+    animate-[fadein_300ms_ease-in-out_infinite];
+  }
+
+  .how-you-learn-furnance-label {
+    @apply absolute
+    left-[23%]
+    top-[39%]
+    max-w-[12rem]
+    text-primary-700
+    text-[1.8em]
+    font-bold
+    text-left
+    leading-[1.15]
+    z-[6];
+
+    /* max-width: calc(12rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-furnance-wheel {
+    @apply absolute
+    left-0
+    bottom-0
+    z-[1]
+    w-[8.75rem]
+    h-[8.75rem]
+    overflow-hidden;
+
+    /* width: calc(8.75rem * (1 / var(--zoom)));
+    height: calc(8.75rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-furnance-wheel img {
+    @apply w-[17.5rem]
+    h-[17.5rem]
+    origin-center;
+
+    /* width: calc(17.5rem * (1 / var(--zoom)));
+    height: calc(17.5rem * (1 / var(--zoom))); */
+  }
+
+  .furnance-on .how-you-learn-furnance-wheel img {
+    animation: wheel-spin 2500ms linear infinite;
+  }
+
+  @keyframes wheel-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    15% {
+      transform: rotate(-90deg);
+    }
+    25% {
+      transform: rotate(-90deg);
+    }
+    40% {
+      transform: rotate(-180deg);
+    }
+    50% {
+      transform: rotate(-180deg);
+    }
+    65% {
+      transform: rotate(-270deg);
+    }
+    75% {
+      transform: rotate(-270deg);
+    }
+    90% {
+      transform: rotate(-360deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .how-you-learn-book-flame,
+  .how-you-learn-book-smoke {
+    @apply absolute;
+  }
+
+  .how-you-learn-book-flame {
+    @apply -top-[14rem]
+    left-[6.5rem]
+    z-[2];
+
+    /* top: calc(-14rem * (1 / var(--zoom)));
+    left: calc(6.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-book-smoke {
+    @apply bottom-0
+    left-0
+    opacity-10
+    z-[1];
+  }
+
+  .how-you-learn-book-flame.flame-fade-in,
+  .how-you-learn-book-smoke.smoke-fade-in {
+    @apply opacity-0
+    transition-opacity
+    duration-300;
+  }
+
+  .how-you-learn-section.show .how-you-learn-book-flame.flame-fade-in {
+    @apply opacity-100
+    delay-[1500ms];
+  }
+
+  .how-you-learn-section.show .how-you-learn-book-smoke.smoke-fade-in {
+    @apply opacity-10
+    delay-[1200ms];
+  }
+
+  /* Sparkles */
+  .how-you-learn-furnance-wrapper .how-you-learn-sparkle {
+    @apply left-[10%]
+    -top-[20%]
+    z-[7];
+  }
+
+  .how-you-learn-furnance-wrapper .how-you-learn-sparkle-sm {
+    @apply left-[17%]
+    top-[10%]
+    z-[7];
+  }
+
+  .how-you-learn-furnance-wrapper .how-you-learn-sparkle:nth-child(6),
+  .furnance-on.how-you-learn-furnance-wrapper
+    .how-you-learn-sparkle:nth-child(7) {
+    @apply left-[65%]
+    -top-[15%]
+    z-[7];
+  }
+
+  /* Torn pages inside furnance */
+  .how-you-learn-furnance-wrapper .how-you-learn-book-pages {
+    @apply absolute
+    opacity-100;
+  }
+
+  .how-you-learn-furnance-wrapper .how-you-learn-book-pages {
+    @apply max-w-[13.0625rem]
+    -top-[5rem]
+    left-[9.5rem]
+    -rotate-[3.74deg]
+    z-[3];
+
+    /* max-width: calc(13.0625rem * (1 / var(--zoom)));
+    top: calc(-5rem * (1 / var(--zoom)));
+    left: calc(9.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-furnance-wrapper .how-you-learn-book-pages:nth-child(8) {
+    @apply -top-[7rem]
+    left-[11rem]
+    -rotate-[12deg]
+    z-[2];
+
+    /* top: calc(-7rem * (1 / var(--zoom)));
+    left: calc(11rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-furnance-wrapper .how-you-learn-book-pages:nth-child(9) {
+    @apply -top-[6.5rem]
+    left-[12rem]
+    rotate-[20.07deg]
+    z-[1];
+
+    /* top: calc(-6.5rem * (1 / var(--zoom)));
+    left: calc(12rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-section.show
+    .furnance-burning-items.how-you-learn-furnance-wrapper
+    .how-you-learn-book-pages:nth-child(7) {
+    animation: book-pages 750ms linear forwards;
+  }
+
+  @keyframes book-pages {
+    0% {
+      top: -5rem;
+      transform: rotate(-3.74deg) translateX(0);
+    }
+    10% {
+      transform: rotate(-3.74deg) translateX(0.25rem);
+    }
+    20% {
+      transform: rotate(-3.74deg) translateX(0);
+    }
+    30% {
+      transform: rotate(-3.74deg) translateX(0.25rem);
+    }
+    40% {
+      transform: rotate(-3.74deg) translateX(0);
+    }
+    50% {
+      transform: rotate(-3.74deg) translateX(0.25rem);
+    }
+    60% {
+      transform: rotate(-3.74deg) translateX(0);
+    }
+    70% {
+      transform: rotate(-3.74deg) translateX(0.25rem);
+    }
+    80% {
+      transform: rotate(-3.74deg) translateX(0);
+    }
+    90% {
+      transform: rotate(-3.74deg) translateX(0.25rem);
+    }
+    100% {
+      top: 3rem;
+      transform: rotate(-3.74deg) translateX(0);
+    }
+  }
+
+  .how-you-learn-section.show
+    .furnance-burning-items.how-you-learn-furnance-wrapper
+    .how-you-learn-book-pages:nth-child(8) {
+    animation: book-pages-2 850ms linear forwards;
+  }
+
+  @keyframes book-pages-2 {
+    0% {
+      top: -7rem;
+      transform: rotate(-12deg) translateX(0);
+    }
+    10% {
+      transform: rotate(-12deg) translateX(0.25rem);
+    }
+    20% {
+      transform: rotate(-12deg) translateX(0);
+    }
+    30% {
+      transform: rotate(-12deg) translateX(0.25rem);
+    }
+    40% {
+      transform: rotate(-12deg) translateX(0);
+    }
+    50% {
+      transform: rotate(-12deg) translateX(0.25rem);
+    }
+    60% {
+      transform: rotate(-12deg) translateX(0);
+    }
+    70% {
+      transform: rotate(-12deg) translateX(0.25rem);
+    }
+    80% {
+      transform: rotate(-12deg) translateX(0);
+    }
+    90% {
+      transform: rotate(-12deg) translateX(0.25rem);
+    }
+    100% {
+      top: 1rem;
+      transform: rotate(-12deg) translateX(0);
+    }
+  }
+
+  .how-you-learn-section.show
+    .furnance-burning-items.how-you-learn-furnance-wrapper
+    .how-you-learn-book-pages:nth-child(9) {
+    animation: book-pages-3 950ms linear forwards;
+  }
+
+  @keyframes book-pages-3 {
+    0% {
+      top: -6.5rem;
+      left: 12rem;
+      transform: rotate(20.07deg) translateX(0);
+    }
+    10% {
+      transform: rotate(20.07deg) translateX(0.25rem);
+    }
+    20% {
+      transform: rotate(20.07deg) translateX(0);
+    }
+    30% {
+      transform: rotate(20.07deg) translateX(0.25rem);
+    }
+    40% {
+      transform: rotate(20.07deg) translateX(0);
+    }
+    50% {
+      transform: rotate(20.07deg) translateX(0.25rem);
+    }
+    60% {
+      transform: rotate(20.07deg) translateX(0);
+    }
+    70% {
+      transform: rotate(20.07deg) translateX(0.25rem);
+    }
+    80% {
+      transform: rotate(20.07deg) translateX(0);
+    }
+    90% {
+      transform: rotate(20.07deg) translateX(0.25rem);
+    }
+    100% {
+      top: 1.5rem;
+      left: 10rem;
+      transform: rotate(20.07deg) translateX(0);
+    }
+  }
+
+  /* Pencils inside furnance */
+  .how-you-learn-furnance-wrapper .how-you-learn-pencil {
+    @apply absolute
+    rotate-[75deg]
+    -top-[0.75rem]
+    left-[7rem];
+
+    /* top: calc(-0.75rem * (1 / var(--zoom)));
+    left: calc(7rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-furnance-wrapper .how-you-learn-pencil:nth-child(11) {
+    @apply absolute
+    rotate-[110deg]
+    -top-[5rem]
+    left-[9.75rem];
+
+    /* top: calc(-5rem * (1 / var(--zoom)));
+    left: calc(9.75rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-furnance-wrapper .how-you-learn-pencil:nth-child(12) {
+    @apply absolute
+    rotate-[120deg]
+    -top-[3rem]
+    left-[10.5rem];
+
+    /* top: calc(-3rem * (1 / var(--zoom)));
+    left: calc(10.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-section.show
+    .furnance-burning-items.how-you-learn-furnance-wrapper
+    .how-you-learn-pencil:nth-child(10) {
+    animation: pencil 750ms linear forwards;
+  }
+
+  @keyframes pencil {
+    0% {
+      top: -0.75rem;
+      transform: rotate(75deg) translateX(0);
+    }
+    10% {
+      transform: rotate(75deg) translateX(0.25rem);
+    }
+    20% {
+      transform: rotate(75deg) translateX(0);
+    }
+    30% {
+      transform: rotate(75deg) translateX(0.25rem);
+    }
+    40% {
+      transform: rotate(75deg) translateX(0);
+    }
+    50% {
+      transform: rotate(75deg) translateX(0.25rem);
+    }
+    60% {
+      transform: rotate(75deg) translateX(0);
+    }
+    70% {
+      transform: rotate(75deg) translateX(0.25rem);
+    }
+    80% {
+      transform: rotate(75deg) translateX(0);
+    }
+    90% {
+      transform: rotate(75deg) translateX(0.25rem);
+    }
+    100% {
+      top: 11rem;
+      transform: rotate(75deg) translateX(0);
+    }
+  }
+
+  .how-you-learn-section.show
+    .furnance-burning-items.how-you-learn-furnance-wrapper
+    .how-you-learn-pencil:nth-child(11) {
+    animation: pencil-2 850ms linear forwards;
+  }
+
+  @keyframes pencil-2 {
+    0% {
+      top: -5rem;
+      left: 9.75rem;
+      transform: rotate(110deg) translateX(0);
+    }
+    10% {
+      transform: rotate(110deg) translateX(0.25rem);
+    }
+    20% {
+      transform: rotate(110deg) translateX(0);
+    }
+    30% {
+      transform: rotate(110deg) translateX(0.25rem);
+    }
+    40% {
+      transform: rotate(110deg) translateX(0);
+    }
+    50% {
+      transform: rotate(110deg) translateX(0.25rem);
+    }
+    60% {
+      transform: rotate(110deg) translateX(0);
+    }
+    70% {
+      transform: rotate(110deg) translateX(0.25rem);
+    }
+    80% {
+      transform: rotate(110deg) translateX(0);
+    }
+    90% {
+      transform: rotate(110deg) translateX(0.25rem);
+    }
+    100% {
+      top: 11rem;
+      left: 9rem;
+      transform: rotate(110deg) translateX(0);
+    }
+  }
+
+  .how-you-learn-section.show
+    .furnance-burning-items.how-you-learn-furnance-wrapper
+    .how-you-learn-pencil:nth-child(12) {
+    animation: pencil-3 950ms linear forwards;
+  }
+
+  @keyframes pencil-3 {
+    0% {
+      top: -3rem;
+      left: 10.5rem;
+      transform: rotate(120deg) translateX(0);
+    }
+    10% {
+      transform: rotate(120deg) translateX(0.25rem);
+    }
+    20% {
+      transform: rotate(120deg) translateX(0);
+    }
+    30% {
+      transform: rotate(120deg) translateX(0.25rem);
+    }
+    40% {
+      transform: rotate(120deg) translateX(0);
+    }
+    50% {
+      transform: rotate(120deg) translateX(0.25rem);
+    }
+    60% {
+      transform: rotate(120deg) translateX(0);
+    }
+    70% {
+      transform: rotate(120deg) translateX(0.25rem);
+    }
+    80% {
+      transform: rotate(120deg) translateX(0);
+    }
+    90% {
+      transform: rotate(120deg) translateX(0.25rem);
+    }
+    100% {
+      top: 11rem;
+      left: 8rem;
+      transform: rotate(120deg) translateX(0);
+    }
+  }
+
+  .how-you-learn-section.show
+    .furnance-disappear.how-you-learn-furnance-wrapper {
+    animation: furnance-disappear 1500ms ease-in-out forwards;
+  }
+
+  @keyframes furnance-disappear {
+    0% {
+      transform: translate(0, 0) scale(calc(1 * var(--zoom-pcm)));
+    }
+    30% {
+      transform: translate(0, 1rem)
+        scale(calc(1.15 * var(--zoom-pcm)), calc(0.85 * var(--zoom-pcm)));
+    }
+    40% {
+      transform: translate(0, 0) scale(calc(1 * var(--zoom-pcm)));
+    }
+    50% {
+      transform: translate(0, 1.5rem)
+        scale(calc(1.1 * var(--zoom-pcm)), calc(0.9 * var(--zoom-pcm)));
+    }
+    60% {
+      transform: translate(0, 0) scale(calc(1 * var(--zoom-pcm)));
+    }
+    100% {
+      transform: translate(0, 200%) scale(calc(1 * var(--zoom-pcm)));
+    }
+  }
+
+  .furnance-appear {
+    @apply translate-y-[100%];
+  }
+
+  .how-you-learn-section.show .furnance-appear.how-you-learn-furnance-wrapper {
+    animation: furnance-appear 1000ms ease-in-out forwards;
+    animation-delay: 600ms;
+  }
+
+  @keyframes furnance-appear {
+    0% {
+      transform: translate(0, 100%) scale(calc(1 * var(--zoom-pcm)));
+    }
+    70% {
+      transform: translate(0, 0) scale(calc(1 * var(--zoom-pcm)));
+    }
+    85% {
+      transform: translate(0, 0.25rem)
+        scale(calc(1.02 * var(--zoom-pcm)), calc(0.98 * var(--zoom-pcm)));
+    }
+    100% {
+      transform: translate(0, 0) scale(calc(1 * var(--zoom-pcm)));
+    }
+  }
+
+  /*========================================
+  Ash, Boss
+========================================*/
+  .how-you-learn-ash {
+    @apply flex
+    flex-col
+    justify-end
+    grow
+    w-full
+    max-w-container
+    px-6
+    mx-auto
+    mt-4
+    origin-bottom
+    transition-all
+    duration-400;
+
+    /* margin-top: calc(2rem * (1 / var(--zoom)));
+    max-width: calc(53.5rem * (1 / var(--zoom)));
+    padding: 0 calc(1.5rem * (1 / var(--zoom))); */
+    transform: scale(var(--zoom-pcm));
+  }
+
+  .how-you-learn-ash-boss {
+    @apply flex
+    grow
+    items-end
+    justify-between
+    w-full
+    max-w-container-full-sm
+    px-6
+    mx-auto
+    mt-4
+    origin-bottom
+    transition-all
+    duration-400
+    xl:gap-x-10;
+
+    transform: scale(var(--zoom-pcm));
+    /* max-width: calc(81rem * (1 / var(--zoom)));
+    padding-left: calc(1.5rem * (1 / var(--zoom)));
+    padding-right: calc(1.5rem * (1 / var(--zoom)));
+    margin-top: calc(1rem * (1 / var(--zoom))); */
+  }
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-ash-boss {
+      row-gap: calc(2.5rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash-boss .how-you-learn-ash-boss-ash,
+  .how-you-learn-ash-boss .how-you-learn-ash-boss-boss {
+    @apply relative
+    shrink-0;
+  }
+
+  .how-you-learn-ash-boss .how-you-learn-ash-boss-ash {
+    @apply w-[45%]
+    max-w-[36.6875rem]
+    left-[1%]
+    lg:w-[50%]
+    lg:-left-[9%]
+    xl:w-[50%]
+    xl:left-[3rem]
+    xl:mr-[15%];
+
+    /* max-width: calc(36.6875rem * (1 / var(--zoom))); */
+  }
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-ash-boss .how-you-learn-ash-boss-ash {
+      left: calc(3rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash-boss .how-you-learn-ash-boss-boss {
+    @apply w-[36.9%]
+    max-w-[30.4375rem]
+    right-[15%]
+    lg:w-[41%]
+    lg:right-[4%]
+    xl:w-[41%]
+    xl:right-[10rem];
+
+    /* max-width: calc(30.4375rem * (1 / var(--zoom))); */
+  }
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-ash-boss .how-you-learn-ash-boss-boss {
+      right: calc(10rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash .how-you-learn-ash-person {
+    @apply relative
+    w-full
+    max-w-[33rem]
+    z-[2]
+    mx-auto;
+
+    /* max-width: calc(33rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash .how-you-learn-ash-person *:first-child {
+    @apply max-h-[calc(100vh_-_10rem)];
+
+    /* max-height: calc(100vh - (10rem * (1 / var(--zoom)))); */
+  }
+
+  .how-you-learn-ash-boss .how-you-learn-ash-person,
+  .how-you-learn-ash-boss .how-you-learn-boss-person {
+    @apply relative
+    max-h-[calc(100vh_-_15rem)]
+    z-[2];
+
+    /* max-height: calc(100vh - (15rem * (1 / var(--zoom)))); */
+  }
+
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-ash-person {
+    @apply -translate-x-[50%]
+    opacity-0;
+  }
+
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-boss-person {
+    @apply translate-x-[50%]
+    opacity-0;
+  }
+
+  .how-you-learn-ash-boss-ash.arms-open {
+    @apply -left-[10%]
+    xl:-left-[4.5rem];
+  }
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-ash-boss-ash.arms-open {
+      left: calc(-4.5rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash-boss-ash.arms-open .how-you-learn-ash-person {
+    @apply w-[150%]
+    max-w-[53rem];
+
+    /* max-width: calc(53rem (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash-boss-ash.arms-open .how-you-learn-ash-dialog-thought {
+    @apply -right-[82%]
+    -mb-12;
+
+    /* margin-bottom: calc(-3rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash .how-you-learn-sparkle,
+  .how-you-learn-ash .how-you-learn-sparkle-sm {
+    @apply z-10;
+  }
+
+  .how-you-learn-ash .how-you-learn-sparkle {
+    @apply -top-[4%]
+    left-[17%];
+  }
+
+  .how-you-learn-ash .how-you-learn-sparkle-sm {
+    @apply top-[3%]
+    left-[42.5%];
+  }
+
+  .how-you-learn-ash .how-you-learn-sparkle:nth-child(2) {
+    @apply top-[6%]
+    left-[43%];
+  }
+
+  /*========================================
+    Dialog
+  ========================================*/
+  .how-you-learn-ash-dialog,
+  .how-you-learn-boss-dialog,
+  .how-you-learn-ash-dialog-thought {
+    @apply relative
+    pt-8
+    pb-8
+    pl-5
+    pr-8
+    font-bold
+    font-display
+    text-base
+    opacity-0
+    scale-50
+    origin-bottom-right
+    z-[1]
+    
+    after:content-[""]
+    after:block
+    after:absolute
+    after:top-0
+    after:left-0
+    after:w-full
+    after:h-full
+    after:bg-no-repeat
+    after:-z-[1];
+
+    /* font-size: calc(1rem * (1 / var(--zoom)));
+    padding-bottom: calc(2rem * (1 / var(--zoom)));
+    padding-left: calc(1.25rem * (1 / var(--zoom)));
+    padding-right: calc(2rem * (1 / var(--zoom)));
+    padding-top: calc(2rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash-dialog.no-animate,
+  .how-you-learn-boss-dialog.no-animate,
+  .how-you-learn-ash-dialog-thought.no-animate {
+    @apply opacity-100
+    scale-100;
+  }
+
+  .how-you-learn-ash-dialog {
+    @apply top-0
+    -left-[6rem]
+    w-[80%]
+    max-w-[23rem]
+    -mb-[5rem]
+    max-lg:pl-8
+    max-lg:pr-5
+    origin-bottom-left
+    xl:max-w-[27.25rem]
+    xl:-left-[10rem]
+    xl:origin-bottom-right
+
+    max-lg:after:-scale-x-100;
+
+    /* max-width: calc(27.25rem * (1 / var(--zoom)));
+    right: calc(-15rem * (1 / var(--zoom)));
+    top: calc(-1.5rem * (1 / var(--zoom)));
+    margin-bottom: calc(-5rem * (1 / var(--zoom))); */
+  }
+
+  /* @media (max-width: 1023.98px) {
+    .how-you-learn-ash-dialog {
+      padding-left: calc(1.25rem * (1 / var(--zoom)));
+      padding-right: calc(2rem * (1 / var(--zoom)));
+    }
+  } */
+
+  /* @media (min-width: 1024px) {
+    .how-you-learn-ash-dialog {
+      max-width: calc(23rem * (1 / var(--zoom)));
+      left: calc(-6rem * (1 / var(--zoom)));
+    }
+  } */
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-ash-dialog {
+      max-width: calc(27.25rem * (1 / var(--zoom)));
+      left: calc(-10rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash-dialog::after,
+  .how-you-learn-boss-dialog::after {
+    background-image: url("../dist/assets/image-how-you-learn-dialog.webp");
+    background-size: 100% 100%;
+  }
+
+  .how-you-learn-ash-dialog-thought {
+    @apply w-[110%]
+    max-w-[30.5rem]
+    pt-11
+    pb-9
+    px-9
+    -top-[1rem]
+    -right-[60%]
+    -mb-[3%]
+    origin-bottom-left
+    lg:w-full
+    
+    before:content-[""]
+    before:block
+    before:absolute
+    before:-bottom-[10%]
+    before:left-0
+    before:w-[13.65%]
+    before:aspect-[1.5_/_1];
+
+    animation-delay: 200ms;
+    /* max-width: calc(30.5rem * (1 / var(--zoom)));
+    padding-top: calc(2.75rem * (1 / var(--zoom)));
+    padding-bottom: calc(2.25rem * (1 / var(--zoom)));
+    padding-left: calc(2.25rem * (1 / var(--zoom)));
+    padding-right: calc(2.25rem * (1 / var(--zoom)));
+    top: calc(-1rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash-dialog-thought::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='66' height='43' viewBox='0 0 66 43' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M49.1175 1.55465C42.2735 4.39565 41.6265 12.9817 47.7655 19.4907C52.3375 24.3387 56.2305 24.2127 61.3935 19.0507L65.2755 15.1677L65.2435 10.3007C65.1845 1.27765 58.5065 -2.34335 49.1175 1.55465ZM27.5835 19.9426C21.6805 22.3196 21.0545 29.3437 26.2505 34.9057C29.5595 38.4487 31.5725 38.6587 36.0505 35.9287C46.7555 29.4017 39.2555 15.2406 27.5835 19.9426ZM2.0825 31.6827C-2.8165 37.3867 1.5275 44.0207 8.8825 42.0687L11.7755 41.3007L12.0915 37.5187C12.6325 31.0457 5.9675 27.1587 2.0825 31.6827Z' fill='white'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+  }
+
+  .how-you-learn-ash-dialog-thought::after {
+    background-image: url("../dist/assets/image-how-you-learn-dialog-thought.webp");
+    background-size: 100% 100%;
+  }
+
+  .how-you-learn-ash-dialog-thought.flip {
+    @apply relative
+    w-[60%]
+    left-[12%]
+    top-[3rem]
+    mb-[15%]
+    z-[1]
+    origin-bottom-right
+    xl:-left-[7%]
+    xl:-mb-[3%]
+
+    before:left-auto
+    before:-bottom-[13%]
+    before:right-[9rem]
+    before:-scale-x-100
+    xl:before:bottom-0
+    xl:before:-right-8;
+
+    /* top: calc(3rem * (1 / var(--zoom)));
+    right: calc(-9rem * (1 / var(--zoom))); */
+  }
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-ash-dialog-thought.flip::before {
+      right: calc(-2rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash-boss .how-you-learn-boss-dialog {
+    @apply relative
+    top-0
+    right-[65%]
+    -mb-[10%]
+    w-[120%]
+    max-w-[26rem]
+    xl:right-[48%];
+
+    /* max-width: calc(26rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash-boss .how-you-learn-ash-dialog {
+    @apply relative
+    left-[70%]
+    w-[120%]
+    -mb-[5%]
+    max-w-[21rem]
+    pl-8
+    pr-5
+    xl:-mb-[7%]
+    xl:left-[75%]
+    
+    after:-scale-x-100;
+
+    /* max-width: calc(21rem * (1 / var(--zoom)));
+    padding-left: calc(2rem * (1 / var(--zoom)));
+    padding-right: calc(1.25rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash-boss .how-you-learn-ash-dialog-thought.flip {
+    @apply absolute
+    -top-[11rem]
+    xl:-top-[9rem];
+
+    /* top: calc(-11rem * (1 / var(--zoom))); */
+  }
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-ash-boss .how-you-learn-ash-dialog-thought.flip {
+      top: calc(-9rem * (1 / var(--zoom)));
+    }
+  } */
+
+  /*========================================
+    Reactions
+  ========================================*/
+  .how-you-learn-ash-ellipsis {
+    @apply absolute
+    w-[8rem]
+    -top-[7%]
+    right-[45%]
+    animate-bounce-subtle
+    xl:right-[47%]
+    2xl:w-[10rem]
+    2xl:-top-[15%];
+
+    animation-delay: 500ms;
+    /* width: calc(4rem * (1 / var(--zoom))); */
+  }
+  /* 
+  @media (min-width: 1024px) {
+    .how-you-learn-ash-ellipsis {
+      width: calc(8rem * (1 / var(--zoom)));
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .how-you-learn-ash-ellipsis {
+      width: calc(10rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash-question-mark {
+    @apply absolute
+    w-[2.6875rem]
+    top-[3%]
+    right-[51%]
+    opacity-0
+    transition-opacity
+    duration-400
+    z-[3]
+    animate-bounce-subtle
+    lg:-top-[10%]
+    xl:right-[48%];
+
+    animation-delay: 500ms;
+    /* width: calc(2.15rem * (1 / var(--zoom))); */
+  }
+
+  /* @media (min-width: 1024px) {
+    .how-you-learn-ash-question-mark {
+      width: calc(2.6875rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash-question-mark-sm {
+    @apply absolute
+    w-[1.875rem] 
+    -top-[7%]
+    right-[43%]
+    opacity-0
+    transition-opacity
+    duration-400
+    z-[3]
+    animate-bounce-subtle
+    xl:right-[41%];
+
+    animation-delay: 700ms;
+    /* width: calc(1.5rem * (1 / var(--zoom))); */
+  }
+
+  /* @media (min-width: 1024px) {
+    .how-you-learn-ash-question-mark-sm {
+      width: calc(1.875rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash-alert-mark {
+    @apply hidden
+    absolute
+    top-0
+    right-[39%]
+    w-[3.5rem]
+    opacity-0
+    transition-opacity
+    duration-400
+    xl:block;
+
+    /* width: calc(3.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash-music-note {
+    @apply absolute
+    w-[3.375rem]
+    bottom-[51%]
+    -right-[5%]
+    opacity-0
+    transition-opacity
+    duration-400
+    animate-bounce-subtle
+    z-10
+    lg:right-0
+    xl:right-[0%]
+    xl:bottom-[55%];
+
+    /* width: calc(3.375rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash-bulb {
+    @apply absolute
+    w-[6.5615rem]
+    -top-[13%]
+    right-[40%]
+    opacity-0
+    animate-glow
+    transition-opacity
+    duration-400
+    z-[2];
+
+    /* width: calc(6.5615rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash-bulb img {
+    @apply w-full
+    h-auto
+    scale-0
+    origin-bottom-right;
+  }
+
+  .how-you-learn-sparkle,
+  .how-you-learn-sparkle-sm {
+    @apply absolute
+    top-0
+    left-0;
+  }
+
+  .how-you-learn-sparkle {
+    @apply w-24;
+
+    /* width: calc(6rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-sparkle-sm {
+    @apply w-12
+    rotate-45;
+
+    /* width: calc(3rem * (1 / var(--zoom))); */
+  }
+
+  /*========================================
+    Image tag
+  ========================================*/
+  .how-you-learn-image-tag {
+    @apply relative
+    -mt-5
+    mx-auto
+    bg-neutral-700
+    font-semibold
+    text-center
+    px-6
+    py-1
+    rounded-full
+    z-[2]
+    transition-opacity
+    duration-300;
+
+    /* margin-top: calc(-1.25rem * (1 / var(--zoom)));
+    padding-left: calc(1.5rem * (1 / var(--zoom)));
+    padding-right: calc(1.5rem * (1 / var(--zoom)));
+    padding-top: calc(0.25rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-image-tag,
+  .how-you-learn-image-tag.paragraph-1,
+  .how-you-learn-image-tag.paragraph-2,
+  .how-you-learn-image-tag.paragraph-3 {
+    @apply text-white;
+  }
+
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-image-tag,
+  .how-you-learn-section[data-pcm-slide-new-info] .how-you-learn-image-tag {
+    @apply opacity-0;
+  }
+
+  /*========================================
+    Competency units
+  ========================================*/
+  .how-you-learn-competency {
+    @apply flex
+    items-start
+    justify-between
+    relative
+    w-full
+    /* max-w-container-full-sm */
+    max-w-container-xl-p
+    /* min-h-[18.1875rem] */
+    min-h-[16.6875rem]
+    grow
+    py-[3.5rem]
+    /* mb-[4.5rem] */
+    mx-auto
+    gap-12
+    z-10
+    origin-top
+    transition-all
+    duration-400
+    xl:gap-x-20;
+
+    transform: scale(var(--zoom-pcm));
+    /* max-width: calc(81rem * (1 / var(--zoom)));
+    min-height: calc(16.6875rem * (1 / var(--zoom)));
+    padding-top: calc(3.5rem * (1 / var(--zoom)));
+    margin-bottom: calc(4.5rem * (1 / var(--zoom)));
+    row-gap: calc(5rem * (1 / var(--zoom))); */
+  }
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-competency {
+      transform: scale(calc(var(--zoom-pcm) * 0.9));
+    }
+  } */
+
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-competency {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-competency .how-you-learn-instruction {
+    @apply max-w-[24rem]
+    xl:max-w-[27rem];
+
+    /* max-width: calc(29rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-competency
+    .how-you-learn-instruction {
+    @apply opacity-0
+    /* max-h-[18.1875rem] */
+    max-h-[16.6875rem]
+    overflow-hidden;
+
+    /* max-height: calc(16.6875rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-competency-book {
+    @apply flex
+    items-start
+    mt-20
+    xl:mt-16;
+
+    /* margin-top: calc(4rem * (1 / var(--zoom))); */
+  }
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-competency-book {
+      margin-top: calc(3.5rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-competency-book-open-wrapper {
+    @apply relative
+    flex
+    flex-col
+    justify-center
+    shrink-0
+    w-[17.125rem]
+    h-[16.5rem]
+    max-w-full;
+
+    /* width: calc(17.125rem * (1 / var(--zoom)));
+    height: calc(16.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-competency-book-open-wrapper[data-pcm-animate-item-target] {
+    @apply flex-col-reverse;
+  }
+
+  .how-you-learn-competency-book-open {
+    @apply relative
+    z-[2]
+    animate-bounce-subtle;
+  }
+
+  .how-you-learn-competency-book-open img {
+    @apply first:w-full;
+  }
+
+  .how-you-learn-competency-book-open-wrapper[data-pcm-animate-item-target]
+    .how-you-learn-competency-book-open {
+    @apply animate-none;
+  }
+
+  .how-you-learn-competency + .how-you-learn-furnance-wrapper {
+    @apply z-10;
+  }
+
+  .how-you-learn-furnance-wrapper .how-you-learn-competency-book-open {
+    @apply absolute
+    top-[1rem]
+    left-[15rem]
+    w-[0.125rem]
+    h-[0.0625rem]
+    opacity-0
+    animate-none
+    z-[1];
+
+    /* top: calc(1rem * (1 / var(--zoom)));
+    left: calc(15rem * (1 / var(--zoom)));
+    width: calc(0.125rem * (1 / var(--zoom)));
+    height: calc(0.0625rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-competency-book-info {
+    @apply flex
+    relative
+    z-30
+    transition-opacity
+    duration-300;
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-competency-book-info,
+  .how-you-learn-section[data-pcm-slide-new-info]
+    .how-you-learn-competency-book-info {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-competency-book-info-icon {
+    @apply shrink-0;
+  }
+
+  .how-you-learn-competency-book-info-icon img {
+    @apply w-full
+    h-auto;
+  }
+
+  .how-you-learn-competency-book-info-text,
+  .how-you-learn-competency-book-info-text.paragraph-1,
+  .how-you-learn-competency-book-info-text.paragraph-2,
+  .how-you-learn-competency-book-info-text.paragraph-3 {
+    @apply text-primary-700
+    font-semibold
+    pt-4
+    text-left
+    leading-tight
+    drop-shadow-text-how-you-learn;
+
+    /* padding-top: calc(1rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-competency-book-info-wrapper {
+    @apply flex
+    flex-col
+    items-start
+    gap-y-2;
+
+    /* column-gap: calc(0.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-competency-book-info:nth-child(1) {
+    @apply -ml-[15%];
+  }
+
+  .how-you-learn-competency-book-info:nth-child(2) {
+    @apply pt-2
+    -ml-[25%];
+
+    /* padding-top: calc(0.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-competency-book-info:nth-child(3) {
+    @apply ml-0;
+  }
+
+  .how-you-learn-competency-book-info:nth-child(1)
+    .how-you-learn-competency-book-info-icon {
+    @apply w-[6.5625rem]
+    mr-2;
+
+    /* width: calc(6.5625rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-competency-book-info:nth-child(2)
+    .how-you-learn-competency-book-info-icon {
+    @apply w-[5.1875rem]
+    mr-2;
+
+    /* width: calc(5.1875rem * (1 / var(--zoom)));
+    margin-right: calc(0.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-competency-book-info:nth-child(3)
+    .how-you-learn-competency-book-info-icon {
+    @apply w-[3.5625rem]
+    mr-2;
+
+    /* width: calc(3.5625rem * (1 / var(--zoom)));
+    margin-right: calc(0.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-confetti {
+    @apply absolute
+    top-[10%]
+    -left-[15%]
+    scale-[3]
+    z-[1]
+    opacity-0
+    transition-opacity
+    duration-400;
+  }
+
+  .how-you-learn-competency-book-open .how-you-learn-sparkle,
+  .how-you-learn-competency-book-open .how-you-learn-sparkle-sm {
+    @apply absolute
+    z-[3];
+  }
+
+  .how-you-learn-competency-book-open .how-you-learn-sparkle {
+    @apply top-[9rem]
+    left-4;
+
+    /* top: calc(9rem * (1 / var(--zoom)));
+    left: calc(1rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-competency-book-open .how-you-learn-sparkle-sm {
+    @apply top-[13rem]
+    left-10;
+
+    /* top: calc(13rem * (1 / var(--zoom)));
+    left: calc(2.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-competency-book-open .how-you-learn-sparkle:nth-child(4) {
+    @apply -top-[2rem]
+    left-[6rem];
+
+    /* top: calc(-2rem * (1 / var(--zoom)));
+    left: calc(16em * (1 / var(--zoom))); */
+  }
+
+  /*========================================
+    Internship
+  ========================================*/
+  .how-you-learn-internship {
+    @apply flex
+    items-start
+    justify-between
+    grow
+    pt-10
+    pb-14
+    mb-auto
+    gap-y-10
+    gap-x-20
+    origin-top
+    transition-all
+    duration-400;
+
+    transform: scale(var(--zoom-pcm));
+
+    /* padding-top: calc(2.5rem * (1 / var(--zoom)));
+    padding-bottom: calc(3.5rem * (1 / var(--zoom)));
+    row-gap: calc(2.5rem * (1 / var(--zoom)));
+    column-gap: calc(5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-internship-projects-wrapper,
+  .how-you-learn-internship-attachments-wrapper {
+    @apply relative
+    flex
+    flex-col
+    justify-center
+    grow
+    w-full
+    max-w-[50%];
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-internship-projects-wrapper,
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-internship-attachments-wrapper {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-internship-attachments-wrapper {
+    @apply pt-[1.3rem];
+    /* padding-top: calc(1.3rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-internship-projects,
+  .how-you-learn-internship-attachments {
+    @apply w-auto
+    /* h-[15.5rem] 
+    max-h-[calc(100vh_-_27rem)] */
+    object-contain
+    will-change-transform;
+
+    /* height: calc(15.5rem * (1 / var(--zoom)));
+    max-height: calc(100vh - (27rem * (1 / var(--zoom)))); */
+  }
+
+  .how-you-learn-internship-projects {
+    @apply aspect-[1.3298_/_1]
+    h-[15.75rem] 
+    max-h-[calc(100vh_-_26.75rem)];
+  }
+
+  .how-you-learn-internship-attachments {
+    @apply aspect-[1.3653_/_1]
+    h-[15.5rem] 
+    max-h-[calc(100vh_-_27rem)];
+  }
+
+  .how-you-learn-internship-attachments-wrapper .how-you-learn-image-tag {
+    @apply -mt-9
+    whitespace-nowrap;
+
+    /* margin-top: calc(-2.25rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-internship-book-wrapper {
+    @apply relative
+    origin-bottom
+    transition-all
+    duration-400;
+
+    transform: scale(var(--zoom-pcm));
+  }
+
+  .how-you-learn-internship-book-wrapper.fade {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-internship-book {
+    @apply relative
+    w-[39rem]
+    min-w-[39rem]
+    origin-bottom
+    z-[4];
+
+    /* width: calc(39rem * (1 / var(--zoom)));
+    min-width: calc(39rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-internship-book-wrapper .how-you-learn-internship-projects,
+  .how-you-learn-internship-book-wrapper .how-you-learn-internship-attachments {
+    @apply absolute
+    top-[1.125rem]
+    w-auto
+    z-[5];
+
+    /* top: calc(1.125rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-internship-book-wrapper .how-you-learn-internship-projects {
+    @apply w-auto /* 1.3298 */
+    aspect-[1.4298_/_1]
+    h-[0.0625rem]
+    left-[12.5rem];
+
+    /* height: calc(0.0625rem * (1 / var(--zoom)));
+    left: calc(12.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-internship-book-wrapper .how-you-learn-internship-attachments {
+    @apply w-auto /* 1.3653 */
+    aspect-[1.4653_/_1]
+    h-[0.0625rem]
+    right-[12.5rem];
+
+    /* height: calc(0.0625rem * (1 / var(--zoom)));
+    right: calc(12.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-section[data-pcm-slide-end].show
+    .how-you-learn-internship-book-wrapper {
+    /* @apply animate-fade-up-out; */
+
+    animation: fade-up-out-scale 400ms ease-in-out forwards;
+    animation-delay: 600ms;
+  }
+
+  /*========================================
+    Work-Integration Units
+  ========================================*/
+  .how-you-learn-wiu {
+    @apply flex
+    items-start
+    justify-center
+    relative
+    w-full
+    /* max-w-container-full-sm */
+    max-w-container-xl-p
+    grow
+    py-[3.5rem]
+    mx-auto
+    gap-x-4
+    z-10
+    origin-top
+    transition-all
+    duration-400
+    xl:gap-x-6;
+
+    transform: scale(var(--zoom-pcm));
+    /* max-width: calc(81rem * (1 / var(--zoom)));
+    padding-top: calc(3.5rem * (1 / var(--zoom)));
+    padding-bottom: calc(3.5rem * (1 / var(--zoom)));
+    row-gap: calc(1.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-wiu {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-wiu .how-you-learn-instruction {
+    @apply w-full
+    mb-10
+    /* max-w-[29.8125rem] */
+    max-w-[20rem]
+    xl:max-w-[25rem];
+
+    /* max-width: calc(29.8125rem * (1 / var(--zoom)));
+    margin-bottom: calc(2.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-wiu-content {
+    @apply flex
+    flex-col
+    w-full
+    items-center
+    justify-center
+    gap-2
+    mt-14
+    xl:mt-12;
+
+    /* gap: calc(0.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-wiu-book-wrapper {
+    @apply relative
+    flex
+    justify-center
+    animate-bounce-subtle
+    z-[2];
+  }
+
+  .how-you-learn-wiu-book {
+    @apply w-full
+    max-w-[10rem]
+    xl:max-w-[11.5626rem];
+
+    /* max-width: calc(11.5626rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-wiu-book-label {
+    @apply absolute
+    top-[2rem]
+    w-full
+    max-w-[11.5626rem]
+    py-4
+    px-8
+    text-white
+    font-bold
+    text-center
+    text-[1rem]
+    leading-tight
+    xl:text-[1.25rem];
+
+    /* word-break: normal;
+    max-width: calc(11.5626rem * (1 / var(--zoom)));
+    top: calc(2rem * (1 / var(--zoom)));
+    padding-top: calc(1rem * (1 / var(--zoom)));
+    padding-bottom: calc(1rem * (1 / var(--zoom)));
+    padding-left: calc(2rem * (1 / var(--zoom)));
+    padding-right: calc(2rem * (1 / var(--zoom)));
+    font-size: calc(1.25rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-wiu-book-info-wrapper {
+    @apply relative
+    flex
+    z-[3];
+  }
+
+  .how-you-learn-wiu-book-info {
+    @apply flex
+    items-center
+    relative;
+  }
+
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-wiu-book-info,
+  .how-you-learn-section[data-pcm-slide-new-info] .how-you-learn-wiu-book-info {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-wiu-book-info:nth-child(1),
+  .how-you-learn-wiu-book-info:nth-child(3) {
+    @apply top-[7rem];
+
+    /* top: calc(7rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-wiu-book-info-text,
+  .how-you-learn-wiu-book-info-text.paragraph-1,
+  .how-you-learn-wiu-book-info-text.paragraph-2,
+  .how-you-learn-wiu-book-info-text.paragraph-3 {
+    @apply w-full
+    max-w-[9.1875rem]
+    text-primary-700
+    font-semibold
+    text-left
+    leading-tight;
+
+    /* max-width: calc(9.1875rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-wiu-book-info:nth-child(1) .how-you-learn-wiu-book-info-text {
+    @apply rotate-[2deg];
+  }
+
+  .how-you-learn-wiu-book-info:nth-child(3) .how-you-learn-wiu-book-info-text {
+    @apply -rotate-[2deg];
+  }
+
+  .how-you-learn-wiu-book-info-icon {
+    @apply shrink-0;
+  }
+
+  .how-you-learn-wiu-book-info:nth-child(1) .how-you-learn-wiu-book-info-icon {
+    @apply w-[3.8125rem]
+    rotate-[2deg]
+    xl:w-[4.8125rem];
+    /* xl:ml-[2rem]; */
+
+    /* width: calc(4.8125rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-wiu-book-info:nth-child(2) .how-you-learn-wiu-book-info-icon {
+    @apply w-[4.5rem]
+    xl:w-[6.8125rem];
+
+    /* width: calc(6.8125rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-wiu-book-info:nth-child(3) .how-you-learn-wiu-book-info-icon {
+    @apply w-[3.5rem]
+    -rotate-[2deg]
+    xl:w-[4.75rem];
+    /* xl:ml-[2.0645rem]; */
+
+    /* width: calc(4.75rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-wiu-book-wrapper .how-you-learn-sparkle {
+    @apply -top-[30%]
+    -left-[65%]
+    opacity-0;
+  }
+
+  .how-you-learn-wiu-book-wrapper .how-you-learn-sparkle-sm {
+    @apply -top-[12%]
+    -left-[40%]
+    opacity-0;
+  }
+
+  .how-you-learn-wiu-book-wrapper .how-you-learn-sparkle:nth-child(3) {
+    @apply left-auto
+    -top-[27%]
+    -right-[65%];
+  }
+
+  .how-you-learn-wiu-book-wrapper .how-you-learn-sparkle-sm:nth-child(4) {
+    @apply left-auto
+    -top-[30%]
+    -right-[70%];
+  }
+
+  .how-you-learn-wiu-book-wrapper .how-you-learn-confetti {
+    @apply top-[10%]
+    left-[5%]
+    scale-[5]
+    z-[1];
+  }
+
+  /*========================================
+    Learning units
+  ========================================*/
+  .how-you-learn-learning-units {
+    @apply flex
+    grow
+    pt-6
+    origin-top
+    transition-all
+    duration-400;
+
+    transform: scale(var(--zoom-pcm));
+    /* transform: scale(var(--zoom-pcm));
+    padding-top: calc(1.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-section[data-pcm-slide-new] .how-you-learn-learning-units {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-text {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-learning-units-text {
+    @apply mt-[25%]
+    w-auto
+    h-[5rem]
+    max-h-[calc(100vh_-_31rem)];
+
+    /* height: calc(5rem * (1 / var(--zoom)));
+    max-height: calc(100vh - (31rem * (1 / var(--zoom)))); */
+  }
+
+  .how-you-learn-learning-units-arrow {
+    @apply -rotate-[60deg]
+    /* scale-[0.7] */
+    mt-4
+    /* -mt-[5rem] */
+    -ml-[1.75rem]
+    w-auto
+    h-[4.5rem]
+    max-h-[calc(100vh_-_32rem)];
+
+    /* height: calc(4.5rem * (1 / var(--zoom)));
+    max-height: calc(100vh - (32rem * (1 / var(--zoom))));
+    margin-top: calc(1rem * (1 / var(--zoom)));
+    margin-left: calc(-1.75rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-arrow {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-learning-units-book-wrapper {
+    @apply relative
+    /* w-[18rem]
+    h-auto */
+    /* -mb-4 */
+    animate-glow;
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-book-wrapper {
+    animation-delay: 2600ms;
+  }
+
+  .how-you-learn-learning-units-book-1,
+  .how-you-learn-learning-units-book-2,
+  .how-you-learn-learning-units-book-3,
+  .how-you-learn-learning-units-book-4,
+  .how-you-learn-learning-units-book-bulb {
+    @apply w-auto
+    top-[1rem]
+    h-[24rem]
+    max-h-[calc(100vh_-_25rem)];
+
+    /* top: calc(1rem * (1 / var(--zoom)));
+    height: calc(24rem * (1 / var(--zoom)));
+    max-height: calc(100vh - (25rem * (1 / var(--zoom)))); */
+  }
+
+  .how-you-learn-learning-units-book-2,
+  .how-you-learn-learning-units-book-3,
+  .how-you-learn-learning-units-book-4,
+  .how-you-learn-learning-units-book-bulb {
+    @apply absolute;
+  }
+
+  .how-you-learn-learning-units-book-1 {
+    @apply relative
+    z-[2];
+  }
+
+  .how-you-learn-learning-units-book-2 {
+    @apply z-[3];
+  }
+
+  .how-you-learn-learning-units-book-3 {
+    @apply z-[4]
+    -left-6;
+
+    /* left: calc(-1.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-learning-units-book-4 {
+    @apply z-[5]
+    -left-4;
+
+    /* left: calc(-1rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-learning-units-book-bulb {
+    @apply z-[6]
+    origin-center;
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-book-1,
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-book-2,
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-book-3,
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-book-4 {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-book-bulb {
+    @apply scale-50
+    opacity-0;
+  }
+
+  .how-you-learn-learning-units-book-glow {
+    @apply absolute
+    h-[25rem]
+    max-h-[calc(100vh_-_23.5rem)]
+    w-auto
+    top-0
+    -left-2
+    z-[1]
+    opacity-0
+    transition-opacity
+    duration-300
+    animate-blur-glow;
+
+    /* height: calc(25rem * (1 / var(--zoom)));
+    max-height: calc(100vh - (23.5rem * (1 / var(--zoom))));
+    left: calc(-0.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-book-glow {
+    @apply opacity-0;
+  }
+
+  .how-you-learn-learning-units-content {
+    @apply flex
+    flex-col
+    h-full
+    max-h-[calc(100vh_-_25rem)]
+    w-auto;
+
+    /* max-height: calc(100vh - (25rem * (1 / var(--zoom)))); */
+  }
+
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-book-wrapper
+    .how-you-learn-sparkle,
+  .how-you-learn-section[data-pcm-slide-new]
+    .how-you-learn-learning-units-book-wrapper
+    .how-you-learn-sparkle-sm {
+    @apply opacity-0
+    transition-opacity
+    duration-300;
+  }
+
+  .how-you-learn-learning-units-book-wrapper .how-you-learn-sparkle {
+    @apply w-[30%];
+  }
+
+  .how-you-learn-learning-units-book-wrapper .how-you-learn-sparkle-sm {
+    @apply w-1/5;
+  }
+
+  .how-you-learn-learning-units-book-wrapper .how-you-learn-sparkle {
+    @apply left-24
+    z-[2];
+
+    /* left: calc(6rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-learning-units-book-wrapper .how-you-learn-sparkle-sm {
+    @apply top-16
+    left-[8rem]
+    z-[2];
+
+    /* left: calc(8rem * (1 / var(--zoom)));
+    top: calc(14rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-learning-units-book-wrapper
+    .how-you-learn-sparkle:nth-child(8) {
+    @apply top-24
+    left-[13.5rem]
+    rotate-45
+    z-[2];
+
+    /* left: calc(13.5rem * (1 / var(--zoom)));
+    top: calc(6rem * (1 / var(--zoom))); */
+  }
+
+  /*========================================
+    Ash working
+  ========================================*/
+  .how-you-learn-ash-working {
+    @apply relative
+    flex
+    items-end
+    justify-center
+    grow
+    w-full
+    /* pt-4 */
+    origin-bottom
+    transition-all
+    duration-400;
+
+    transform: scale(var(--zoom-pcm));
+  }
+  @media (min-width: 1600px) {
+    .how-you-learn-ash-working {
+      margin-left: -6rem;
+    }
+  }
+
+  .how-you-learn-ash-working-ash {
+    @apply relative
+    w-auto
+    max-w-[39rem]
+    shrink-0
+    xl:max-w-[44rem];
+
+    /* max-width: calc(39rem * (1 / var(--zoom))); */
+  }
+
+  @media (min-width: 1700px) {
+    .how-you-learn-ash-working-ash {
+      @apply max-w-[40rem];
+    }
+  }
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-ash-working-ash {
+      max-width: calc(45rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash-working-boss {
+    @apply relative
+    right-15
+    w-auto
+    max-w-[20rem]
+    shrink-0
+    -ml-8
+    xl:max-w-[23rem];
+
+    /* max-width: calc(20rem * (1 / var(--zoom))); */
+  }
+
+  @media (min-width: 1700px) {
+    .how-you-learn-ash-working-boss {
+      @apply max-w-[21rem];
+    }
+  }
+
+  /* @media (min-width: 1280px) {
+    .how-you-learn-ash-working-boss {
+      max-width: calc(23rem * (1 / var(--zoom)));
+    }
+  } */
+
+  .how-you-learn-ash-working-ash .how-you-learn-ash-person,
+  .how-you-learn-ash-working-boss .how-you-learn-boss-person {
+    @apply relative
+    w-auto
+    h-full
+    z-[2];
+  }
+
+  .how-you-learn-ash-working-ash .how-you-learn-ash-person {
+    @apply max-h-[calc(100vh_-_16rem)];
+
+    /* max-height: calc(100vh - (16rem * (1 / var(--zoom)))); */
+  }
+
+  .how-you-learn-ash-working-boss .how-you-learn-boss-person {
+    @apply max-h-[calc(100vh_-_15rem)];
+
+    /* max-height: calc(100vh - (15rem * (1 / var(--zoom)))); */
+  }
+
+  .how-you-learn-ash-working + .how-you-learn-instruction {
+    @apply absolute
+    right-6
+    bottom-0
+    max-w-container-sm;
+
+    /* max-width: calc(35rem * (1 / var(--zoom)));
+    right: calc(1.5rem * (1 / var(--zoom))); */
+  }
+
+  .how-you-learn-ash-working-boss .how-you-learn-boss-dialog {
+    @apply relative
+    w-[70%]
+    max-w-[27rem]
+    -top-[1.5rem]
+    pl-8
+    pr-5
+    -right-[55%]
+    -mb-[10%]
+    z-[1]
+    origin-bottom-left
+    xl:w-[76%]
+    xl:top-[0.75rem]
+    xl:-right-[59%]
+
+    after:-scale-x-100;
+
+    /* max-width: calc(27rem * (1 / var(--zoom)));
+    top: calc(0.75rem * (1 / var(--zoom)));
+    padding-left: calc(2rem * (1 / var(--zoom)));
+    padding-right: calc(1.25rem * (1 / var(--zoom))); */
+  }
+
+  @media (min-width: 1700px) {
+    .how-you-learn-ash-working-boss .how-you-learn-boss-dialog {
+      width: 80%;
+    }
+  }
+
+  .how-you-learn-ash-working-ash .how-you-learn-ash-dialog-thought {
+    @apply relative
+    w-[calc(80%_-_2rem)]
+    right-[8%]
+    -mb-[20%]
+    z-[1]
+    origin-bottom-right
+    /* xl:right-[11%]
+    xl:w-[calc(80%_-_2rem)] */
+
+    before:left-auto
+    before:right-0
+    before:-scale-x-100
+    /* xl:before:-right-8; */;
+
+    /* width: calc(80% - (2rem * (1 / var(--zoom)))); */
+  }
+
+  .how-you-learn-ash-working-ash .how-you-learn-sparkle,
+  .how-you-learn-ash-working-ash .how-you-learn-sparkle-sm {
+    @apply absolute
+    z-[3]
+    top-auto
+    opacity-0;
+  }
+
+  .how-you-learn-ash-working-ash .how-you-learn-sparkle {
+    @apply w-[8%]
+    bottom-[39%]
+    left-[26%];
+  }
+
+  .how-you-learn-ash-working-ash .how-you-learn-sparkle-sm {
+    @apply w-[5%]
+    bottom-[31%]
+    left-[19%];
+  }
+
+  .how-you-learn-ash-working-ash .how-you-learn-sparkle:nth-child(5) {
+    @apply w-[8%]
+    bottom-[27.5%]
+    left-[30%]
+    rotate-45;
+  }
+
+  @keyframes fadeout-scale {
+    0% {
+      opacity: 1;
+      transform: scale(var(--zoom-pcm));
+    }
+    100% {
+      opacity: 0;
+      transform: scale(var(--zoom-pcm));
+    }
+  }
+
+  @keyframes fade-up-in-scale {
+    0% {
+      transform: translateY(2rem) scale(var(--zoom-pcm));
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(var(--zoom-pcm));
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-down-in-scale {
+    0% {
+      transform: translateY(-2rem) scale(var(--zoom-pcm));
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(var(--zoom-pcm));
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-up-in-scale {
+    0% {
+      transform: translateY(2rem) scale(var(--zoom-pcm));
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scale(var(--zoom-pcm));
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-up-out-scale {
+    0% {
+      transform: translateY(0) scale(var(--zoom-pcm));
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(2rem) scale(var(--zoom-pcm));
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in-instruction-overlay-scale {
+    0% {
+      transform: translateY(2rem) rotate(-7.56deg) scale(var(--zoom-pcm));
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) rotate(-7.56deg) scale(var(--zoom-pcm));
+      opacity: 1;
+    }
+  }
+}
+
+/*========================================
+  Show or hide slides
+========================================*/
+.how-you-learn-intro.transition-in,
+.how-you-learn-section.transition-in {
+  @apply opacity-100;
+}
+
+.how-you-learn-intro.transition-in {
+  @apply block;
+}
+
+.how-you-learn-section.transition-in {
+  @apply flex;
+}
+
+.how-you-learn-section.transition-out[data-pcm-slide-stop]
+  .how-you-learn-content,
+.how-you-learn-section.transition-out[data-pcm-slide-stop] .how-you-learn-arrow,
+.how-you-learn-section.transition-out[data-pcm-slide-stop]
+  .how-you-learn-instruction,
+.how-you-learn-section.transition-out[data-pcm-slide-stop]
+  .how-you-learn-instruction-overlay,
+.how-you-learn-section.transition-out[data-pcm-slide-stop]
+  .how-you-learn-ash-boss,
+.how-you-learn-section.transition-out[data-pcm-slide-stop]
+  .how-you-learn-competency,
+.how-you-learn-section.transition-out[data-pcm-slide-stop] .how-you-learn-wiu,
+.how-you-learn-section.transition-out[data-pcm-slide-stop]
+  .how-you-learn-learning-units,
+.how-you-learn-section.transition-out[data-pcm-slide-end]
+  .how-you-learn-content,
+.how-you-learn-section.transition-out[data-pcm-slide-end] .how-you-learn-arrow,
+.how-you-learn-section.transition-out[data-pcm-slide-end]
+  .how-you-learn-instruction,
+.how-you-learn-section.transition-out[data-pcm-slide-end]
+  .how-you-learn-instruction-overlay,
+.how-you-learn-section.transition-out[data-pcm-slide-end]
+  .how-you-learn-ash-boss,
+.how-you-learn-section.transition-out[data-pcm-slide-end]
+  .how-you-learn-competency,
+.how-you-learn-section.transition-out[data-pcm-slide-end] .how-you-learn-wiu {
+  @apply animate-fadeout;
+}
+
+.how-you-learn-section.transition-out[data-pcm-slide-end]
+  .how-you-learn-learning-units {
+  /* @apply animate-fadeout; */
+
+  animation: fadeout-scale 300ms ease-in-out forwards;
+}
+
+.how-you-learn-intro.transition-in,
+.how-you-learn-intro.transition-out {
+  @apply !flex;
+}
+
+.how-you-learn-intro.hide {
+  @apply hidden;
+}
+
+.how-you-learn-intro.hide .loader-tile {
+  @apply w-full;
+}
+
+.how-you-learn-intro.transition-in .loader-tile {
+  @apply !w-full;
+}
+
+.how-you-learn-intro.transition-out .loader-tile {
+  @apply !w-full;
+}
+
+.how-you-learn-section.show {
+  @apply flex
+  opacity-100;
+}
+
+.how-you-learn-prev-wrapper.show {
+  @apply animate-fadein
+  block;
+}
+
+/*========================================
+  Animations
+========================================*/
+/* Titles */
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-content
+  > *:not(.no-animate):not(.how-you-learn-arrow),
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-content
+  > *:not(.no-animate):not(.how-you-learn-arrow) {
+  @apply animate-fade-up-in;
+
+  animation-delay: 400ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-content
+  > *:first-child:not(.no-animate):not(.how-you-learn-arrow),
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-content
+  > *:first-child:not(.no-animate):not(.how-you-learn-arrow) {
+  animation-delay: 200ms;
+}
+
+/* Content, fade down */
+/* .how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-competency,
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-wiu,
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-learning-units {
+  @apply animate-fade-up-in;
+
+  animation-delay: 500ms;
+} */
+
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-competency,
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-wiu,
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-learning-units {
+  animation: fade-up-in-scale 400ms ease-in-out forwards;
+  animation-delay: 500ms;
+}
+
+/* Tags */
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-image-tag,
+.how-you-learn-section.show[data-pcm-slide-new-info] .how-you-learn-image-tag {
+  @apply animate-fade-up-in;
+
+  animation-delay: 200ms;
+}
+
+/* Instructions */
+.how-you-learn-section.show[data-pcm-slide-stop] .how-you-learn-instruction,
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-instruction,
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-instruction {
+  @apply animate-fade-up-in;
+}
+
+.how-you-learn-section.show[data-pcm-slide-stop]
+  .how-you-learn-wrapper
+  > .how-you-learn-instruction,
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-wrapper
+  > .how-you-learn-instruction,
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-wrapper
+  > .how-you-learn-instruction {
+  animation: fade-up-in-scale 400ms ease-in-out forwards;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new-stop]
+  .how-you-learn-instruction {
+  animation-delay: 200ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-instruction {
+  animation-delay: 500ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-instruction {
+  animation-delay: 800ms;
+}
+
+/* Arrow above instructions  */
+.how-you-learn-section.show[data-pcm-slide-stop] .how-you-learn-arrow,
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-arrow,
+.how-you-learn-section.show[data-pcm-slide-new-info] .how-you-learn-arrow {
+  @apply opacity-100;
+}
+
+.how-you-learn-section.show[data-pcm-slide-stop] .how-you-learn-arrow {
+  @apply delay-200;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-arrow,
+.how-you-learn-section.show[data-pcm-slide-new-info] .how-you-learn-arrow {
+  @apply delay-700;
+}
+
+/* Instructions below arrow */
+.how-you-learn-section.show[data-pcm-slide-stop]
+  .how-you-learn-instruction-overlay,
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-instruction-overlay,
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-instruction-overlay {
+  /* @apply animate-fade-in-instruction-overlay; */
+
+  animation: fade-in-instruction-overlay-scale 400ms ease-in-out forwards;
+}
+
+.how-you-learn-section.show[data-pcm-slide-stop]
+  .how-you-learn-instruction-overlay {
+  animation-delay: 500ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-instruction-overlay,
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-instruction-overlay {
+  animation-delay: 1200ms;
+}
+
+/* Books */
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-book {
+  @apply animate-scale-up;
+
+  animation-delay: 500ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-book:nth-child(2) {
+  animation-delay: 800ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-book:nth-child(3) {
+  animation-delay: 1100ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-books
+  + .how-you-learn-instruction {
+  animation-delay: 1600ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-arrow-books {
+  @apply delay-[1600ms];
+}
+
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-books
+  + .how-you-learn-instruction-overlay {
+  animation-delay: 1900ms;
+}
+
+.how-you-learn-section.transition-out[data-pcm-slide-new][data-pcm-slide-stop]
+  .how-you-learn-books {
+  /* @apply translate-y-[2.96875rem]; */
+  transform: translateY(2.96875rem) scale(var(--zoom-pcm));
+}
+
+/* Pencils */
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-pencil {
+  @apply animate-slide-left;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-pencil.purple {
+  @apply animate-slide-right;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-pencil:nth-child(1) {
+  animation-delay: 600ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-pencil:nth-child(2) {
+  animation-delay: 900ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-pencil:nth-child(3) {
+  animation-delay: 1200ms;
+}
+
+/* Ash, boss */
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-ash-person {
+  @apply animate-slide-right;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-boss-person {
+  @apply animate-slide-left;
+
+  animation-delay: 200ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-ash
+  + .how-you-learn-instruction {
+  animation-delay: 1400ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-ash-boss
+  + .how-you-learn-instruction {
+  animation-delay: 1600ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-ash
+  + .how-you-learn-instruction,
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-ash-boss
+  + .how-you-learn-instruction {
+  animation-delay: 1200ms;
+}
+
+/* Dialog */
+.how-you-learn-section.show .how-you-learn-ash-dialog:not(.no-animate),
+.how-you-learn-section.show .how-you-learn-boss-dialog:not(.no-animate),
+.how-you-learn-section.show .how-you-learn-ash-dialog-thought:not(.no-animate) {
+  /* @apply animate-fade-down-in; */
+  @apply animate-scale-up-speech;
+
+  animation-delay: 200ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-ash-dialog:not(.no-animate),
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-ash-dialog-thought:not(.no-animate) {
+  animation-delay: 1000ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-boss-dialog:not(.no-animate) {
+  animation-delay: 1200ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-ash
+  .how-you-learn-ash-dialog:not(.no-animate) {
+  animation-delay: 600ms;
+}
+
+/* Fade in */
+.how-you-learn-section.show .how-you-learn-ash-alert-mark,
+.how-you-learn-section.show .how-you-learn-ash-question-mark,
+.how-you-learn-section.show .how-you-learn-ash-question-mark-sm,
+.how-you-learn-section.show .how-you-learn-ash-music-note,
+.how-you-learn-section.show .how-you-learn-confetti,
+.how-you-learn-section.show .how-you-learn-ash-bulb {
+  @apply opacity-100;
+}
+
+.how-you-learn-section.show .how-you-learn-ash-music-note {
+  @apply delay-[800ms];
+}
+
+.how-you-learn-section.show .how-you-learn-ash-alert-mark {
+  @apply delay-[1800ms];
+}
+
+.how-you-learn-section.show .how-you-learn-ash-question-mark-sm {
+  @apply delay-[2500ms];
+}
+
+.how-you-learn-section.show .how-you-learn-ash-question-mark {
+  @apply delay-[2800ms];
+}
+
+.how-you-learn-section.show .how-you-learn-ash-bulb img {
+  @apply animate-scale-up
+  delay-600;
+}
+
+/* Twitch animation */
+.how-you-learn-section.show button.how-you-learn-pencil:first-child,
+.how-you-learn-section.show button.how-you-learn-book:first-child {
+  @apply animate-twitch;
+
+  animation-delay: 1000ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  button.how-you-learn-pencil:first-child,
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  button.how-you-learn-pencil:first-child {
+  animation-delay: 1800ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  button.how-you-learn-book:first-child,
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  button.how-you-learn-book:first-child {
+  animation-delay: 2400ms;
+}
+
+/* Competency units, red book */
+.how-you-learn-section.show .how-you-learn-confetti {
+  @apply opacity-100
+  delay-700
+  animate-fadeout;
+
+  animation-delay: 1800ms;
+}
+
+.how-you-learn-section[data-pcm-slide-new] .how-you-learn-competency-book-info,
+.how-you-learn-section[data-pcm-slide-new-info]
+  .how-you-learn-competency-book-info {
+  @apply animate-fade-up-in;
+}
+
+.how-you-learn-section[data-pcm-slide-new]
+  .how-you-learn-competency-book-info:nth-child(1),
+.how-you-learn-section[data-pcm-slide-new-info]
+  .how-you-learn-competency-book-info:nth-child(1) {
+  animation-delay: 800ms;
+}
+
+.how-you-learn-section[data-pcm-slide-new]
+  .how-you-learn-competency-book-info:nth-child(2),
+.how-you-learn-section[data-pcm-slide-new-info]
+  .how-you-learn-competency-book-info:nth-child(2) {
+  animation-delay: 1100ms;
+}
+
+.how-you-learn-section[data-pcm-slide-new]
+  .how-you-learn-competency-book-info:nth-child(3),
+.how-you-learn-section[data-pcm-slide-new-info]
+  .how-you-learn-competency-book-info:nth-child(3) {
+  animation-delay: 1400ms;
+}
+
+.how-you-learn-section[data-pcm-slide-new]
+  .how-you-learn-competency
+  .how-you-learn-instruction,
+.how-you-learn-section[data-pcm-slide-new-info]
+  .how-you-learn-competency
+  .how-you-learn-instruction {
+  animation-delay: 1700ms;
+}
+
+/* Internship slide */
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-internship-projects-wrapper,
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-internship-attachments-wrapper {
+  @apply animate-fade-up-in;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-internship-projects-wrapper {
+  animation-delay: 500ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-internship-attachments-wrapper {
+  animation-delay: 900ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-internship-projects-wrapper
+  .how-you-learn-image-tag {
+  animation-delay: 500ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-internship-attachments-wrapper
+  .how-you-learn-image-tag {
+  animation-delay: 900ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-internship
+  + .how-you-learn-instruction {
+  animation-delay: 1300ms;
+}
+
+/* Opened green book in internship slide */
+.how-you-learn-section.show .how-you-learn-internship-book-wrapper.fade {
+  /* @apply animate-fade-up-in; */
+
+  animation: fade-up-in-scale 400ms ease-in-out forwards;
+  animation-delay: 200ms;
+}
+
+/* WIU slide */
+.how-you-learn-section.show[data-pcm-slide-new] .how-you-learn-wiu-book-info,
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-wiu-book-info {
+  @apply animate-fade-up-in;
+
+  animation-delay: 1900ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-wiu-book-info:nth-child(2),
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-wiu-book-info:nth-child(2) {
+  animation-delay: 2200ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-wiu-book-info:nth-child(3),
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-wiu-book-info:nth-child(3) {
+  animation-delay: 2500ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-wiu
+  .how-you-learn-instruction,
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-wiu
+  .how-you-learn-instruction {
+  animation-delay: 2800ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-wiu
+  .how-you-learn-sparkle,
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-wiu
+  .how-you-learn-sparkle-sm,
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-wiu
+  .how-you-learn-sparkle,
+.how-you-learn-section.show[data-pcm-slide-new-info]
+  .how-you-learn-wiu
+  .how-you-learn-sparkle-sm {
+  @apply animate-fadein;
+
+  animation-delay: 700ms;
+}
+
+/* Stack of books with bulb plant */
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-1,
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-2,
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-3,
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-4 {
+  @apply animate-fade-down-in;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-bulb {
+  @apply animate-scale-up-plant;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-1 {
+  animation-delay: 500ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-2 {
+  animation-delay: 800ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-3 {
+  animation-delay: 1100ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-4 {
+  animation-delay: 1400ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-bulb {
+  animation-delay: 1800ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-glow {
+  @apply opacity-100
+  delay-[2600ms];
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-wrapper
+  .how-you-learn-sparkle,
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-book-wrapper
+  .how-you-learn-sparkle-sm {
+  @apply opacity-100
+  delay-[2800ms];
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-text {
+  @apply animate-fade-down-in;
+
+  animation-delay: 3000ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units-arrow {
+  @apply opacity-100
+  delay-[3200ms];
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-learning-units
+  + .how-you-learn-instruction {
+  animation-delay: 3500ms;
+}
+
+/* Ash working */
+.how-you-learn-section.show
+  .how-you-learn-ash-working
+  .how-you-learn-boss-person {
+  animation-delay: 1200ms;
+}
+
+.how-you-learn-section.show
+  .how-you-learn-ash-working
+  .how-you-learn-ash-person {
+  @apply animate-fade-up-in;
+
+  animation-delay: 600ms;
+}
+
+.how-you-learn-section.show
+  .how-you-learn-ash-working-ash
+  .how-you-learn-sparkle,
+.how-you-learn-section.show
+  .how-you-learn-ash-working-ash
+  .how-you-learn-sparkle-sm {
+  @apply animate-fadein;
+  animation-delay: 900ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-ash-working
+  .how-you-learn-ash-dialog-thought:not(.no-animate) {
+  animation-delay: 3000ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-ash-working
+  .how-you-learn-boss-dialog:not(.no-animate) {
+  animation-delay: 2000ms;
+}
+
+.how-you-learn-section.show[data-pcm-slide-new]
+  .how-you-learn-ash-working
+  + .how-you-learn-instruction {
+  animation-delay: 4000ms;
+}
+
+/*========================================
+  Tailwind
+========================================*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

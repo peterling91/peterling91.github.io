@@ -1,0 +1,107 @@
+@layer components {
+  .alert-information,
+  .alert-warning,
+  .alert-success {
+    @apply inline-flex 
+    px-6 
+    py-4 
+    rounded-lg
+    border
+    text-left;
+  }
+
+  /* Updated for sustainability */
+  .alert-information > i,
+  .alert-warning > i,
+  .alert-success > i {
+    @apply mr-2
+    mt-1;
+  }
+
+  .alert-information {
+    @apply bg-primary-50 
+    border-primary-200;
+  }
+
+    /* Updated for sustainability */
+  .alert-information > i {
+    @apply text-link;
+  }
+
+  .alert-warning {
+    @apply bg-warning-50
+    border-warning-300
+    !mt-4;
+  }
+
+  .alert-warning i {
+    @apply text-warning-700;
+  }
+
+  .alert-success {
+    @apply bg-success-50
+    border-success-300;
+  }
+
+  .alert-success i {
+    @apply text-success-700;
+  }
+
+  .alert-live {
+    @apply absolute
+    top-[5rem]
+    left-[max(1.5rem,_calc(50%_-_40.5rem))]
+    w-[calc(100%_-_3rem)]
+    max-w-container-full-sm
+    mx-auto
+    z-50
+    max-2xl:hidden;
+  }
+
+  .alert-live-mobile,
+  .alert-information.alert-live-mobile {
+    @apply w-full
+    rounded-none
+    border-t-0
+    border-l-0
+    border-r-0
+    2xl:hidden;
+  }
+
+  .alert-live > * {
+    @apply w-full;
+  }
+
+  .alert-live-content {
+    @apply flex
+    flex-col
+    items-start
+    justify-start
+    w-full
+    gap-2
+    sm:flex-row
+    sm:justify-between
+    max-sm:text-sm;
+  }
+
+  .alert-live-content-left {
+    @apply block
+    w-full
+    grow;
+  }
+
+  .alert-live-content-right {
+    @apply block;
+  }
+
+  .alert-live-content-right > a {
+    @apply whitespace-nowrap;
+  }
+}
+
+.alert-live-mobile-inner {
+  @apply inline-flex 
+  w-full
+  max-w-container-full
+  mx-auto;
+}

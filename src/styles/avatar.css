@@ -1,0 +1,45 @@
+@layer components {
+  .avatar {
+    @apply flex
+    items-center
+    gap-x-4;
+  }
+
+  .avatar-image {
+    @apply w-14
+    min-w-[3.5rem]
+    h-14
+    min-h-[3.5rem]
+    rounded-full
+    overflow-hidden;
+  }
+
+  .avatar-image img {
+    @apply h-full
+    w-full
+    object-center
+    object-cover;
+  }
+
+  .avatar-content {
+    @apply text-left;
+  }
+
+  .avatar-title,
+  .avatar-description {
+    @apply block;
+  }
+
+  .avatar-title {
+    @apply font-bold
+    text-neutral-700;
+  }
+
+  .avatar-description {
+    @apply text-neutral-600;
+  }
+
+  .card * + .avatar {
+    @apply mt-6;
+  }
+}
