@@ -732,7 +732,8 @@
 
   @media (hover: hover) {
     .button-primary {
-      @apply [&:not([disabled])]:hover:bg-primary-400;
+      @apply [&:not([disabled])]:hover:bg-primary-400
+      [&:not([disabled])]:active:bg-primary-600;
     }
 
     .banner-button:hover .button-primary,
@@ -755,7 +756,8 @@
 
   @media (hover: hover) {
     .button-secondary {
-      @apply [&:not([disabled])]:hover:bg-secondary-500;
+      @apply [&:not([disabled])]:hover:bg-secondary-500
+      [&:not([disabled])]:active:bg-secondary-700;
     }
 
     .banner-button:hover .button-secondary,
@@ -778,7 +780,8 @@
 
   @media (hover: hover) {
     .button-tertiary {
-      @apply [&:not([disabled])]:hover:bg-tertiary-400;
+      @apply [&:not([disabled])]:hover:bg-tertiary-400
+      [&:not([disabled])]:active:bg-tertiary-600;
     }
 
     .banner-button:hover .button-tertiary,
@@ -801,7 +804,8 @@
 
   @media (hover: hover) {
     .button-grey {
-      @apply [&:not([disabled])]:hover:bg-neutral-300;
+      @apply [&:not([disabled])]:hover:bg-neutral-300
+      [&:not([disabled])]:active:bg-neutral-500;
     }
 
     .banner-button:hover .button-grey,
@@ -824,7 +828,8 @@
 
   @media (hover: hover) {
     .button-grey-dark {
-      @apply [&:not([disabled])]:hover:bg-neutral-600;
+      @apply [&:not([disabled])]:hover:bg-neutral-600
+      [&:not([disabled])]:active:bg-neutral-800;
     }
 
     .banner-button:hover .button-grey-dark,
@@ -949,7 +954,9 @@
   @media (hover: hover) {
     .button-ghost-primary {
       @apply [&:not([disabled])]:hover:bg-primary-500
-      [&:not([disabled])]:hover:border-primary-500;
+      [&:not([disabled])]:hover:border-primary-500
+      [&:not([disabled])]:active:bg-primary-600
+      [&:not([disabled])]:active:border-primary-600;
     }
 
     .banner-button:hover .button-ghost-primary,
@@ -981,7 +988,9 @@
   @media (hover: hover) {
     .button-ghost-secondary {
       @apply [&:not([disabled])]:hover:bg-secondary-600
-      [&:not([disabled])]:hover:border-secondary-600;
+      [&:not([disabled])]:hover:border-secondary-600
+      [&:not([disabled])]:active:bg-secondary-700
+      [&:not([disabled])]:active:border-secondary-700;
     }
 
     .banner-button:hover .button-ghost-secondary,
@@ -1013,7 +1022,9 @@
   @media (hover: hover) {
     .button-ghost-tertiary {
       @apply [&:not([disabled])]:hover:bg-tertiary-500
-      [&:not([disabled])]:hover:border-tertiary-500;
+      [&:not([disabled])]:hover:border-tertiary-500
+      [&:not([disabled])]:active:bg-tertiary-600
+      [&:not([disabled])]:active:border-tertiary-600;
     }
 
     .banner-button:hover .button-ghost-tertiary,
@@ -1045,7 +1056,9 @@
   @media (hover: hover) {
     .button-ghost-grey {
       @apply [&:not([disabled])]:hover:bg-neutral-400
-      [&:not([disabled])]:hover:border-neutral-400;
+      [&:not([disabled])]:hover:border-neutral-400
+      [&:not([disabled])]:active:bg-neutral-500
+      [&:not([disabled])]:active:border-neutral-500;
     }
 
     .banner-button:hover .button-ghost-grey,
@@ -1124,7 +1137,8 @@
 
   @media (hover: hover) {
     .button-white-primary {
-      @apply [&:not([disabled])]:hover:bg-primary-50;
+      @apply [&:not([disabled])]:hover:bg-primary-50
+      [&:not([disabled])]:active:bg-primary-100;
     }
 
     .banner-button:hover .button-white-primary,
@@ -1152,7 +1166,8 @@
 
   @media (hover: hover) {
     .button-white-secondary {
-      @apply [&:not([disabled])]:hover:bg-secondary-50;
+      @apply [&:not([disabled])]:hover:bg-secondary-50
+      [&:not([disabled])]:active:bg-secondary-100;
     }
 
     .banner-button:hover .button-white-secondary,
@@ -1180,7 +1195,8 @@
 
   @media (hover: hover) {
     .button-white-tertiary {
-      @apply [&:not([disabled])]:hover:bg-tertiary-50;
+      @apply [&:not([disabled])]:hover:bg-tertiary-50
+      [&:not([disabled])]:active:bg-tertiary-100;
     }
 
     .banner-button:hover .button-white-tertiary,
@@ -1208,7 +1224,8 @@
 
   @media (hover: hover) {
     .button-white-grey {
-      @apply [&:not([disabled])]:hover:bg-neutral-50;
+      @apply [&:not([disabled])]:hover:bg-neutral-50
+      [&:not([disabled])]:active:bg-neutral-100;
     }
 
     .banner-button:hover .button-white-grey,
@@ -1239,13 +1256,17 @@
   }
 
   .button-white-ghost-primary {
-    @apply [&:not([disabled])]:active:text-primary-600;
+    @apply [&:not([disabled])]:active:text-primary-600
+    [&:not([disabled])]:active:bg-primary-50
+    [&:not([disabled])]:active:border-primary-50;
   }
 
   .banner-button:active .button-white-ghost-primary,
   .card-hover:active .button-white-ghost-primary,
   a.card:active .button-white-ghost-primary {
-    @apply [&:not([disabled])]:text-primary-600;
+    @apply [&:not([disabled])]:text-primary-600
+    [&:not([disabled])]:bg-primary-50
+    [&:not([disabled])]:border-primary-50;
   }
 
   .button-white-ghost-primary.external-link {
@@ -1260,19 +1281,21 @@
 
   .button-white-ghost-secondary,
   .card-tilted .card:nth-child(even) .button-white-ghost-primary {
-    @apply [&:not([disabled])]:active:text-secondary-700;
+    @apply [&:not([disabled])]:active:text-secondary-700
+    [&:not([disabled])]:active:bg-secondary-50
+    [&:not([disabled])]:active:border-secondary-50;
   }
 
   .banner-button:active .button-white-ghost-secondary,
   .card-hover:active .button-white-ghost-secondary,
   a.card:active .button-white-ghost-secondary {
-    @apply [&:not([disabled])]:text-secondary-700;
+    @apply [&:not([disabled])]:text-secondary-700
+    [&:not([disabled])]:bg-secondary-50
+    [&:not([disabled])]:border-secondary-50;
   }
 
   .button-white-ghost-secondary.external-link,
-  .card-tilted
-    .card:nth-child(even)
-    .button-white-ghost-primary.external-link {
+  .card-tilted .card:nth-child(even) .button-white-ghost-primary.external-link {
     @apply [&:not([disabled])]:active:after:bg-secondary-700;
   }
 
@@ -1283,13 +1306,17 @@
   }
 
   .button-white-ghost-tertiary {
-    @apply [&:not([disabled])]:active:text-tertiary-600;
+    @apply [&:not([disabled])]:active:text-tertiary-600
+    [&:not([disabled])]:active:bg-tertiary-50
+    [&:not([disabled])]:active:border-tertiary-50;
   }
 
   .banner-button:active .button-white-ghost-tertiary,
   .card-hover:active .button-white-ghost-tertiary,
   a.card:active .button-white-ghost-tertiary {
-    @apply [&:not([disabled])]:text-tertiary-600;
+    @apply [&:not([disabled])]:text-tertiary-600
+    [&:not([disabled])]:bg-tertiary-50
+    [&:not([disabled])]:border-tertiary-50;
   }
 
   .button-white-ghost-tertiary.external-link {
@@ -1303,13 +1330,17 @@
   }
 
   .button-white-ghost-grey {
-    @apply [&:not([disabled])]:active:text-neutral-500;
+    @apply [&:not([disabled])]:active:text-neutral-500
+    [&:not([disabled])]:active:bg-neutral-50
+    [&:not([disabled])]:active:border-neutral-50;
   }
 
   .banner-button:active .button-white-ghost-grey,
   .card-hover:active .button-white-ghost-grey,
   a.card:active .button-white-ghost-grey {
-    @apply [&:not([disabled])]:text-neutral-500;
+    @apply [&:not([disabled])]:text-neutral-500
+    [&:not([disabled])]:bg-neutral-50
+    [&:not([disabled])]:border-neutral-50;
   }
 
   .button-white-ghost-grey.external-link {
@@ -1348,13 +1379,17 @@
     }
 
     .button-white-ghost-primary {
-      @apply [&:not([disabled])]:hover:text-primary-500;
+      @apply [&:not([disabled])]:hover:text-primary-500
+      [&:not([disabled])]:active:bg-primary-50
+      [&:not([disabled])]:active:border-primary-50;
     }
 
     .banner-button:hover .button-white-ghost-primary,
     .card-hover:hover .button-white-ghost-primary,
     a.card:hover .button-white-ghost-primary {
-      @apply [&:not([disabled])]:text-primary-500;
+      @apply [&:not([disabled])]:text-primary-500
+      [&:not([disabled])]:bg-primary-50
+      [&:not([disabled])]:border-primary-50;
     }
 
     .button-white-ghost-primary.external-link {
@@ -1369,13 +1404,17 @@
 
     .button-white-ghost-secondary,
     .card-tilted .card:nth-child(even) .button-white-ghost-primary {
-      @apply [&:not([disabled])]:hover:text-secondary-600;
+      @apply [&:not([disabled])]:hover:text-secondary-600
+      [&:not([disabled])]:active:bg-secondary-50
+      [&:not([disabled])]:active:border-secondary-50;
     }
 
     .banner-button:hover .button-white-ghost-secondary,
     .card-hover:hover .button-white-ghost-secondary,
     a.card:hover .button-white-ghost-secondary {
-      @apply [&:not([disabled])]:text-secondary-600;
+      @apply [&:not([disabled])]:text-secondary-600
+      [&:not([disabled])]:bg-secondary-50
+      [&:not([disabled])]:border-secondary-50;
     }
 
     .button-white-ghost-secondary.external-link,
@@ -1392,13 +1431,17 @@
     }
 
     .button-white-ghost-tertiary {
-      @apply [&:not([disabled])]:hover:text-tertiary-500;
+      @apply [&:not([disabled])]:hover:text-tertiary-500
+      [&:not([disabled])]:active:bg-tertiary-50
+      [&:not([disabled])]:active:border-tertiary-50;
     }
 
     .banner-button:hover .button-white-ghost-tertiary,
     .card-hover:hover .button-white-ghost-tertiary,
     a.card:hover .button-white-ghost-tertiary {
-      @apply [&:not([disabled])]:text-tertiary-500;
+      @apply [&:not([disabled])]:text-tertiary-500
+      [&:not([disabled])]:bg-tertiary-50
+      [&:not([disabled])]:border-tertiary-50;
     }
 
     .button-white-ghost-tertiary.external-link {
@@ -1412,13 +1455,17 @@
     }
 
     .button-white-ghost-grey {
-      @apply [&:not([disabled])]:hover:text-neutral-400;
+      @apply [&:not([disabled])]:hover:text-neutral-400
+      [&:not([disabled])]:active:bg-neutral-50
+      [&:not([disabled])]:active:border-neutral-50;
     }
 
     .banner-button:hover .button-white-ghost-grey,
     .card-hover:hover .button-white-ghost-grey,
     a.card:hover .button-white-ghost-grey {
-      @apply [&:not([disabled])]:text-neutral-400;
+      @apply [&:not([disabled])]:text-neutral-400
+      [&:not([disabled])]:bg-neutral-50
+      [&:not([disabled])]:border-neutral-50;
     }
 
     .button-white-ghost-grey.external-link {
@@ -1606,7 +1653,9 @@
 
   @media (hover: hover) {
     .button-text-primary {
-      @apply [&:not([disabled])]:hover:text-primary-500;
+      @apply [&:not([disabled])]:hover:text-primary-500
+      [&:not([disabled])]:active:text-primary-600
+      [&:not([disabled])]:active:before:bg-primary-600;
     }
 
     .card-hover:hover .button-text-primary,
@@ -1630,12 +1679,14 @@
   .card-hover:active .button-text-secondary,
   a.card:active .button-text-secondary {
     @apply [&:not([disabled])]:text-secondary-700
-    [&:not([disabled])]:before:bg-secondary-700;;
+    [&:not([disabled])]:before:bg-secondary-700;
   }
 
   @media (hover: hover) {
     .button-text-secondary {
-      @apply [&:not([disabled])]:hover:text-secondary-600;
+      @apply [&:not([disabled])]:hover:text-secondary-600
+      [&:not([disabled])]:active:text-secondary-700
+      [&:not([disabled])]:active:before:bg-secondary-700;
     }
 
     .card-hover:hover .button-text-secondary,
@@ -1652,7 +1703,6 @@
     [&:not([disabled])]:active:before:bg-tertiary-600;
   }
 
-
   .button-text-tertiary.external-link {
     @apply [&:not([disabled])]:after:bg-tertiary-500;
   }
@@ -1665,7 +1715,9 @@
 
   @media (hover: hover) {
     .button-text-tertiary {
-      @apply [&:not([disabled])]:hover:text-tertiary-500;
+      @apply [&:not([disabled])]:hover:text-tertiary-500
+      [&:not([disabled])]:active:text-tertiary-600
+      [&:not([disabled])]:active:before:bg-tertiary-600;
     }
 
     .card-hover:hover .button-text-tertiary,
@@ -1694,7 +1746,9 @@
 
   @media (hover: hover) {
     .button-text-grey {
-      @apply [&:not([disabled])]:hover:text-neutral-400;
+      @apply [&:not([disabled])]:hover:text-neutral-400
+      [&:not([disabled])]:active:text-neutral-500
+      [&:not([disabled])]:active:before:bg-neutral-500;
     }
 
     .card-hover:hover .button-text-grey,
@@ -1707,7 +1761,8 @@
     @apply relative
     text-white
     before:bg-white
-    [&:not([disabled])]:active:text-white;
+    [&:not([disabled])]:active:text-neutral-100
+    [&:not([disabled])]:active:before:bg-neutral-100;
   }
 
   .button-text-white.external-link {
@@ -1721,7 +1776,9 @@
 
   @media (hover: hover) {
     .button-text-white {
-      @apply [&:not([disabled])]:hover:text-white;
+      @apply [&:not([disabled])]:hover:text-white
+      [&:not([disabled])]:active:text-neutral-100
+      [&:not([disabled])]:active:before:bg-neutral-100;
     }
 
     .card-hover:hover .button-text-white,

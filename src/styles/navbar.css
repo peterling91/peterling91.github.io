@@ -75,12 +75,14 @@
     cursor-pointer
     transition-colors
     duration-200
-    xl:hidden;
+    xl:hidden
+    [&:not([disabled])]:active:bg-primary-100;
   }
 
   @media (hover: hover) {
     .navbar-menu {
-      @apply [&:not([disabled])]:hover:bg-primary-50;
+      @apply [&:not([disabled])]:hover:bg-primary-50
+      [&:not([disabled])]:active:bg-primary-100;
     }
   }
 
@@ -280,7 +282,10 @@
     xl:h-[4.25rem]
     xl:px-0
     xl:py-0
-    xl:rounded-none;
+    xl:rounded-none
+    [&:not([disabled])]:active:bg-primary-100
+    [&:not([disabled])]:active:text-primary-600
+    xl:[&:not([disabled])]:active:bg-transparent;
 
     word-break: break-word;
   }
@@ -289,7 +294,10 @@
     .navbar-links-item {
       @apply [&:not([disabled])]:hover:bg-primary-50
       [&:not([disabled])]:hover:text-primary-500
-      xl:[&:not([disabled])]:hover:bg-transparent;
+      xl:[&:not([disabled])]:hover:bg-transparent
+      [&:not([disabled])]:active:bg-primary-100
+      [&:not([disabled])]:active:text-primary-600
+      xl:[&:not([disabled])]:active:bg-transparent;
     }
   }
 
@@ -328,13 +336,15 @@
     after:origin-center
     after:transition-all
     after:duration-300
-    xl:after:rotate-0;
+    xl:after:rotate-0
+    [&:not([disabled])]:active:after:bg-primary-600;
   }
 
   @media (hover: hover) {
     .navbar-mega .navbar-links-item,
     .navbar-mega-submenu-button {
-      @apply [&:not([disabled])]:hover:after:bg-primary-500;
+      @apply [&:not([disabled])]:hover:after:bg-primary-500
+      [&:not([disabled])]:active:after:bg-primary-600;
     }
   }
 
@@ -461,13 +471,14 @@
     font-semibold
     transition-opacity
     duration-200
-    active:opacity-100
+    active:opacity-90
     xl:hidden;
   }
 
   @media (hover: hover) {
     .navbar-mega-back-button {
-      @apply hover:opacity-80;
+      @apply hover:opacity-80
+      active:opacity-90;
     }
   }
 
@@ -497,13 +508,15 @@
     max-xl:w-full
     max-xl:px-6
     max-xl:py-4
+    max-xl:active:bg-primary-100
     
     xl:after:hidden;
   }
 
   @media (hover: hover) {
     .navbar-mega-submenu-button {
-      @apply max-xl:hover:bg-primary-50;
+      @apply max-xl:hover:bg-primary-50
+      max-xl:active:bg-primary-100;
     }
   }
 
@@ -512,6 +525,10 @@
     xl:after:hidden
     
     after:!mt-1;
+  }
+
+  .navbar-mega-submenu-button:active .navbar-mega-item-title {
+    @apply max-xl:text-primary-600;
   }
 
   @media (hover: hover) {
@@ -601,7 +618,8 @@
 
   @media (hover: hover) {
     .navbar-mega-menu a {
-      @apply hover:bg-primary-50;
+      @apply hover:bg-primary-50
+      active:bg-primary-100;
     }
   }
 
@@ -656,6 +674,15 @@
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='1em' fill='%23393C47' viewBox='0 0 448 512'%3E%3Cpath d='M440.6 273.4c4.7-4.5 7.4-10.8 7.4-17.4s-2.7-12.8-7.4-17.4l-176-168c-9.6-9.2-24.8-8.8-33.9 .8s-8.8 24.8 .8 33.9L364.1 232 24 232c-13.3 0-24 10.7-24 24s10.7 24 24 24l340.1 0L231.4 406.6c-9.6 9.2-9.9 24.3-.8 33.9s24.3 9.9 33.9 .8l176-168z'/%3E%3C/svg%3E");
   }
 
+  .navbar-mega-menu a:not([disabled]):active .navbar-mega-item-title,
+  .navbar-mega-menu a:not([disabled]):active {
+    @apply text-primary-600;
+  }
+
+  .navbar-mega-menu a:not([disabled]):active .navbar-mega-item-title::after {
+    @apply bg-primary-600;
+  }
+
   @media (hover: hover) {
     .navbar-mega-menu a:not([disabled]):hover .navbar-mega-item-title,
     .navbar-mega-menu a:not([disabled]):hover {
@@ -695,6 +722,10 @@
 
   .navbar-mega-item-title + .navbar-mega-item-desc {
     @apply mt-2;
+  }
+
+  .navbar-mega-menu a:not([disabled]):active .navbar-mega-item-desc {
+    @apply text-neutral-700;
   }
 
   @media (hover: hover) {
@@ -839,17 +870,24 @@
     space-x-0
     transition-colors
     duration-200
-    xl:inline-block;
+    xl:inline-block
+    [&:not([disabled])]:active:bg-primary-100;
   }
+
+  /* .navbar-search-button[aria-expanded="true"] {
+    @apply [&:not([disabled])]:active:bg-primary-600/20;
+  } */
 
   @media (hover: hover) {
     .navbar-search-button {
-      @apply [&:not([disabled])]:hover:bg-primary-50;
+      @apply [&:not([disabled])]:hover:bg-primary-50
+      [&:not([disabled])]:active:bg-primary-100;
     }
 
-    .navbar-search-button[aria-expanded="true"] {
-      @apply [&:not([disabled])]:hover:bg-primary-600/10;
-    }
+    /* .navbar-search-button[aria-expanded="true"] {
+      @apply [&:not([disabled])]:hover:bg-primary-600/10
+      [&:not([disabled])]:active:bg-primary-600/20;
+    } */
   }
 
   .navbar-search-button .visually-hidden + * {
@@ -859,8 +897,8 @@
   .navbar-search-button-line {
     @apply inline-block
     absolute
-    top-[1.625rem]
-    left-[1.5625rem]
+    top-[1.8125rem]
+    left-[1.6875rem]
     w-2
     h-0.5
     bg-primary-600
@@ -871,8 +909,8 @@
 
   .navbar-search-button[aria-expanded="true"] .navbar-search-button-line {
     @apply w-5
-    top-[1.25rem]
-    left-[0.8125rem]
+    top-[1.4375rem]
+    left-[0.9375rem]
     last:rotate-[135deg];
   }
 
@@ -881,8 +919,8 @@
   .navbar-search-button-circle {
     @apply inline-block
     absolute
-    top-[0.6875rem]
-    left-[0.75rem]
+    top-[0.875rem]
+    left-[0.875rem]
     w-4
     h-4
     border-[0.125rem]
@@ -895,8 +933,8 @@
   .navbar-search-button[aria-expanded="true"] .navbar-search-button-circle {
     @apply w-0
     h-0
-    top-[1.25rem]
-    left-[1.5625rem]
+    top-[1.4375rem]
+    left-[1.625rem]
     border-0;
   }
 
@@ -932,12 +970,14 @@
   .navbar-search-recent-search-link {
     @apply text-neutral-800
     font-normal
-    no-underline;
+    no-underline
+    [&:not([disabled])]:active:text-primary-600;
   }
 
   @media (hover: hover) {
     .navbar-search-recent-search-link {
-      @apply [&:not([disabled])]:hover:text-primary-500;
+      @apply [&:not([disabled])]:hover:text-primary-500
+      [&:not([disabled])]:active:text-primary-600;
     }
   }
 
@@ -980,12 +1020,14 @@
     @apply px-6
     font-normal
     text-neutral-800
-    no-underline;
+    no-underline
+    [&:not([disabled])]:active:text-primary-600;
   }
 
   @media (hover: hover) {
     .navbar-search-results-item-link {
-      @apply [&:not([disabled])]:hover:text-primary-500;
+      @apply [&:not([disabled])]:hover:text-primary-500
+      [&:not([disabled])]:active:text-primary-600;
     }
   }
 

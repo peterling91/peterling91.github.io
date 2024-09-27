@@ -106,19 +106,77 @@ const setDialogHeight = (
 
   // Updated for sustainability 108 - 158
   if (dialog.classList.contains("dialog-full-image")) {
-    setFullHeightStyle(dialog, "height", 0, null, 1, disableFullHeight);
-    setFullHeightStyle(dialog, "max", 0, null, 1, disableFullHeight);
+    if (navigator.maxTouchPoints <= 0) {
+      dialog.style.width = `calc(${window.innerWidth - 64 * getPageZoom()}px)`;
+      dialog.style.height = "max-content";
+      setFullHeightStyleNoReset(dialog, "max", 56, null, 1, disableFullHeight);
 
-    if (dialogContent) {
-      setFullHeightStyle(
-        dialogContent,
+      if (dialogContent) {
+        dialogContent.style.height = "max-content";
+        setFullHeightStyleNoReset(
+          dialogContent,
+          "max",
+          56,
+          null,
+          1,
+          disableFullHeight,
+        );
+      }
+    } else {
+      if (window.innerWidth >= 1024) {
+        dialog.style.width = `calc(${
+          window.innerWidth - 64 * getPageZoom()
+        }px)`;
+      } else {
+        dialog.style.width = `calc(${window.innerWidth}px)`;
+      }
+      dialog.style.height = "max-content";
+      dialog.style.width = `calc(${window.innerWidth - 64 * getPageZoom()}px)`;
+      setFullHeightStyleNoReset(
+        dialog,
         "height",
         0,
-        null,
+        "max-lg",
         1,
         disableFullHeight,
       );
-      setFullHeightStyle(dialogContent, "max", 0, null, 1, disableFullHeight);
+      setFullHeightStyleNoReset(
+        dialog,
+        "max",
+        0,
+        "max-lg",
+        1,
+        disableFullHeight,
+      );
+      setFullHeightStyleNoReset(dialog, "max", 56, "lg", 1, disableFullHeight);
+
+      if (dialogContent) {
+        dialogContent.style.height = "max-content";
+        setFullHeightStyleNoReset(
+          dialogContent,
+          "height",
+          0,
+          "max-lg",
+          1,
+          disableFullHeight,
+        );
+        setFullHeightStyleNoReset(
+          dialogContent,
+          "max",
+          0,
+          "max-lg",
+          1,
+          disableFullHeight,
+        );
+        setFullHeightStyleNoReset(
+          dialogContent,
+          "max",
+          56,
+          "lg",
+          1,
+          disableFullHeight,
+        );
+      }
     }
   } else {
     setFullHeightStyle(dialog, "min", 0, "max-lg", 1, disableFullHeight);
@@ -198,17 +256,6 @@ const resize = (
     if (isVideo) {
       setVideoDialog(dialog, disableFullHeight);
     }
-
-    // Fix - 29 Apr 2024 - Page not scrollable if modal is closed
-    // Commented code below
-    // if (!getBreakpoint(dialogBreakpoint) && !dialog.open) {
-    //   // Android fix - Updated lenisMain
-    //   if (lenisMain) {
-    //     lenisMain.start();
-    //   } else {
-    //     document.body.style.overflow = "";
-    //   }
-    // }
   }
 };
 

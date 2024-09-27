@@ -5,6 +5,8 @@ import { Flip } from "gsap/Flip";
 
 // Lenis (plugin): https://github.com/darkroomengineering/lenis
 import Lenis from "lenis";
+// @ts-ignore
+import Snap from "lenis/snap";
 
 import { setLenisScroll } from "./utilites";
 import { isTouch } from ".";
@@ -32,6 +34,7 @@ export const scrollTriggered = (
     scrollMasonry();
   }
   smoothScrollAnimation(lenisMain, hasScrollAnimation, isTouch);
+  scrollSnap(lenisMain, hasScrollAnimation);
   // });
 };
 
@@ -1113,7 +1116,7 @@ const smoothScrollAnimation = (
       // if (window.innerWidth !== windowWidthPrev) {
       //   resizeScroll();
       // }
-      
+
       windowWidthPrev = window.innerWidth;
     });
 
@@ -1189,5 +1192,47 @@ const smoothScrollAnimation = (
     });
 
     resizeObserver.observe(table);
+  }
+};
+
+const scrollSnap = (lenisMain: null | Lenis, hasScrollAnimation: boolean) => {
+  const sections: NodeListOf<HTMLElement> =
+    document.querySelectorAll("[data-scroll-snap]");
+
+  if (sections.length > 0) {
+  const navbar: HTMLDivElement | null = document.querySelector(".navbar");
+  let snap: { add: (arg0: number) => void } | null = null;
+
+  const setScrollSnap = () => {
+    if (lenisMain) {
+      snap = new Snap(lenisMain, {
+        type: "proximity",
+        duration: 1,
+        onSnapComplete: () => {
+          setTimeout(() => {
+            navbar && navbar.classList.add("hide-up");
+          }, 50);
+        },
+      });
+
+      sections.forEach((section) => {
+        snap &&
+          snap.add(section.getBoundingClientRect().top + window.scrollY + 8);
+      });
+    }
+  };
+
+  const resetScrollSnap = () => {
+    if (navigator.maxTouchPoints > 0 && snap) {
+      snap = null;
+    } else {
+      if (hasScrollAnimation && !snap) {
+        setScrollSnap();
+      }
+    }
+  };
+
+  setScrollSnap();
+  window.addEventListener("resize", resetScrollSnap);
   }
 };

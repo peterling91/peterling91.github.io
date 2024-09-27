@@ -214,17 +214,23 @@
   ========================================*/
   .dialog-full-image {
     @apply rounded-none
-    touch-none
-    lg:w-[min(100vw,_2560px)];
+    border-none
+    max-lg:touch-none
+    max-lg:w-screen
+    lg:overflow-visible;
   }
 
   .dialog-full-image .dialog-body-content {
     @apply relative
-    overflow-hidden
     flex
     items-center
     justify-center
-    p-0;
+    p-0
+    max-lg:overflow-hidden;
+  }
+
+  .dialog-full-image form {
+    @apply max-lg:relative;
   }
 
   .dialog-full-image *:not(.dialog-close-button) {
@@ -236,7 +242,7 @@
     items-center
     justify-center
     grow
-    absolute
+    max-lg:absolute
     w-full
     h-max
     origin-center;
@@ -258,7 +264,13 @@
     max-lg:w-11
     max-lg:h-11
     max-lg:max-w-[2.75rem]
-    max-lg:min-w-[2.75rem];
+    max-lg:min-w-[2.75rem]
+    lg:absolute
+    lg:-top-[1.375rem]
+    lg:-right-[1.375rem]
+    lg:backdrop-blur-none
+    lg:bg-white
+    lg:shadow-lg;
   }
 
   .dialog__tap-to-zoom {
@@ -273,11 +285,12 @@
     shadow-md
     rounded-full
     translate-y-4
-    z-10;
+    z-10
+    lg:hidden;
   }
 
   dialog[open] .dialog__tap-to-zoom {
-    animation: 600ms tap-to-zoom 1500ms ease-in-out forwards;
+    animation: 600ms tap-to-zoom 1900ms ease-in-out forwards;
   }
 
   @keyframes tap-to-zoom {
@@ -299,13 +312,56 @@
   }
 
   @media (hover: hover) {
+    .dialog-full-image {
+      @apply rounded-none
+      border-0
+      overflow-visible
+      max-lg:m-auto
+      max-lg:translate-x-0;
+    }
+
+    dialog.dialog-full-image[open] {
+      @apply animate-dialog-fadein;
+    }
+
+    dialog.dialog-full-image[open].closing {
+      @apply animate-dialog-fadeout;
+    }
+
+    .dialog-full-image form,
+    .dialog-full-image .dialog-content {
+      @apply w-[calc(100%_+_0.0625rem)]
+      h-auto
+      lg:w-[calc(100%_+_0.0625rem)]
+      lg:h-auto
+      lg:bg-transparent;
+    }
+
+    .dialog-full-image form {
+      @apply static;
+    }
+
     .dialog-full-image .dialog-body-content {
       @apply overflow-y-auto
       justify-start;
     }
 
     .dialog-full-image .dialog-close-button {
-      @apply right-4;
+      @apply absolute
+      -top-[1.375rem]
+      -right-[1.375rem]
+      left-auto
+      border-0
+      backdrop-blur-none
+      bg-white
+      shadow-lg
+      text-base
+      z-10
+      hover:shadow-lg
+      max-lg:w-12
+      max-lg:h-12
+      max-lg:max-w-[3rem]
+      max-lg:min-w-[3rem];
     }
 
     .dialog-full-image__image {

@@ -5,8 +5,6 @@ import "lazysizes";
 
 // Lenis (plugin): https://github.com/darkroomengineering/lenis
 import Lenis from "lenis";
-// @ts-ignore
-import Snap from 'lenis/snap';
 
 /* Loading */
 import { loading } from "./loading";
@@ -102,8 +100,7 @@ if (
   hasScrollAnimation = true;
 }
 
-// Fix - 29 Apr 2024: Android fix - Updated conditions
-if (hasScrollAnimation && !isTouch) {
+const createLenis = () => {
   lenisMain = new Lenis({
     lerp: 0.1,
     smoothWheel: true,
@@ -114,7 +111,27 @@ if (hasScrollAnimation && !isTouch) {
     requestAnimationFrame(rafMain);
   };
   requestAnimationFrame(rafMain);
+};
+
+// Fix - 29 Apr 2024: Android fix - Updated conditions
+if (hasScrollAnimation && !isTouch) {
+  createLenis();
 }
+
+const resetLenis = () => {
+  if (navigator.maxTouchPoints > 0 === isTouch) return;
+  
+  if (navigator.maxTouchPoints > 0) {
+    lenisMain && lenisMain.destroy();
+    lenisMain = null;
+  } else {
+    if (hasScrollAnimation && !lenisMain) {
+      createLenis();
+    }
+  }
+};
+
+window.addEventListener("resize", resetLenis);
 
 /*========================================
   Initialise all functions
@@ -189,17 +206,3 @@ pcm();
 
 /* Plugins, APIs */
 youtubeEmbed(body);
-
-
-// const scrollSnap = () => {
-//   if (lenisMain) {
-//     const sections: NodeListOf<HTMLElement> = document.querySelectorAll("[data-scroll-snap]")
-//     const snap = new Snap(lenisMain, {type: "proximity"})
-  
-//     sections.forEach((section) => {
-//       snap.add(section.getBoundingClientRect().top + window.scrollY + 8);
-//     })
-//   }
-// }
-
-// scrollSnap();

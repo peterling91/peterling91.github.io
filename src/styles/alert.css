@@ -23,7 +23,7 @@
     border-primary-200;
   }
 
-    /* Updated for sustainability */
+  /* Updated for sustainability */
   .alert-information > i {
     @apply text-link;
   }

@@ -445,11 +445,9 @@
 
       <!-- Section: intro banner -->
       <section class="bg-primary text-white overflow-hidden" id="introBanner">
-        <div
-          class="intro-banner"
-        >
-          <div 
-            class="intro-banner__image mt-4 md:mt-14 md:-mb-14 scroll-fade-up"
+        <div class="intro-banner">
+          <div
+            class="intro-banner__image intro-banner__image--two mt-4 md:mt-14 md:-mb-14 scroll-fade-up"
             data-scroll-fade-up-start="top 100%"
             data-scroll-fade-up-end="bottom top"
             data-scroll-fade-up-duration="0.5"
@@ -473,17 +471,14 @@
               loading="lazy"
               data-parallax-y="-125"
             />
-            <img
-              class="intro-banner__image__item lazyload parallax-item"
-              data-src="../dist/assets/sustainability-asi-03.webp"
-              alt=""
-              width="211"
-              height="217"
-              loading="lazy"
+            <div
+              class="intro-banner__image__circle--md parallax-item md:mt-10"
               data-parallax-y="-150"
-            />
-            <div class="intro-banner__image__circle--md parallax-item md:mt-10" data-parallax-y="-150"></div>
-            <div class="intro-banner__image__circle--sm parallax-item md:-mt-4" data-parallax-y="-200"></div>
+            ></div>
+            <div
+              class="intro-banner__image__circle--sm parallax-item"
+              data-parallax-y="-150"
+            ></div>
           </div>
           <div class="intro-banner__content">
             <img
@@ -494,7 +489,7 @@
               height="47"
               loading="lazy"
             />
-            <h2 
+            <h2
               class="h3 sm:h4 scroll-fade-up"
               data-scroll-fade-up-trigger="#introBanner"
               data-scroll-fade-up-end-trigger="#introBanner"
@@ -503,50 +498,18 @@
               data-scroll-fade-up-duration="0.7"
               data-scroll-fade-up-toggle-actions="play none none reverse"
             >
-              ASI acts as a dynamic platform designed to empower your business by providing you with the resources and support necessary to achieve your goals
+              ASI acts as a dynamic platform designed to empower your business
+              by providing you with the resources and support necessary to
+              achieve your goals
             </h2>
-
-            <!-- Alert-->
-            <div 
-              class="alert-information w-full mt-4 sm:mt-8 scroll-fade-up"
-              data-scroll-fade-up-trigger="#introBanner"
-              data-scroll-fade-up-end-trigger="#introBanner"
-              data-scroll-fade-up-start="top 80%"
-              data-scroll-fade-up-end="bottom top"
-              data-scroll-fade-up-delay="0.1"
-              data-scroll-fade-up-duration="0.5"
-              data-scroll-fade-up-toggle-actions="play none none reverse"
-              >
-              <i class="fa-solid fa-users" aria-hidden="true"></i>
-              <div class="flex flex-col items-start gap-4 w-full sm:flex-row sm:gap-8">
-                <div class="grow">
-                  <p class="paragraph-2 font-bold">
-                    Are you a member of ASI already?
-                  </p>
-                  <p class="paragraph-2">
-                    Find out what’s in store for you.
-                  </p>
-                </div>
-                <a href="#" class="button-ghost-primary">
-                  <span>See benefits</span>
-                  <i
-                    class="fa-regular fa-arrow-right"
-                    aria-hidden="true"
-                  ></i>
-                </a>
-              </div>
-            </div>
-
           </div>
         </div>
       </section>
 
       <!-- Section: Carousel with progress indicator -->
-      <section class="bg-primary-50 overflow-hidden scroll-fixed">
-        <div 
-          class="flex flex-col full-height max-w-container-full-sm-p px-8 py-10 mx-auto gap-10 scroll-fixed-item sm:py-14 md:justify-center"
-          data-scroll-fixed-end="+=100%"
-          data-scroll-pin-spacing="true"
+      <section class="bg-primary-50 overflow-hidden" id="carouselProgress" data-scroll-snap>
+        <div
+          class="flex flex-col full-height max-w-container-full-sm-p px-8 py-10 mx-auto gap-10 sm:py-14 md:justify-center"
         >
           <div class="max-w-container mx-auto space-y-4 text-center">
             <h2 class="h4 bold-to-red">
@@ -554,16 +517,25 @@
             </h2>
           </div>
           <!-- Carousel-->
-          <div class="carousel-progress">
+          <div
+            class="carousel-progress"
+            data-scroll-container="#carouselProgress"
+          >
             <div class="carousel-progress__indicator"></div>
             <div class="carousel-progress__slides">
               <!-- Slide 1 -->
               <div class="carousel-progress__item">
                 <div class="carousel-progress__content">
                   <h3 class="h1 sm:h2 text-primary-500">01.</h3>
-                  <h4 class="h3 sm:h5 text-primary-700 mt-2">Education and awareness</h4>
+                  <h4 class="h3 sm:h5 text-primary-700 mt-2">
+                    Education and awareness
+                  </h4>
                   <p class="paragraph-2 sm:paragraph-1">
-                    We host workshops, webinars, and training to help the community learn about sustainable practices and global goals. This knowledge will empower companies to make smarter decisions and inspire positive change, both personally and professionally.
+                    We host workshops, webinars, and training to help the
+                    community learn about sustainable practices and global
+                    goals. This knowledge will empower companies to make smarter
+                    decisions and inspire positive change, both personally and
+                    professionally.
                   </p>
                   <a href="#" class="button-ghost-primary">
                     <span>Discover more</span>
@@ -586,9 +558,15 @@
               <div class="carousel-progress__item">
                 <div class="carousel-progress__content">
                   <h3 class="h1 sm:h2 text-primary-500">02.</h3>
-                  <h4 class="h3 sm:h5 text-primary-700 mt-2">Lorem ipsum dolor sit amet</h4>
+                  <h4 class="h3 sm:h5 text-primary-700 mt-2">
+                    Lorem ipsum dolor sit amet
+                  </h4>
                   <p class="paragraph-2 sm:paragraph-1">
-                   Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque.
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                    Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                    natoque penatibus et magnis dis parturient montes, nascetur
+                    ridiculus mus. Donec quam felis, ultricies nec,
+                    pellentesque.
                   </p>
                   <a href="#" class="button-ghost-primary">
                     <span>Discover more</span>
@@ -610,7 +588,7 @@
             </div>
           </div>
         </div>
-       </section>
+      </section>
 
       <!-- Section: What we’ve done -->
       <section class="bg-sustainability overflow-hidden">

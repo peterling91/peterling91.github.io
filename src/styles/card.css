@@ -1241,7 +1241,7 @@
   a.card-text-overlay.card:not([disabled]):active .banner-button > span {
     @apply opacity-100;
   }
-    
+
   @media (hover: hover) {
     .card-text-overlay .banner-button > span {
       @apply opacity-0;

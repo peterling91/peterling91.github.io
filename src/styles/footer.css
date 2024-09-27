@@ -105,9 +105,14 @@
     font-normal
     no-underline
     /* whitespace-nowrap */ /* Updated for sustainability */
-    transition-all
+    transition-colors
     duration-200
-    md:mb-3;
+    md:mb-3
+    [&:not([disabled])]:active:text-neutral-200
+
+    after:transition-colors
+    after:duration-200
+    [&:not([disabled])]:active:after:bg-neutral-200;
   }
 
   .footer-col .footer-links-item {
@@ -121,7 +126,9 @@
   @media (hover: hover) {
     .footer-social-items,
     .footer-links-item {
-      @apply [&:not([disabled])]:hover:text-white;
+      @apply [&:not([disabled])]:hover:text-white
+      [&:not([disabled])]:active:text-neutral-200
+      [&:not([disabled])]:active:after:bg-neutral-200;
     }
 
     .footer-links-item {
