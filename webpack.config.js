@@ -6,7 +6,7 @@ module.exports = {
   watch: true,
   entry: {
     index: ["./src/js/index.ts"],
-    sustainability: ["./src/js/sustainability.ts"],
+    // sustainability: ["./src/js/sustainability.ts"],
   },
   devtool: "source-map",
   output: {

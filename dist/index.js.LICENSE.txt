@@ -39,6 +39,23 @@
 */
 
 /*!
+ * ScrambleText
+ * https://github.com/yomotsu/ScrambleText
+ * (c) 2017 @yomotsu
+ * Released under the MIT License.
+ */
+
+/*!
+ * ScrollToPlugin 3.12.5
+ * https://gsap.com
+ *
+ * @license Copyright 2008-2024, GreenSock. All rights reserved.
+ * Subject to the terms at https://gsap.com/standard-license or for
+ * Club GSAP members, the agreement issued with that membership.
+ * @author: Jack Doyle, jack@greensock.com
+*/
+
+/*!
  * ScrollTrigger 3.12.5
  * https://gsap.com
  *
@@ -118,6 +135,8 @@
 
 /*! ./Observer.js */
 
+/*! ./ScrambleText */
+
 /*! ./accordion */
 
 /*! ./alertLive */
@@ -151,6 +170,8 @@
 /*! ./detectOverflow.js */
 
 /*! ./dialog */
+
+/*! ./dialogFullImage */
 
 /*! ./dom-utils/getCompositeRect.js */
 
@@ -304,13 +325,19 @@
 
 /*! ./rectToClientRect.js */
 
+/*! ./registerGsap */
+
 /*! ./scrollTriggered */
 
 /*! ./sideNav */
 
 /*! ./sideTab */
 
+/*! ./statsCircle */
+
 /*! ./stickyTop */
+
+/*! ./sustainabilityCursor */
 
 /*! ./switchRole */
 
@@ -340,13 +367,13 @@
 
 /*! gsap/Flip */
 
+/*! gsap/ScrollToPlugin */
+
 /*! gsap/ScrollTrigger */
 
 /*! lazysizes */
 
 /*! lenis */
-
-/*! lenis/snap */
 
 /*!***********************!*\
   !*** ./src/js/pcm.ts ***!
@@ -476,8 +503,20 @@
   !*** ./src/js/personaPage.ts ***!
   \*******************************/
 
+/*!*******************************!*\
+  !*** ./src/js/statsCircle.ts ***!
+  \*******************************/
+
+/*!********************************!*\
+  !*** ./src/js/ScrambleText.js ***!
+  \********************************/
+
 /*!********************************!*\
   !*** ./src/js/carouselFull.ts ***!
+  \********************************/
+
+/*!********************************!*\
+  !*** ./src/js/registerGsap.ts ***!
   \********************************/
 
 /*!********************************!*\
@@ -494,6 +533,10 @@
 
 /*!***********************************!*\
   !*** ./node_modules/gsap/Flip.js ***!
+  \***********************************/
+
+/*!***********************************!*\
+  !*** ./src/js/dialogFullImage.ts ***!
   \***********************************/
 
 /*!***********************************!*\
@@ -536,6 +579,10 @@
   !*** ./node_modules/gsap/gsap-core.js ***!
   \****************************************/
 
+/*!****************************************!*\
+  !*** ./src/js/sustainabilityCursor.ts ***!
+  \****************************************/
+
 /*!******************************************!*\
   !*** ./src/js/horizontalCardCarousel.ts ***!
   \******************************************/
@@ -553,6 +600,10 @@
   \********************************************/
 
 /*!*********************************************!*\
+  !*** ./node_modules/gsap/ScrollToPlugin.js ***!
+  \*********************************************/
+
+/*!*********************************************!*\
   !*** ./node_modules/lazysizes/lazysizes.js ***!
   \*********************************************/
 
@@ -563,10 +614,6 @@
 /*!*********************************************!*\
   !*** ./src/js/infiniteMarqueeScrollText.ts ***!
   \*********************************************/
-
-/*!************************************************!*\
-  !*** ./node_modules/lenis/dist/lenis-snap.mjs ***!
-  \************************************************/
 
 /*!**************************************************!*\
   !*** ./node_modules/@popperjs/core/lib/enums.js ***!
