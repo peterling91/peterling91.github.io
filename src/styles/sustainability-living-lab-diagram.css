@@ -1,0 +1,173 @@
+.three-circles {
+  @apply max-w-[min(100vw,_2560px)]
+    overflow-hidden;
+}
+
+.three-circles__intro {
+  @apply flex
+    justify-center
+    py-10
+    text-white
+    lg:items-center
+    lg:justify-center
+    /* lg:pt-[5.8125rem]
+    lg:pb-[6.75rem]; */;
+}
+
+.three-circles__intro > div {
+  @apply flex
+    gap-6
+    items-center
+    max-lg:flex-col
+    max-lg:text-center
+    lg:gap-15
+    xl:gap-[6rem];
+}
+
+.three-circles__intro__content {
+  @apply flex
+    flex-col
+    gap-2
+    max-lg:max-w-container-md
+    max-lg:mx-auto
+    xl:gap-6;
+}
+
+/* Three circles */
+.three-circles__chart {
+  @apply relative
+    w-full
+    max-w-[20rem]
+    shrink-0
+    aspect-[1.0123_/_1]
+    -mb-[min(8.5%,_1.7rem)]
+    z-10
+    lg:max-w-[25rem]
+    lg:mb-0
+    xl:max-w-[35.87rem];
+}
+
+/* Individual circles */
+.three-circles__chart__item {
+  --circle-arrow-head-opacity: 1;
+
+  @apply absolute
+    border-2
+    border-[var(--green-500)]
+    bg-primary-600
+    rounded-full
+    w-[36.236%]
+    h-[36.236%]
+    aspect-square;
+}
+
+.three-circles__chart__item:nth-child(1) {
+  @apply top-0
+    left-[31.882%];
+}
+
+.three-circles__chart__item:nth-child(2) {
+  @apply bottom-[8.5%]
+    left-0
+    lg:bottom-0;
+}
+
+.three-circles__chart__item:nth-child(3) {
+  @apply bottom-[8.5%]
+    right-0
+    lg:bottom-0;
+}
+
+.three-circles__chart__item--transition {
+  --circle-transition-scale: 1;
+
+  @apply opacity-0
+    left-[31.882%]
+    top-[0.125rem]
+    z-[100]
+    scale-[var(--circle-transition-scale)];
+}
+
+@media (hover: hover) {
+  .three-circles__chart__item--transition {
+    @apply top-0;
+  }
+}
+
+/* Circle label */
+.three-circles__chart__item span {
+  @apply flex
+    items-center
+    justify-center
+    text-center
+    w-full
+    h-full
+    px-2
+    overflow-hidden
+    lg:px-7;
+}
+
+/* Arrow lines */
+.three-circles__chart__item__line {
+  --circle-arrow-line-scale: 1;
+
+  @apply content-[""]
+    block
+    absolute
+    h-[20%]
+    w-[0.0625rem]
+    bg-[var(--green-500)]
+    origin-center
+    lg:h-[29%];
+}
+
+.three-circles__chart__item__line:nth-child(4) {
+  @apply top-[35%]
+    left-[32%];
+
+  transform: rotate(30deg) scaleY(var(--circle-arrow-line-scale));
+}
+
+.three-circles__chart__item__line:nth-child(5) {
+  @apply top-[35%]
+    right-[32%]
+    left-auto;
+
+  transform: rotate(-30deg) scaleY(var(--circle-arrow-line-scale));
+}
+
+.three-circles__chart__item__line:nth-child(6) {
+  @apply bottom-[11.5%]
+    left-[50%]
+    top-auto
+    h-[23%]
+    lg:h-[23%]
+    lg:bottom-[5%];
+
+  transform: rotate(90deg) scaleY(var(--circle-arrow-line-scale));
+}
+
+/* Arrow heads */
+.three-circles__chart__item__line::before,
+.three-circles__chart__item__line::after {
+  @apply content-[""]
+    block
+    absolute
+    rotate-45
+    h-[0.5rem]
+    w-[0.5rem]
+    border-b-[0.0625rem]
+    border-r-[0.0625rem]
+    border-[var(--green-500)];
+}
+
+.three-circles__chart__item__line::before {
+  @apply -rotate-[135deg]
+    -left-1;
+}
+
+.three-circles__chart__item__line::after {
+  @apply rotate-45
+    bottom-0
+    -left-1;
+}

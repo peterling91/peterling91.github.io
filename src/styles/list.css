@@ -1,0 +1,188 @@
+@layer components {
+  .bullets-red > li,
+  .bullets-red-outline > li,
+  .bullets-black > li,
+  .bullets-red *:not(.list-decimal):not(.list-none):not(.list-disc) > li,
+  .bullets-red-outline
+    *:not(.list-decimal):not(.list-none):not(.list-disc)
+    > li,
+  .bullets-black *:not(.list-decimal):not(.list-none):not(.list-disc) > li {
+    @apply block
+    relative
+
+    before:content-['']
+    before:inline-block
+    before:absolute
+    before:left-0
+    before:top-2.5
+    before:rounded-full;
+  }
+
+  .bullets-red > li,
+  .bullets-red-outline > li,
+  .bullets-red
+    *:not(.bullets-black):not(.list-decimal):not(.list-none):not(.list-disc)
+    > li,
+  .bullets-red-outline
+    *:not(.bullets-black):not(.list-decimal):not(.list-none):not(.list-disc)
+    > li {
+    @apply pl-6
+    before:w-[0.5rem]
+    before:min-w-[0.5rem]
+    before:h-[0.5rem]
+    before:min-h-[0.5rem];
+  }
+
+  .bullets-red > li,
+  .bullets-red
+    *:not(.bullets-red-outline):not(.bullets-black):not(.list-decimal):not(
+      .list-none
+    ):not(.list-disc)
+    > li {
+    @apply before:bg-secondary-500;
+  }
+
+  .bullets-red-outline > li,
+  .bullets-red-outline
+    *:not(.bullets-red):not(.bullets-black):not(.list-decimal):not(
+      .list-none
+    ):not(.list-disc)
+    > li {
+    @apply before:border
+    before:border-secondary-500
+    before:bg-white;
+  }
+
+  .bullets-black > li,
+  .bullets-black
+    *:not(.bullets-red):not(.bullets-red-outline):not(.list-decimal):not(
+      .list-none
+    ):not(.list-disc)
+    > li {
+    @apply pl-4
+    before:w-[0.3125rem]
+    before:min-w-[0.3125rem]
+    before:h-[0.3125rem]
+    before:min-h-[0.3125rem]
+    before:bg-neutral-800;
+  }
+
+  .list-decimal,
+  .list-disc {
+    @apply !pl-[1.25em];
+  }
+
+  .bullets-red .list-decimal,
+  .bullets-red .list-disc,
+  .bullets-red-outline .list-decimal,
+  .bullets-red-outline .list-disc,
+  .bullets-black .list-decimal,
+  .bullets-black .list-disc {
+    @apply pl-4;
+  }
+
+  .bullets-red li,
+  .bullets-red-outline li,
+  .bullets-black li,
+  .list-decimal li,
+  .list-disc li {
+    @apply mb-2
+    last:mb-0;
+  }
+
+  .bullets-red li > ul,
+  .bullets-red-outline li > ul,
+  .bullets-black li > ul,
+  .list-decimal li > ul,
+  .list-disc li > ul {
+    @apply mt-2;
+  }
+
+  .bullets-red li > p + p,
+  .bullets-red-outline li > p + p,
+  .bullets-black li > p + p,
+  .list-decimal li > p + p,
+  .list-disc li > p + p {
+    @apply mt-0;
+  }
+
+  .list-none > li,
+  .list-disc > li,
+  .list-decimal > li {
+    @apply before:hidden;
+  }
+
+  .list-disc > li,
+  .list-decimal > li {
+    @apply pl-[0.25em];
+  }
+
+  .bullets-red + *,
+  .bullets-red-outline + * .bullets-black + * .list-decimal + * .list-disc + * {
+    @apply mt-4
+    sm:mt-6;
+  }
+
+  .numeric-list {
+    @apply list-[revert]
+    pl-5
+    mt-8
+    grid
+    gap-8;
+  }
+
+  .numeric-list > li::marker {
+    @apply font-bold;
+  }
+
+  .numeric-list-base {
+    @apply list-[revert]
+    pl-5
+    grid
+    gap-2;
+  }
+
+  .numeric-list.v2 > li::marker {
+    @apply font-normal;
+  }
+
+  ol.numbered-list {
+    list-style: auto;
+    @apply pl-[1.125rem] !mt-6;
+  }
+
+  ol.numbered-list > li::marker {
+    @apply font-bold;
+  }
+
+  ol.numbered-list li {
+    @apply mb-6;
+  }
+
+  ol.numbered-list .bullets-red {
+    @apply mt-2
+    ml-[-1.125rem];
+  }
+
+  ol.numbered-list .bullets-red li {
+    @apply mb-2;
+  }
+
+  ol.numbered-list li:last-of-type,
+  ol.numbered-list .bullets-red li:last-of-type {
+    @apply mb-0;
+  }
+
+  /* Zoom fix
+     Updated ol.lower-alpha */
+  ol.lower-alpha {
+    list-style-type: lower-alpha;
+    margin-left: 1rem;
+  }
+
+  /* Zoom fix
+     ol.lower-alpha li */
+  ol.lower-alpha li {
+    margin-bottom: 0.25rem;
+  }
+}

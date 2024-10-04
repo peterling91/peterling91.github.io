@@ -1,0 +1,170 @@
+@layer components {
+  .arc-carousel {
+    @apply lg:max-w-container-full-p
+    lg:mx-auto;
+  }
+
+  .arc-carousel-cards {
+    @apply flex
+    justify-start
+    items-start
+    relative
+    w-max
+    px-6
+    transition-all
+    duration-500
+    max-lg:cursor-grab
+    max-lg:active:cursor-grabbing
+    lg:justify-between
+    lg:w-[110%]
+    lg:-ml-[5%]
+    lg:px-0
+    xl:w-[106%]
+    xl:-ml-[3%];
+  }
+
+  .arc-carousel-cards .card {
+    @apply w-[calc(100vw_-_8rem)]
+    mr-20
+    border-0
+    rounded-none
+    select-none
+    overflow-visible
+    bg-transparent
+    origin-top
+    duration-500
+    xs:w-[calc(100vw_-_12rem)]
+    xs:mr-24
+    sm:w-[calc(50vw_-_8rem)]
+    sm:mr-20
+    max-lg:opacity-40
+    max-lg:shrink-0
+    max-lg:mr-20
+    max-lg:last:mr-0
+    lg:w-[20%]
+    lg:mr-0;
+
+    transition-property: opacity, transform;
+  }
+
+  @media (hover: hover) {
+    .arc-carousel-cards a.card {
+      @apply [&:not([disabled])]:hover:shadow-none;
+    }
+  }
+
+  .arc-carousel-cards a.card .card-header img {
+    @apply transition-all
+    duration-500;
+  }
+
+  .arc-carousel-cards a.card:not([disabled]):hover .card-header img {
+    @apply scale-110;
+  }
+
+  .arc-carousel-cards .card.active {
+    @apply opacity-100;
+  }
+
+  .arc-carousel-cards .card-header {
+    @apply relative
+    overflow-hidden
+    origin-top
+    w-full
+    aspect-[1_/_1.3474]
+    lg:h-[20rem]
+    xl:h-[26rem]
+    
+    after:content-[""]
+    after:hidden
+    after:w-full
+    after:h-full
+    after:absolute
+    after:top-0
+    after:left-0
+    after:z-10
+    after:bg-[linear-gradient(180deg,_rgba(0,_0,_0,_0)_0%,_rgba(0,_0,_0,_0)_60%,_rgba(0,_0,_0,_1)_100%)]
+    lg:after:block;
+  }
+
+  /* Individual card rotations and positions */
+  .arc-carousel-cards .card:nth-child(1) .card-header {
+    @apply lg:rotate-[-14.06deg]
+    lg:translate-y-20;
+  }
+
+  .arc-carousel-cards .card:nth-child(2) .card-header {
+    @apply lg:rotate-[-4.304deg]
+    lg:translate-y-4;
+  }
+
+  .arc-carousel-cards .card:nth-child(3) .card-header {
+    @apply lg:rotate-[4.3deg]
+    lg:translate-y-4;
+  }
+
+  .arc-carousel-cards .card:nth-child(4) .card-header {
+    @apply lg:rotate-[14.06deg]
+    lg:translate-y-20;
+  }
+
+  .arc-carousel-cards .card:nth-child(1) .card-content {
+    @apply lg:translate-x-18
+    lg:mt-6
+    xl:translate-x-24;
+  }
+
+  .arc-carousel-cards .card:nth-child(2) .card-content {
+    @apply lg:translate-x-6
+    lg:-mt-1
+    xl:translate-x-8;
+  }
+
+  .arc-carousel .card:nth-child(3) .card-content {
+    @apply lg:-translate-x-6
+    lg:-mt-1
+    xl:-translate-x-8;
+  }
+
+  .arc-carousel .card:nth-child(4) .card-content {
+    @apply lg:-translate-x-18
+    lg:mt-6
+    xl:-translate-x-24;
+  }
+
+  .arc-carousel-cards .card-content {
+    @apply relative
+    pt-4
+    pb-0
+    px-0
+    z-20
+    lg:pt-0
+    lg:px-2;
+  }
+
+  .arc-carousel-cards .card img {
+    @apply w-full
+    h-full
+    object-cover
+    object-center;
+  }
+
+  .arc-carousel-cards .card-title {
+    @apply text-white;
+  }
+
+  .arc-carousel-cards .card-description {
+    @apply text-white
+    line-clamp-none
+    opacity-80;
+  }
+
+  .arc-carousel-cards .card:hover .card-description {
+    @apply text-white
+    opacity-80;
+  }
+
+  .arc-carousel .carousel-indicator-wrapper {
+    @apply lg:hidden;
+  }
+}

@@ -1,0 +1,79 @@
+@layer components {
+  .section-tabs {
+    @apply flex
+    flex-col
+    rounded-xl
+    border
+    border-neutral-200 
+    bg-white 
+    shadow-sm
+    overflow-hidden 
+    md:flex-row
+    md:items-stretch;
+  }
+
+  .section-tabs-wrapper.side-tabs-content-wrapper {
+    @apply p-0;
+  }
+
+  .section-tab-content {
+    @apply bg-white px-5 py-6 sm:px-10 sm:py-8;
+  }
+
+  .section-tab-buttons {
+    @apply bg-primary-50 py-3 hidden md:block;
+    height: inherit;
+  }
+
+  .section-tab-buttons .side-tabs {
+    @apply shadow-none rounded-none border-0 w-[19.1875rem] bg-transparent;
+  }
+
+  .mobile-tabs-btn-wrap {
+    @apply md:hidden p-4 bg-primary-50;
+  }
+
+  .mobile-tabs-btn-wrap select,
+  .mobile-tabs-btn-wrap .form-select {
+    @apply min-w-full;
+  }
+
+  .section-tab-buttons .tab-button {
+    @apply text-primary-700
+    font-bold
+    first-of-type:mt-0
+    last-of-type:mb-0;
+  }
+
+  .section-tab-buttons .tab-button.active {
+    @apply p-6 bg-white text-primary-500;
+  }
+
+  @media (hover: hover) {
+    .section-tab-buttons .tab-button:hover,
+    .section-tab-buttons .tab-button.active:hover {
+      @apply p-6 bg-white text-primary-500;
+    }
+  }
+
+  .section-tabs h6 {
+    @apply !mb-6;
+  }
+
+  .section-tabs .paragraph-2 {
+    @apply !mb-8;
+  }
+
+  .section-tabs .paragraph-1 {
+    @apply !mb-4;
+  }
+
+  .section-tabs .paragraph-2:last-of-type {
+    @apply !mb-0;
+  }
+
+  .section-tabs .side-tabs-content {
+    @apply w-full
+    p-0;
+  }
+}

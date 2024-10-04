@@ -1,0 +1,89 @@
+@layer components {
+  .intro-banner {
+    @apply flex
+    flex-col-reverse
+    gap-12
+    items-center
+    justify-center
+    max-w-container-full-sm-p
+    px-8
+    py-10
+    mx-auto
+    sm:py-16
+    lg:justify-between
+    lg:flex-row
+    xl:gap-21;
+  }
+
+  .intro-banner__content {
+    @apply flex
+    flex-col
+    w-full
+    gap-4
+    max-w-container-sm;
+  }
+
+  .intro-banner__content__logo {
+    @apply h-auto
+    w-[12.5rem];
+  }
+
+  .intro-banner__image {
+    @apply relative
+    w-full
+    max-w-[38.5rem]
+    aspect-[0.95_/_1];
+  }
+
+  .intro-banner__image--two {
+    @apply aspect-[1.082_/_1];
+  }
+
+  .intro-banner__image__item,
+  .intro-banner__image__circle--md,
+  .intro-banner__image__circle--sm {
+    @apply rounded-full
+    aspect-square;
+  }
+
+  .intro-banner__image__item {
+    @apply z-10;
+  }
+
+  .intro-banner__image__item:nth-child(1n) {
+    @apply w-[62.43%]
+    relative;
+  }
+
+  .intro-banner__image__item:nth-child(2n) {
+    @apply w-[42.95%]
+    absolute
+    right-0
+    top-[43%];
+  }
+
+  .intro-banner__image__item:nth-child(3n) {
+    @apply w-[36.69%]
+    absolute
+    left-[17.75%]
+    bottom-0;
+  }
+
+  .intro-banner__image__circle--md {
+    @apply w-[11.65%]
+    bg-secondary-600
+    absolute
+    top-[1.56%]
+    left-[2.43%];
+  }
+
+  .intro-banner__image__circle--sm {
+    @apply w-[6.95%]
+    bg-neutral-50
+    absolute
+    top-[75%]
+    /* right-[4.69%] */
+    right-[3%]
+    z-20;
+  }
+}

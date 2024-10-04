@@ -1,0 +1,74 @@
+@layer components {
+  .sitemap {
+    @apply w-full
+    max-w-container-full-sm-p
+    px-6
+    pt-4
+    pb-14
+    mx-auto
+    space-y-10
+    sm:pt-14;
+  }
+
+  .sitemap-section + .sitemap-section {
+    @apply border-t
+    border-neutral-100
+    pt-10;
+  }
+
+  .sitemap-section {
+    @apply block;
+  }
+
+  .sitemap-section-title {
+    @apply sticky
+    -top-[0.0625rem]
+    bg-white
+    pt-6
+    -mt-6
+    pb-2
+    z-10
+    md:float-left 
+    md:w-[15rem]
+    md:max-w-[15rem]
+    xl:w-[17rem]
+    xl:max-w-[17rem];
+  }
+
+  .sitemap-section-content {
+    @apply w-full
+    space-y-10 
+    grow
+    pt-3
+    md:w-[calc(100%_-_15rem)]
+    md:ml-auto
+    md:pl-6
+    xl:w-[calc(100%_-_17rem)];
+  }
+
+  .sitemap-section-content-section {
+    @apply space-y-6;
+  }
+
+  .sitemap-section-content-section a {
+    @apply no-underline;
+  }
+
+  .sitemap-section-content-section ul {
+    @apply mb-6
+    font-semibold;
+  }
+
+  .sitemap-section-content-section > ul {
+    @apply space-y-6
+    text-lg;
+  }
+
+  .sitemap-section-content-section > ul ul {
+    @apply text-base;
+  }
+
+  .sitemap-section-content-section > ul ul ul {
+    @apply text-sm;
+  }
+}

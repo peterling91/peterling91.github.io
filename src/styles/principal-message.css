@@ -1,0 +1,36 @@
+@layer components {
+  .message-img {
+    @apply w-full
+    max-w-[24rem];
+  }
+
+  .message-img img {
+    @apply w-full
+    h-auto
+    object-contain;
+  }
+
+  .text-contd {
+    @apply flex
+    flex-col
+    items-center
+    gap-6
+    lg:flex-row
+    lg:items-start
+    lg:gap-16;
+  }
+
+  .text-contd.text-contd-message {
+    @apply xl:gap-[7.5rem];
+  }
+
+  .text-contd .message-content {
+    @apply w-full;
+  }
+
+  .text-contd-message-quotation {
+    @apply w-[6.8125rem]
+    mb-4
+    lg:-ml-5;
+  }
+}

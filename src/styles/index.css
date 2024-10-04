@@ -1,0 +1,104 @@
+/*========================================
+  Base
+========================================*/
+@import "base.css"; /* Updated for sustainability */
+@import "typography.css"; /* Updated for sustainability */
+@import "link.css";
+@import "button.css"; /* Updated for sustainability */
+@import "form.css";
+@import "table.css";
+@import "dialog.css"; /* Updated for sustainability */
+
+/*========================================
+  Components
+========================================*/
+/* Navigation */
+@import "navbar.css"; /* Updated for sustainability */
+@import "switch-role.css";
+@import "footer.css"; /* Updated for sustainability */
+
+/* Tabs */
+@import "side-nav.css";
+@import "tabs.css";
+
+/* Banners */
+@import "breadcrumb.css";
+@import "page-banner.css";
+@import "masonry.css";
+@import "bottom-banner";
+
+/* Cards */
+@import "card.css"; /* Updated for sustainability */
+@import "article.css";
+@import "selectionRadioCard.css";
+@import "staggered-card.css";
+
+/* Carousel */
+@import "carousel.css"; /* Updated for sustainability */
+@import "arcCarousel.css";
+@import "penguin-carousel.css"; /* Updated for sustainability */
+
+/* Others */
+@import "dropdown.css";
+@import "alert.css"; /* Updated for sustainability */
+@import "pagination.css";
+@import "accordion.css";
+@import "dialog-video.css"; /* Updated for sustainability */
+@import "list.css";
+@import "badge.css";
+@import "filter.css";
+@import "marquee.css";
+@import "parallax-image.css";
+@import "sticky-bar.css";
+@import "tooltip.css";
+@import "loading.css";
+@import "avatar.css";
+@import "social-media-bar.css";
+@import "sitemap.css";
+@import "section-we-go.css";
+@import "section-annual-report.css";
+@import "section-listing-section.css";
+@import "section-contact-info.css";
+@import "section-cet-info-list.css";
+@import "course-details.css";
+@import "course-details-tabs.css";
+@import "principal-message.css";
+@import "school-event-list.css";
+
+/*========== Sustainability ==========*/
+/* Generic */
+@import "sustainability-cursor.css";
+
+/* Home */
+@import "page-banner-circle-animation.css";
+@import "sustainability-home-diagram.css";
+@import "image-splash-animation.css";
+@import "sustainability-report.css";
+@import "sustainability-actions.css";
+
+/* Living lab, ASI, NYPxAMK */
+@import "page-banner-sustainability.css";
+
+/* Living lab */
+@import "sustainability-living-lab-diagram.css";
+@import "sustainability-living-lab-section.css";
+
+/* ASI, NYPxAMK */
+@import "sustainability-circle-banner.css";
+@import "carousel-progress-indicator.css";
+
+/* Report */
+@import "stats-circle.css";
+
+/*========================================
+  Utilities
+========================================*/
+@import "column.css";
+@import "utilities.css"; /* Updated for sustainability */
+
+/*========================================
+  Tailwind
+========================================*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

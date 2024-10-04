@@ -1,0 +1,137 @@
+@layer components {
+  /* Tooltip styling */
+  .tooltip-button {
+    @apply relative;
+  }
+
+  .tooltip-button::before {
+    @apply content-[attr(data-tooltip)]
+    absolute
+    top-[130%]
+    left-[50%]
+    w-[calc(100%_+_12.5rem)]
+    max-w-[37.5rem]
+    p-2
+    bg-neutral-700
+    rounded-sm
+    border
+    border-neutral-700
+    text-white
+    font-normal
+    leading-5
+    text-sm
+    whitespace-normal
+    -translate-x-[50%]
+    transition-opacity
+    duration-200
+    z-[1000]
+    opacity-0
+    invisible;
+  }
+
+  .tooltip-button::after {
+    @apply content-[""]
+    absolute
+    top-[100%]
+    left-[50%]
+    mt-[0.3125rem]
+    border-8
+    border-transparent
+    border-b-neutral-700
+    -translate-x-[50%]
+    -translate-y-[100%]
+    z-[1000]
+    opacity-0
+    invisible;
+  }
+
+  .tooltip-button:hover::before,
+  .tooltip-button:hover::after {
+    @apply opacity-100
+      visible;
+  }
+
+  .tooltip-butn .fa-solid {
+    @apply text-primary-500
+    !text-base;
+  }
+
+  .tooltip-button.v2:hover::before {
+    @apply w-fit;
+  }
+
+  .tooltip-button.v2::before {
+    @apply -top-12
+    left-[30%];
+  }
+
+  .tooltip-button.v2::after {
+    @apply hidden;
+  }
+}
+
+.tooltip {
+  @apply hidden
+  relative
+  w-auto
+  max-w-[14.5rem]
+  bg-neutral-700
+  rounded
+  py-2
+  px-3
+  text-white
+  text-xs
+  leading-normal
+  opacity-0
+  z-[800]
+  
+  before:absolute
+  before:w-[0.875rem]
+  before:h-[0.625rem]
+  before:-bottom-[0.5625rem]
+  before:left-[calc(50%_-_0.4375rem)]
+  before:bg-neutral-700
+  before:bg-no-repeat
+  before:bg-center
+  before:bg-contain
+  before:origin-center
+  before:rotate-180
+  before:z-[2];
+}
+
+/* Zoom fix
+   Updated "-webkit-mask-image" and "mask-image" */
+.tooltip::before {
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 0L13.9282 9.75H0.0717969L7 0Z' fill='white'/%3E%3C/svg%3E%0A");
+  mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 0L13.9282 9.75H0.0717969L7 0Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+.tooltip.show {
+  @apply block
+  animate-fadein;
+}
+
+.tooltip[data-popper-placement^="top"] {
+  @apply before:-bottom-[0.5625rem];
+}
+
+.tooltip[data-popper-placement^="bottom"] {
+  @apply before:-top-[0.5625rem]
+  before:rotate-0;
+}
+
+.tooltip[data-popper-placement^="left"],
+.tooltip[data-popper-placement^="right"] {
+  @apply before:top-[calc(50%_-_0.3125rem)];
+}
+
+.tooltip[data-popper-placement^="left"] {
+  @apply before:left-auto
+  before:-right-[0.5625rem]
+  before:rotate-90;
+}
+
+.tooltip[data-popper-placement^="right"] {
+  @apply before:-left-[0.5625rem]
+  before:-rotate-90;
+}

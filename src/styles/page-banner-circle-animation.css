@@ -1,0 +1,23 @@
+@layer components {
+  .page-banner-mask {
+    @apply absolute
+    block
+    w-full
+    h-full
+    bg-primary-600
+    z-40;
+
+    --page-banner-mask-percent: 100%;
+
+    -webkit-mask-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.01) var(--page-banner-mask-percent),
+      rgba(0, 0, 0, 1) var(--page-banner-mask-percent)
+    );
+    mask-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.01) var(--page-banner-mask-percent),
+      rgba(0, 0, 0, 1) var(--page-banner-mask-percent)
+    );
+  }
+}

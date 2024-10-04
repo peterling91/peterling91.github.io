@@ -1,0 +1,106 @@
+@layer components {
+  .sustainability-home-intro-section + .sustainability-home-intro-section {
+    @apply -mt-[5.25rem]
+  lg:-mt-[14rem];
+  }
+
+  .image-with-mask {
+    @apply flex
+  items-center
+  justify-center
+  relative
+  opacity-80
+  overflow-visible;
+  }
+
+  .image-with-mask .image-with-mask__image--active {
+    @apply relative
+  z-10;
+
+    --image-with-mask-percent: 0%;
+
+    -webkit-mask-image: radial-gradient(
+      circle at 50% 0,
+      black var(--image-with-mask-percent),
+      rgba(0, 0, 0, 0.01) var(--image-with-mask-percent)
+    );
+    mask-image: radial-gradient(
+      circle at 50% 0,
+      black var(--image-with-mask-percent),
+      rgba(0, 0, 0, 0.01) var(--image-with-mask-percent)
+    );
+  }
+
+  .image-with-mask .image-with-mask__image--inactive {
+    @apply absolute;
+  }
+
+  .image-with-mask .green-splash {
+    @apply absolute
+  w-[30rem]
+  -top-[8.5rem]
+  h-auto
+  z-10
+  rotate-[30deg]
+  lg:w-[40rem]
+  lg:-top-[11rem];
+  }
+
+  .green-splash > img {
+    @apply w-full
+  h-auto;
+  }
+
+  .image-with-mask--left,
+  .image-with-mask--right {
+    @apply w-full
+  max-w-[31.6875rem]
+  max-lg:order-1;
+  }
+
+  .image-with-mask--left .green-splash,
+  .image-with-mask--right .green-splash {
+    @apply -top-[60%]
+  w-[30rem]
+  xs:w-[35rem]
+  xs:-top-[50%]
+  lg:w-[35rem]
+  lg:-top-[50%];
+  }
+
+  .image-with-mask--left .green-splash {
+    @apply -right-[50%]
+  -rotate-45;
+  }
+
+  .image-with-mask--right .green-splash {
+    @apply -left-[50%]
+  rotate-45;
+  }
+
+  .image-with-mask.image-with-mask--left .image-with-mask__image--active {
+    -webkit-mask-image: radial-gradient(
+      circle at 100% 0,
+      black var(--image-with-mask-percent),
+      rgba(0, 0, 0, 0.01) var(--image-with-mask-percent)
+    );
+    mask-image: radial-gradient(
+      circle at 100% 0,
+      black var(--image-with-mask-percent),
+      rgba(0, 0, 0, 0.01) var(--image-with-mask-percent)
+    );
+  }
+
+  .image-with-mask.image-with-mask--right .image-with-mask__image--active {
+    -webkit-mask-image: radial-gradient(
+      circle at 0 0,
+      black var(--image-with-mask-percent),
+      rgba(0, 0, 0, 0.01) var(--image-with-mask-percent)
+    );
+    mask-image: radial-gradient(
+      circle at 0 0,
+      black var(--image-with-mask-percent),
+      rgba(0, 0, 0, 0.01) var(--image-with-mask-percent)
+    );
+  }
+}

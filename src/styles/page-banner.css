@@ -1,0 +1,951 @@
+@layer components {
+  /*========================================
+    Default page banner
+  ========================================*/
+  .page-banner {
+    @apply block
+    relative
+    w-[min(100vw,_2560px)] /* Upper boundary limit */
+    mx-auto /* Upper boundary limit */
+    max-w-full
+    overflow-hidden
+    sm:min-h-[20rem]
+    sm:bg-primary-600
+    
+    after:hidden
+    after:content-[""]
+    after:absolute
+    after:top-0
+    after:left-0
+    after:w-full
+    after:h-full
+    after:z-10
+    after:bg-[linear-gradient(67deg,rgba(0,_0,_0,_0.6)_37.4%,rgba(0,_0,_0,_0)_70.43%)]
+    sm:after:block;
+  }
+
+  .page-banner-wrapper,
+  .text-banner-wrapper {
+    @apply flex
+    flex-col
+    w-full
+    max-w-container-full-sm
+    mx-auto
+    px-6
+    z-20
+    max-sm:pb-6
+    sm:min-h-[20rem];
+  }
+
+  .page-banner-breadcrumb {
+    @apply pt-6
+    z-20
+    sm:pt-10;
+  }
+
+  .page-banner-title,
+  .text-banner-title {
+    @apply flex
+    items-center
+    grow
+    w-full
+    max-w-container
+    font-bold
+    z-20
+    break-words
+    max-sm:mt-6
+    sm:text-white
+    sm:pt-8
+    sm:pb-10;
+
+    word-break: break-word;
+  }
+
+  .page-banner-title {
+    @apply sm:drop-shadow-text;
+  }
+
+  .page-banner-title.display-1,
+  .text-banner-title.display-1,
+  .page-banner-title.display-2,
+  .text-banner-title.display-2 {
+    @apply leading-tight;
+  }
+
+  .page-banner-description,
+  .text-banner-description {
+    @apply max-w-container-md
+    break-words;
+
+    word-break: break-word;
+  }
+
+  .page-banner-description {
+    @apply drop-shadow-text;
+  }
+
+  .page-banner-image {
+    @apply block
+    w-full
+    h-[min(56.25vw,_1440px)] /* Upper boundary limit */
+    overflow-hidden
+    sm:h-full
+    sm:absolute
+    sm:left-0
+    sm:top-0;
+  }
+
+  .text-banner-image {
+    @apply block
+    w-full
+    h-full
+    overflow-hidden
+    absolute
+    left-0
+    top-0;
+  }
+
+  .page-banner-image > img,
+  .page-banner-image > video {
+    @apply w-full
+    h-full
+    object-cover
+    object-top
+    sm:object-center;
+  }
+
+  /* Fix - 01 May 2024 - image not covering the entire banner 
+     Added page-banner-image.scroll-fixed-item */
+  .page-banner-image.scroll-fixed-item {
+    @apply overflow-visible;
+  }
+
+  /* Fix - 01 May 2024 - image not covering the entire banner 
+     Added .page-banner-image.scroll-fixed-item > img, .page-banner-image.scroll-fixed-item > video */
+  .page-banner-image.scroll-fixed-item > img,
+  .page-banner-image.scroll-fixed-item > video {
+    @apply min-h-screen;
+  }
+
+  .text-banner-image > img,
+  .text-banner-image > video {
+    @apply w-full
+    h-full
+    object-cover
+    object-center;
+  }
+
+  .page-banner .breadcrumb-white .breadcrumb-item a,
+  .page-banner .breadcrumb-white .breadcrumb-item span {
+    @apply drop-shadow-text
+    before:drop-shadow-text
+    after:drop-shadow-text;
+  }
+
+  .page-banner * + button,
+  .page-banner * + .button,
+  .page-banner * + .button-primary,
+  .page-banner * + .button-secondary,
+  .page-banner * + .button-tertiary,
+  .page-banner * + .button-grey,
+  .page-banner * + .button-grey-dark,
+  .page-banner * + .button-ghost-primary,
+  .page-banner * + .button-ghost-secondary,
+  .page-banner * + .button-ghost-tertiary,
+  .page-banner * + .button-ghost-grey,
+  .page-banner * + .button-white-primary,
+  .page-banner * + .button-white-secondary,
+  .page-banner * + .button-white-tertiary,
+  .page-banner * + .button-white-grey,
+  .page-banner * + .button-white-ghost-primary,
+  .page-banner * + .button-white-ghost-secondary,
+  .page-banner * + .button-white-ghost-tertiary,
+  .page-banner * + .button-white-ghost-grey,
+  .page-banner * + .button-text-primary,
+  .page-banner * + .button-text-secondary,
+  .page-banner * + .button-text-tertiary,
+  .page-banner * + .button-text-grey,
+  .page-banner * + .button-text-white,
+  .page-banner * + .banner-button,
+  .page-banner * + .button-group,
+  .text-banner * + button,
+  .text-banner * + .button,
+  .text-banner * + .button-primary,
+  .text-banner * + .button-secondary,
+  .text-banner * + .button-tertiary,
+  .text-banner * + .button-grey,
+  .text-banner * + .button-grey-dark,
+  .text-banner * + .button-ghost-primary,
+  .text-banner * + .button-ghost-secondary,
+  .text-banner * + .button-ghost-tertiary,
+  .text-banner * + .button-ghost-grey,
+  .text-banner * + .button-white-primary,
+  .text-banner * + .button-white-secondary,
+  .text-banner * + .button-white-tertiary,
+  .text-banner * + .button-white-grey,
+  .text-banner * + .button-white-ghost-primary,
+  .text-banner * + .button-white-ghost-secondary,
+  .text-banner * + .button-white-ghost-tertiary,
+  .text-banner * + .button-white-ghost-grey,
+  .text-banner * + .button-text-primary,
+  .text-banner * + .button-text-secondary,
+  .text-banner * + .button-text-tertiary,
+  .text-banner * + .button-text-grey,
+  .text-banner * + .button-text-white,
+  .text-banner * + .banner-button,
+  .text-banner * + .button-group {
+    @apply !mt-6
+    sm:!mt-8;
+  }
+
+  .page-banner .button-group {
+    @apply flex
+    flex-wrap
+    gap-6
+    sm:gap-8;
+  }
+
+  .page-banner .button-group > * {
+    @apply !mt-0;
+  }
+
+  /*========================================
+    V2 - Page banner in stories and news
+  ========================================*/
+  .page-banner .page-banner-image {
+    @apply after:hidden
+    after:content-[""]
+    after:absolute
+    after:top-0
+    after:left-0
+    after:w-full
+    after:h-[0.3125rem]
+    after:z-20
+    after:bg-secondary-500
+    sm:after:h-[9.5rem];
+  }
+
+  .page-banner .page-banner-image::after {
+    -webkit-mask-image: url("data:image/svg+xml, %3Csvg class='responsive-svg' width='100%25' height='153' viewBox='0 0 1440 153' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' %3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1440 152.364C1276.17 9.55568 787.993 10.2681 312.177 10.9625C206.268 11.1171 100.971 11.2707 0 9.84058L0 0H1440V152.364Z' fill='%23E0663C' /%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml, %3Csvg class='responsive-svg' width='100%25' height='153' viewBox='0 0 1440 153' fill='none' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' %3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M1440 152.364C1276.17 9.55568 787.993 10.2681 312.177 10.9625C206.268 11.1171 100.971 11.2707 0 9.84058L0 0H1440V152.364Z' fill='%23E0663C' /%3E%3C/svg%3E");
+  }
+
+  @media (max-width: 640px) {
+    .page-banner .page-banner-image::after {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+  }
+
+  .page-banner.school-sdm .page-banner-image {
+    @apply after:block
+    after:bg-school-sdm;
+  }
+
+  .page-banner.school-sas .page-banner-image {
+    @apply after:block
+    after:bg-school-sas;
+  }
+
+  .page-banner.school-sbm .page-banner-image {
+    @apply after:block
+    after:bg-school-sbm;
+  }
+
+  .page-banner.school-shs .page-banner-image {
+    @apply after:block
+    after:bg-school-shs;
+  }
+
+  .page-banner.school-seg .page-banner-image {
+    @apply after:block
+    after:bg-school-seg;
+  }
+
+  .page-banner.school-sit .page-banner-image {
+    @apply after:block
+    after:bg-school-sit;
+  }
+
+  .banner-button {
+    @apply inline-flex
+    items-center
+    w-max
+    max-w-full
+    text-white
+    font-semibold
+    no-underline
+    space-x-3
+    transition-colors
+    duration-200;
+  }
+
+  @media (hover: hover) {
+    .banner-button {
+      @apply [&:not([disabled])]:hover:text-white;
+    }
+  }
+
+  .banner-button .button {
+    @apply w-[2.375rem]
+    max-w-[2.375rem]
+    min-w-[2.375rem]
+    h-[2.375rem];
+  }
+
+  .page-banner * + .banner-button {
+    @apply !mt-5
+    sm:!mt-7;
+  }
+
+  /*========================================
+    V3 - CCA page banner
+  ========================================*/
+  .page-banner.v3 {
+    @apply flex
+    bg-white
+    h-full
+    after:hidden;
+  }
+
+  .page-banner.v3 .page-banner-wrapper {
+    @apply grow;
+  }
+
+  .banner-unique-list {
+    @apply text-left
+    grid
+    gap-3
+    lg:gap-2
+    lg:text-center;
+  }
+
+  .caption + ul.banner-unique-list {
+    @apply mt-5
+    lg:mt-7;
+  }
+
+  .banner-unique-list a {
+    @apply no-underline
+    text-neutral-700;
+  }
+
+  @media (hover: hover) {
+    .banner-unique-list a {
+      @apply hover:text-primary-500;
+    }
+  }
+
+  .banner-unique-list .fa-arrow-right {
+    @apply mx-2
+    text-red-500
+    text-xl
+    lg:text-[1.75rem]
+    lg:hidden;
+  }
+
+  @media (hover: hover) {
+    .banner-unique-list a:hover .fa-arrow-right {
+      @apply inline-block;
+    }
+  }
+
+  .banner-ul-wrapper {
+    @apply flex
+    w-full
+    h-full
+    grow
+    py-10
+    lg:py-18
+    lg:items-center
+    lg:justify-center;
+  }
+
+  .banner-ul-inner .cca-banner-label {
+    @apply text-primary-500 lg:text-center;
+  }
+
+  .bg-img-switch-wrapper img {
+    @apply w-auto h-full;
+  }
+
+  .cont {
+    @apply w-full h-full overflow-hidden;
+  }
+
+  /*academic clubs*/
+  .bg-img-switch-wrapper .cont {
+    @apply overflow-visible;
+  }
+
+  /* Zoom fix
+     Updated .bul1-title */
+  .bul1-title {
+    @apply relative
+    flex
+    z-40
+    lg:justify-center;
+
+    text-shadow:
+      -0.0625rem 0.0625rem 0.125rem #fff,
+      0.0625rem 0.0625rem 0.125rem #fff,
+      0.0625rem -0.0625rem 0 #fff,
+      -0.0625rem -0.0625rem 0 #fff;
+  }
+
+  .bul1-title > i {
+    @apply mt-[0.125rem]
+    lg:mt-[0.375rem];
+  }
+
+  .bul1:hover .img-one,
+  .bul1:hover .img-two,
+  .bul1:hover .img-three,
+  .bul1:hover .img-four {
+    @apply opacity-0 
+    lg:opacity-100 
+    scale-100;
+  }
+
+  /* Common styles for all images */
+  .img-one,
+  .img-two,
+  .img-three,
+  .img-four {
+    @apply hidden
+    scale-[0.8]
+    opacity-0
+    duration-300
+    ease-in-out
+    overflow-hidden /* To ensure the pseudo-element doesn't go outside the image area */
+    lg:relative
+    lg:inline-block
+   
+    /* Pseudo-element for the feather effect */
+    before:content-[""]
+    before:absolute
+    before:top-0
+    before:left-0
+    before:right-0
+    before:bottom-0
+    before:opacity-100
+    before:transition-opacity
+    before:duration-300; /* Smooth transition for fading */
+
+    transition-property: transform, opacity;
+  }
+
+  .img-one::before,
+  .img-two:before,
+  .img-three:before,
+  .img-four:before {
+    @apply bg-[radial-gradient(circle,_transparent,_black_80%)];
+  }
+
+  /* On hover, fade out the feather effect */
+  .bul1:hover .img-one::before,
+  .bul1:hover .img-two::before,
+  .bul1:hover .img-three::before,
+  .bul1:hover .img-four::before {
+    @apply opacity-0;
+  }
+
+  .bg-img-switch-wrapper .academic-clubs .img-one,
+  .bg-img-switch-wrapper .academic-clubs .img-two,
+  .bg-img-switch-wrapper .academic-clubs .img-three,
+  .bg-img-switch-wrapper .academic-clubs .img-four,
+  .bg-img-switch-wrapper .arts-and-culture .img-one,
+  .bg-img-switch-wrapper .arts-and-culture .img-two,
+  .bg-img-switch-wrapper .arts-and-culture .img-three,
+  .bg-img-switch-wrapper .arts-and-culture .img-four,
+  .bg-img-switch-wrapper .community-service-and-environment .img-one,
+  .bg-img-switch-wrapper .community-service-and-environment .img-two,
+  .bg-img-switch-wrapper .community-service-and-environment .img-three,
+  .bg-img-switch-wrapper .leadership-and-character-development .img-one,
+  .bg-img-switch-wrapper .leadership-and-character-development .img-two,
+  .bg-img-switch-wrapper .leadership-and-character-development .img-three,
+  .bg-img-switch-wrapper .societies .img-one,
+  .bg-img-switch-wrapper .societies .img-two,
+  .bg-img-switch-wrapper .sports-and-adventure .img-one,
+  .bg-img-switch-wrapper .sports-and-adventure .img-two,
+  .bg-img-switch-wrapper .sports-and-adventure .img-three,
+  .bg-img-switch-wrapper .sports-and-adventure .img-four {
+    @apply absolute
+    w-[14.625rem]
+    h-auto;
+  }
+
+  .bg-img-switch-wrapper .academic-clubs .img-one {
+    @apply left-[29%] top-[-15%];
+  }
+
+  .bg-img-switch-wrapper .academic-clubs .img-two {
+    @apply left-[initial] right-[10%] top-[10%];
+  }
+
+  .bg-img-switch-wrapper .academic-clubs .img-three {
+    @apply left-[5%] top-[50%];
+  }
+
+  .bg-img-switch-wrapper .academic-clubs .img-four {
+    @apply left-[initial] top-[80%] right-[20%];
+  }
+
+  /*arts and cultures*/
+  /* Issue List - Issue 7
+     Changed top-[5%] --> top-[10%] */
+  .bg-img-switch-wrapper .arts-and-culture .img-one {
+    @apply left-[15%] top-[10%];
+  }
+
+  .bg-img-switch-wrapper .arts-and-culture .img-two {
+    @apply left-[initial] right-[5%] top-[0%];
+  }
+
+  .bg-img-switch-wrapper .arts-and-culture .img-three {
+    @apply left-[0%] top-[65%];
+  }
+
+  .bg-img-switch-wrapper .arts-and-culture .img-four {
+    @apply left-[initial] top-[55%] right-[12%];
+  }
+
+  /*Community Service & Environment*/
+  .bg-img-switch-wrapper .community-service-and-environment .img-one {
+    @apply left-[initial] right-[10%] top-[-10%];
+  }
+
+  .bg-img-switch-wrapper .community-service-and-environment .img-two {
+    @apply left-[10%] top-[30%];
+  }
+
+  .bg-img-switch-wrapper .community-service-and-environment .img-three {
+    @apply left-[initial] top-[55%] right-[2%];
+  }
+
+  /*Leadership & Character Development*/
+  .bg-img-switch-wrapper .leadership-and-character-development .img-one {
+    @apply left-[29%] top-[-12%];
+  }
+
+  .bg-img-switch-wrapper .leadership-and-character-development .img-two {
+    @apply left-[initial] right-[10%] top-[30%];
+  }
+
+  .bg-img-switch-wrapper .leadership-and-character-development .img-three {
+    @apply left-[5%] top-[50%];
+  }
+
+  /*Societies*/
+  .bg-img-switch-wrapper .societies .img-one {
+    @apply left-[10%] top-[30%];
+  }
+
+  .bg-img-switch-wrapper .societies .img-two {
+    @apply left-[initial] right-[10%] top-[30%];
+  }
+
+  /*Sports & Adventure*/
+  .bg-img-switch-wrapper .sports-and-adventure .img-one {
+    @apply w-[19.5625rem] left-[initial] right-[15%] top-[5%];
+  }
+
+  .bg-img-switch-wrapper .sports-and-adventure .img-two {
+    @apply left-[-1%] top-[15%];
+  }
+
+  .bg-img-switch-wrapper .sports-and-adventure .img-three {
+    @apply left-[initial] top-[50%] right-[5%];
+  }
+
+  .bg-img-switch-wrapper .sports-and-adventure .img-four {
+    @apply left-[12%] top-[80%];
+  }
+
+  .bt-wrapped {
+    @apply flex
+    justify-center
+    w-full
+    text-center
+    max-sm:-mb-1
+    sm:pb-5
+    lg:pb-14;
+  }
+
+  .bt-wrappers {
+    @apply flex
+    flex-col
+    lg:flex-row-reverse
+    lg:items-center;
+  }
+
+  .bt-wrappers p {
+    @apply text-sm
+   font-normal
+   leading-5
+   text-neutral-700
+   lg:ml-4
+   lg:mt-2;
+  }
+
+  .scroll-down-indicator-animated {
+    @apply rounded-full
+    w-13
+    h-13
+    flex
+    items-center
+    justify-center
+    bg-secondary-600
+    mt-3
+    ml-auto
+    mr-auto;
+  }
+
+  .scroll-down-indicator-animated i {
+    @apply text-white
+    top-1
+    relative;
+  }
+
+  .scroll-down-indicator-animated i {
+    @apply animate-[glide_0.5s_infinite];
+  }
+
+  /* Zoom fix
+     Updated glide */
+  @keyframes glide {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-0.375rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .cca-modal-content img.cca-group-logo {
+    @apply w-[11rem] h-[11rem] min-w-[11rem] min-h-[11rem] max-h-[11rem] max-w-[11rem];
+  }
+
+  /*========================================
+    V4 - Page banner in landing pages
+  ========================================*/
+  .page-banner.v4,
+  .text-banner,
+  .text-banner-inner {
+    @apply flex
+    flex-col;
+  }
+
+  .page-banner.v4 {
+    @apply min-h-[25.625rem]
+    sm:min-h-[33.625rem]
+    
+    before:content-[""]
+    before:block
+    before:absolute
+    before:top-0
+    before:left-0
+    before:w-full
+    before:h-full
+    before:z-10
+    before:bg-[linear-gradient(_0deg,_rgba(29,_30,_36,_0.6)_0%,_rgba(255,_255,_255,_0)_40%)]
+    
+    after:block
+    after:bg-[linear-gradient(180deg,_rgba(0,_0,_0,_0.6)_-20%,_rgba(0,_0,_0,_0.35)_80%)];
+  }
+
+  .page-banner.v4.scroll-fixed {
+    @apply min-h-[28.125rem]
+    sm:min-h-[39.625rem];
+  }
+
+  .page-banner.v4 .page-banner-wrapper,
+  .text-banner-wrapper {
+    @apply grow
+    h-full
+    min-h-max
+    sm:min-h-max;
+  }
+
+  .page-banner-wrapper-content,
+  .text-banner-wrapper-content {
+    @apply flex
+    flex-col
+    items-center
+    justify-center
+    grow
+    w-full
+    h-full
+    max-w-container-lg-p
+    mx-auto
+    py-10
+    space-y-4
+    z-20;
+  }
+
+  .navbar.navbar-transparent.is-transparent
+    + main
+    > .page-banner.v4:first-of-type
+    .page-banner-wrapper-content,
+  .navbar.navbar-transparent.is-transparent
+    + main
+    > .text-banner:first-of-type
+    .text-banner-wrapper-content {
+    @apply pt-[6.75rem];
+  }
+
+  .navbar.navbar-transparent.is-transparent
+    + main
+    > .page-banner-carousel:first-of-type
+    .page-banner-carousel-item {
+    @apply md:pt-[4.25rem];
+  }
+
+  .page-banner.v4 .page-banner-caption,
+  .text-banner-caption {
+    @apply text-white;
+  }
+
+  .page-banner.v4 .page-banner-caption {
+    @apply drop-shadow-text;
+  }
+
+  .page-banner-wrapper-content .page-banner-title,
+  .text-banner-title {
+    @apply block
+    grow-0
+    max-sm:mt-0
+    sm:pt-0
+    sm:pb-0;
+  }
+
+  .page-banner.v4 .page-banner-title,
+  .text-banner-title {
+    @apply max-w-none
+    text-white
+    text-center;
+  }
+
+  .page-banner.v4 .page-banner-title {
+    @apply drop-shadow-text;
+  }
+
+  .display-1 + .text-banner-description,
+  .display-2 + .text-banner-description {
+    @apply sm:!mt-10;
+  }
+
+  .page-banner.v4 .page-banner-description,
+  .page-banner.v4 .page-banner-description.paragraph-3,
+  .page-banner.v4 .page-banner-description.paragraph-2,
+  .page-banner.v4 .page-banner-description.paragraph-1,
+  .text-banner-description,
+  .text-banner-description.paragraph-3,
+  .text-banner-description.paragraph-2,
+  .text-banner-description.paragraph-1 {
+    @apply text-white
+    text-center;
+  }
+
+  .page-banner.v4 .page-banner-image {
+    @apply block
+    w-full
+    h-full
+    absolute
+    left-0
+    top-0;
+  }
+
+  .page-banner.v4 .page-banner-image img {
+    @apply object-center;
+  }
+
+  .page-banner-scroll-down,
+  .text-banner-scroll-down {
+    @apply flex
+    flex-col
+    items-center
+    pb-[3rem]
+    z-30
+    max-lg:!z-30;
+  }
+
+  .page-banner-wrapper-content .page-banner-scroll-down,
+  .text-banner-wrapper-content .text-banner-scroll-down {
+    @apply mt-8
+    lg:pt-4;
+  }
+
+  .page-banner-wrapper-content .page-banner-scroll-down {
+    @apply pb-0;
+  }
+
+  .text-banner-wrapper-content .text-banner-scroll-down {
+    @apply pb-[4.75rem]
+    lg:pb-[6.5rem];
+  }
+
+  .page-banner-scroll-down-inner,
+  .text-banner-scroll-down-inner {
+    @apply relative
+    inline-flex
+    flex-col
+    items-center
+    lg:flex-row-reverse;
+  }
+
+  .page-banner-scroll-down-text,
+  .page-banner-scroll-down-text.paragraph-3 {
+    @apply relative
+    inline-block
+    text-white
+    whitespace-nowrap
+    opacity-80
+    lg:pl-4
+    lg:top-7
+    lg:left-full
+    lg:absolute;
+  }
+
+  /* Lighthouse fix: 19 Mar 2024 
+     Updated .page-banner-scroll-down-icon, .text-banner-scroll-down-icon */
+  .page-banner-scroll-down-icon,
+  .text-banner-scroll-down-icon {
+    @apply w-24
+    -mt-2
+    lg:mt-6
+    lg:-mb-6
+    lg:w-4
+    animate-bounce;
+  }
+
+  .text-banner-scroll-down-icon {
+    @apply lg:mt-10;
+  }
+
+  .page-banner-scroll-down-icon img,
+  .text-banner-scroll-down-icon img {
+    @apply w-full;
+  }
+
+  /*========================================
+    Text banner
+  ========================================*/
+  .page-banner.v4,
+  .text-banner {
+    @apply bg-primary-600
+    overflow-hidden;
+  }
+
+  .text-banner-w-image .text-banner-inner {
+    @apply flex-row
+    w-full;
+  }
+
+  .text-banner-w-image .text-banner-wrapper {
+    @apply flex
+    flex-col
+    items-center
+    justify-between
+    w-full
+    max-w-full
+    max-lg:px-6
+    lg:w-[40%];
+  }
+
+  .text-banner-w-image .text-banner-title {
+    @apply max-w-[35.875rem]
+    mx-auto;
+  }
+
+  .text-banner-w-image .text-banner-description {
+    @apply max-w-[30.25rem]
+    mx-auto;
+  }
+
+  .text-banner-w-image .text-banner-wrapper-content {
+    @apply space-y-6;
+  }
+
+  .text-banner-images-left,
+  .text-banner-images-right {
+    @apply flex
+    flex-col
+    grow
+    w-full
+    max-w-[calc(30%_-_2.5rem)]
+    py-8
+    xs:max-w-[calc(30%_-_5rem)]
+    max-lg:hidden;
+  }
+
+  .text-banner-images-left {
+    @apply pt-[15rem]
+    lg:pl-8;
+  }
+
+  .text-banner-images-right {
+    @apply lg:pr-8;
+  }
+
+  .text-banner-images-left img,
+  .text-banner-images-right img {
+    @apply w-full
+    mb-[10rem]
+    last:mb-0;
+  }
+
+  .text-banner-images-center {
+    @apply flex
+    w-full
+    lg:hidden;
+  }
+
+  .text-banner-images-center-track {
+    @apply flex
+    shrink-0
+    gap-x-8
+    pl-8
+    w-max;
+  }
+
+  .text-banner-images-center-track img {
+    @apply h-[12.5rem]
+    w-auto;
+  }
+
+  .page-banner-masonry.page-banner.v4 {
+    @apply before:hidden
+
+    after:hidden;
+  }
+
+  .page-banner-masonry .page-banner-wrapper {
+    @apply before:content-[""]
+    before:block
+    before:absolute
+    before:top-0
+    before:left-0
+    before:w-full
+    before:h-full
+    before:z-10
+    before:bg-[linear-gradient(0deg,__rgba(29,_30,_36,_0.6)_0%,_rgba(255,_255,_255,_0)_40%)]
+
+    after:block
+    after:content-[""]
+    after:absolute
+    after:top-0
+    after:left-0
+    after:w-full
+    after:h-full
+    after:z-10
+    after:bg-[linear-gradient(180deg,_rgba(0,_0,_0,_0.6)_-20%,_rgba(0,_0,_0,_0.35)_80%)];
+  }
+
+  .page-banner-masonry .masonry {
+    @apply bg-neutral-50;
+  }
+}

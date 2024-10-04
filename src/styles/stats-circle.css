@@ -1,0 +1,70 @@
+@layer components {
+  .stats-circle {
+    @apply flex
+    flex-wrap
+    items-center
+    justify-center
+    w-full
+    max-w-[54rem]
+    mx-auto
+    pt-2
+    pb-10
+    xl:pt-3
+    xl:pb-11;
+  }
+
+  .stats-circle__item {
+    @apply inline-flex
+    flex-col
+    items-center
+    justify-center
+    w-[50%]
+    p-6
+    rounded-full
+    aspect-square
+    border
+    border-neutral-400
+    text-center
+    last:ml-0
+    max-xs:-my-2
+    xs:p-8
+    max-lg:max-w-[15rem]
+    lg:w-[33.3333%]
+    max-xl:-my-3
+    xl:w-[25%]
+    even:translate-y-8;
+  }
+
+  .stats-circle__item p + p {
+    @apply mt-0;
+  }
+
+  .stats-circle__item + .stats-circle__item {
+    @apply -ml-6
+  xs:-ml-8;
+  }
+
+  .stats-circle__item:nth-child(3n) {
+    @apply max-sm:ml-0;
+  }
+
+  @media (min-width: 704px) and (max-width: 1279.98px) {
+    .stats-circle__item:last-child {
+      @apply ml-0;
+    }
+    .stats-circle__item:last-child:nth-child(3n - 1) {
+      @apply -ml-8;
+    }
+    .stats-circle__item:last-child:nth-child(3n) {
+      @apply -ml-8;
+    }
+  }
+
+  .stats-circle__item:nth-child(odd) .stats-circle__title {
+    @apply text-primary-500;
+  }
+
+  .stats-circle__item:nth-child(even) .stats-circle__title {
+    @apply text-secondary-600;
+  }
+}

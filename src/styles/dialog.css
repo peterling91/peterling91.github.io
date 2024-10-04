@@ -1,0 +1,379 @@
+@layer base {
+  dialog {
+    @apply w-full
+    max-w-[min(100vw,_2560px)] /* Upper boundary limit */
+    shadow-lg
+    overflow-visible
+    z-[1000]
+    max-lg:m-0
+    max-lg:translate-x-[min(100vw,_2560px)] /* Upper boundary limit */
+    lg:w-[min(calc(100%_-_2rem),_67.25rem)] /* Upper boundary limit */
+    lg:rounded-2xl
+    lg:border
+    lg:border-neutral-200
+    lg:opacity-0
+    lg:overflow-hidden
+    lg:-translate-y-[5.5rem];
+  }
+
+  dialog[open] {
+    @apply animate-dialog-fadein-m
+    lg:animate-dialog-fadein;
+  }
+
+  dialog[open].closing {
+    @apply animate-dialog-fadeout-m
+    lg:animate-dialog-fadeout;
+  }
+
+  dialog::backdrop {
+    @apply bg-black
+    opacity-0
+    transition-opacity
+    duration-500;
+  }
+
+  dialog.opening::backdrop {
+    @apply opacity-75;
+  }
+
+  dialog[open]::backdrop {
+    @apply opacity-75
+    animate-dialog-bg-fadein-m
+    lg:animate-dialog-bg-fadein;
+  }
+
+  dialog[open].closing::backdrop {
+    @apply animate-dialog-bg-fadeout-m
+    lg:animate-dialog-bg-fadeout;
+  }
+
+  /* Issue List - Issue 8 
+     Updated dialog form, dialog .dialog-content */
+  dialog form,
+  dialog .dialog-content {
+    @apply flex
+    flex-col
+    w-[min(100vw,_2560px)] /* Upper boundary limit */
+    mx-auto /* Upper boundary limit */
+    bg-white
+    overflow-hidden
+    lg:w-full;
+  }
+
+  .dialog-header {
+    @apply w-full
+    flex
+    px-6
+    py-4
+    bg-neutral-50
+    gap-6
+    max-lg:border-b
+    max-lg:border-neutral-200
+    lg:bg-white
+    lg:px-8
+    lg:pt-6
+    lg:gap-8;
+  }
+
+  .dialog-side-tabs .dialog-header {
+    @apply max-lg:border-b-0;
+  }
+
+  .dialog-title {
+    @apply inline-flex
+    items-center
+    grow 
+    text-primary-500
+    font-bold
+    max-lg:text-[1.375rem];
+  }
+
+  .dialog-close-button {
+    @apply relative
+    left-2
+    top-0
+    !mt-0
+    border-0
+    text-xl
+    bg-transparent
+    lg:left-0;
+  }
+
+  @media (hover: hover) {
+    .dialog-close-button {
+      @apply [&:not([disabled])]:hover:shadow-none
+      max-lg:[&:not([disabled])]:hover:text-neutral-500;
+    }
+  }
+
+  .dialog-close-button.button-sm.button-icon {
+    @apply max-lg:w-12
+    max-lg:h-12
+    max-lg:max-w-[3rem]
+    max-lg:min-w-[3rem];
+  }
+
+  .dialog-header .dialog-close-button {
+    @apply shadow-none;
+  }
+
+  .dialog-footer {
+    @apply flex
+    justify-end
+    w-full
+    border-t
+    border-neutral-100
+    px-6
+    py-4;
+  }
+
+  .dialog-footer * + * {
+    @apply ml-4;
+  }
+
+  .dialog-footer button,
+  .dialog-footer input[type="reset"],
+  .dialog-footer input[type="submit"] {
+    @apply grow
+    shrink
+    w-full;
+  }
+
+  .dialog-body {
+    @apply flex
+    flex-col
+    grow
+    overflow-hidden;
+  }
+
+  .dialog-body-content {
+    @apply flex
+    flex-col
+    grow
+    h-full
+    p-6
+    pb-8
+    overflow-y-auto
+    overflow-x-hidden /* Added for sustainability */
+    lg:px-8
+    lg:pt-4
+    lg:pb-10;
+  }
+
+  .dialog-side-tabs .dialog-body-content,
+  .filter-form .dialog-body-content {
+    @apply pt-0;
+  }
+
+  .dialog-full-content {
+    @apply w-full
+    px-6
+    -mb-6
+    lg:px-8
+    lg:mb-0;
+  }
+
+  .dialog-body-content .dialog-full-content {
+    @apply w-[calc(100%_+_3rem)]
+    -ml-6
+    -mb-8
+    lg:w-[calc(100%_+_4rem)]
+    lg:-ml-8;
+  }
+
+  .dialog-side-tabs .dialog-full-content {
+    @apply mb-0;
+  }
+
+  .dialog-side-tabs .dialog-body-content .dialog-full-content {
+    @apply -mb-8;
+  }
+
+  .dialog-body h1,
+  .dialog-body h2,
+  .dialog-body h3,
+  .dialog-body h4,
+  .dialog-body h5,
+  .dialog-body h6,
+  .dialog-body .h1,
+  .dialog-body .h2,
+  .dialog-body .h3,
+  .dialog-body .h4,
+  .dialog-body .h5,
+  .dialog-body .h6 {
+    @apply text-neutral-700;
+  }
+
+  dialog .dropdown-content {
+    @apply z-[1100];
+  }
+
+  /*========================================
+    View full image
+  ========================================*/
+  .dialog-full-image {
+    @apply rounded-none
+    border-none
+    max-lg:touch-none
+    max-lg:w-screen
+    lg:overflow-visible;
+  }
+
+  .dialog-full-image .dialog-body-content {
+    @apply relative
+    flex
+    items-center
+    justify-center
+    p-0
+    max-lg:overflow-hidden;
+  }
+
+  .dialog-full-image form {
+    @apply max-lg:relative;
+  }
+
+  .dialog-full-image *:not(.dialog-close-button) {
+    @apply touch-none;
+  }
+
+  .dialog-full-image__image {
+    @apply flex
+    items-center
+    justify-center
+    grow
+    max-lg:absolute
+    w-full
+    h-max
+    origin-center;
+  }
+
+  .dialog-full-image__image > img {
+    @apply w-full;
+  }
+
+  .dialog-full-image .dialog-close-button {
+    @apply absolute
+    left-auto
+    right-2
+    top-2
+    z-10
+    bg-white/50
+    backdrop-blur-sm
+    shadow-none
+    max-lg:w-11
+    max-lg:h-11
+    max-lg:max-w-[2.75rem]
+    max-lg:min-w-[2.75rem]
+    lg:absolute
+    lg:-top-[1.375rem]
+    lg:-right-[1.375rem]
+    lg:backdrop-blur-none
+    lg:bg-white
+    lg:shadow-lg;
+  }
+
+  .dialog__tap-to-zoom {
+    @apply absolute
+    bg-white
+    border
+    border-neutral-200
+    text-base
+    font-bold
+    px-4
+    py-3
+    shadow-md
+    rounded-full
+    translate-y-4
+    z-10
+    lg:hidden;
+  }
+
+  dialog[open] .dialog__tap-to-zoom {
+    animation: 600ms tap-to-zoom 1900ms ease-in-out forwards;
+  }
+
+  @keyframes tap-to-zoom {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(-1rem);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(3rem);
+    }
+  }
+
+  @media (hover: hover) {
+    .dialog-full-image {
+      @apply rounded-none
+      border-0
+      overflow-visible
+      max-lg:m-auto
+      max-lg:translate-x-0;
+    }
+
+    dialog.dialog-full-image[open] {
+      @apply animate-dialog-fadein;
+    }
+
+    dialog.dialog-full-image[open].closing {
+      @apply animate-dialog-fadeout;
+    }
+
+    .dialog-full-image form,
+    .dialog-full-image .dialog-content {
+      @apply w-[calc(100%_+_0.0625rem)]
+      h-auto
+      lg:w-[calc(100%_+_0.0625rem)]
+      lg:h-auto
+      lg:bg-transparent;
+    }
+
+    .dialog-full-image form {
+      @apply static;
+    }
+
+    .dialog-full-image .dialog-body-content {
+      @apply overflow-y-auto
+      justify-start;
+    }
+
+    .dialog-full-image .dialog-close-button {
+      @apply absolute
+      -top-[1.375rem]
+      -right-[1.375rem]
+      left-auto
+      border-0
+      backdrop-blur-none
+      bg-white
+      shadow-lg
+      text-base
+      z-10
+      hover:shadow-lg
+      max-lg:w-12
+      max-lg:h-12
+      max-lg:max-w-[3rem]
+      max-lg:min-w-[3rem];
+    }
+
+    .dialog-full-image__image {
+      @apply relative;
+    }
+
+    .dialog__tap-to-zoom {
+      @apply hidden;
+    }
+
+    dialog[open] .dialog__tap-to-zoom {
+      animation: none;
+    }
+  }
+}

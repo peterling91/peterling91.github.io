@@ -1,0 +1,31 @@
+@layer components {
+  #cursor {
+    @apply pointer-events-none
+  /* mix-blend-screen */
+  /* mt-6
+  ml-4 */
+  mt-2.5
+  ml-1.5
+  fixed
+  block
+  rounded-none
+  origin-center
+  top-0
+  left-0
+  z-[1000];
+  }
+
+  #cursor.hide {
+    @apply scale-0;
+  }
+
+  #cursor span {
+    @apply absolute
+    block
+    w-5
+    h-5
+    rounded-full
+    bg-[var(--green-500)]
+    origin-center;
+  }
+}

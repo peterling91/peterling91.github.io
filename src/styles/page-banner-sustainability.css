@@ -1,0 +1,99 @@
+@layer components {
+  .page-banner.v4.sustainability {
+    @apply bg-neutral-800;
+  }
+
+  .page-banner.v4.sustainability::before,
+  .page-banner.v4.sustainability::after {
+    @apply hidden;
+  }
+
+  .page-banner.v4.sustainability .page-banner-wrapper-content {
+    @apply lg:max-w-none
+  lg:flex-row
+  lg:items-stretch
+  lg:justify-between
+  lg:py-0;
+  }
+
+  .page-banner.v4.sustainability .page-banner-title,
+  .page-banner.v4.sustainability .page-banner-description {
+    @apply lg:text-left;
+  }
+
+  .page-banner.v4.sustainability .page-banner-description {
+    @apply max-w-none;
+  }
+
+  .page-banner.v4.sustainability .page-banner-scroll-down {
+    @apply w-full
+  max-w-container-full-sm
+  mx-auto
+  lg:items-start
+  lg:pl-[7.25rem];
+  }
+
+  .page-banner.v4.sustainability .page-banner-image {
+    @apply relative
+  inline-flex
+  items-end
+  grow
+  w-full
+  h-full
+  max-w-[30rem]
+  overflow-visible
+  opacity-80
+  max-lg:top-auto
+  max-lg:bottom-0
+  lg:items-center
+  lg:justify-end
+  /* lg:min-w-[37rem] */
+  lg:max-w-[46.5rem]
+  lg:-mr-[3.75rem]
+  /* lg:mt-[5.5rem]
+  lg:-mb-[5.5rem] */
+  xl:-mr-[8rem];
+  }
+
+  .page-banner.v4.sustainability .page-banner-image img,
+  .page-banner.v4.sustainability .page-banner-image picture {
+    @apply w-full;
+  }
+
+  .page-banner.v4.sustainability .breadcrumb a {
+    @apply underline;
+  }
+
+  .page-banner-wrapper-content-text {
+    @apply flex
+  flex-col
+  items-center
+  justify-center
+  grow
+  shrink-0
+  max-w-container-sm
+  lg:max-w-[30rem]
+  lg:pr-8
+  lg:items-start
+  lg:py-10
+  xl:max-w-container-md;
+  }
+
+  .page-banner-wrapper-content-text-titles {
+    @apply flex
+  flex-col
+  justify-center
+  grow;
+  }
+
+  .page-banner-pattern {
+    @apply hidden
+  absolute
+  -top-[4.25rem]
+  left-[10%]
+  w-[80%]
+  max-w-[51.3125rem]
+  aspect-[2.84_/_1]
+  lg:block;
+  }
+}

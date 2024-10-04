@@ -1,0 +1,44 @@
+@layer base {
+  table {
+    @apply w-full text-left;
+  }
+
+  th[scope="col"],
+  .table-header {
+    @apply px-4
+    py-2
+    bg-primary-50
+    border-t
+    border-b
+    border-primary-200
+    text-primary-500
+    font-semibold
+    align-top
+    select-none;
+  }
+
+  thead.padding-lg th[scope="col"],
+  tbody.padding-lg th[scope="col"],
+  .table-header {
+    @apply py-4;
+  }
+
+  .table-header {
+    @apply w-full
+    text-left;
+  }
+
+  td,
+  th[scope="row"] {
+    @apply p-4
+    border-b
+    border-neutral-200
+    align-top
+    font-normal;
+  }
+
+  .table-responsive {
+    @apply relative
+    overflow-auto;
+  }
+}

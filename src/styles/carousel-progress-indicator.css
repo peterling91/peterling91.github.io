@@ -1,0 +1,100 @@
+@layer components {
+  .carousel-progress {
+    @apply flex
+    gap-4
+    sm:gap-12
+    max-md:grow
+    max-md:pb-8
+    xl:gap-24;
+  }
+
+  .carousel-progress__indicator {
+    --carousel-progress-percent: 0%;
+
+    @apply flex
+    flex-col
+    justify-between
+    relative
+    
+    before:content-[""]
+    before:block
+    before:absolute
+    before:w-[0.125rem]
+    before:h-full
+    before:left-[0.3125rem]
+    before:bg-neutral-300
+    before:z-0
+    
+    after:content-[""]
+    after:block
+    after:absolute
+    after:w-[0.125rem]
+    after:h-[var(--carousel-progress-percent)]
+    after:left-[0.3125rem]
+    after:bg-secondary-500
+    after:z-10;
+  }
+
+  .carousel-progress__slides {
+    @apply relative
+    grow;
+  }
+
+  .carousel-progress__item {
+    @apply absolute
+    top-0
+    left-0
+    flex
+    flex-col
+    gap-8
+    justify-between
+    w-full
+    invisible
+    z-0
+    md:flex-row
+    md:items-center
+    lg:items-end;
+  }
+
+  .carousel-progress__item:first-child {
+    @apply relative
+    visible
+    z-10;
+  }
+
+  .carousel-progress__content {
+    @apply w-full
+    max-w-[30.6875rem]
+    py-3
+    select-none
+    md:py-8;
+  }
+
+  .carousel-progress__image {
+    @apply w-full
+    max-w-[20rem]
+    aspect-[0.9733_/_1]
+    rounded-full
+    overflow-hidden
+    max-md:hidden
+    lg:max-w-[29.625rem];
+  }
+
+  .carousel-progress__image img {
+    @apply w-full
+    object-cover
+    object-center;
+  }
+}
+
+
+.carousel-progress__indicator__item {
+  @apply relative
+  w-3
+  h-3
+  rounded-full
+  bg-white
+  border-2
+  border-neutral-300
+  z-20;
+}

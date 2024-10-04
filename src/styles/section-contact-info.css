@@ -1,0 +1,16 @@
+@layer components {
+  .contact-info {
+    @apply flex
+    flex-wrap
+    mt-6
+    !-mb-4;
+  }
+
+  .contact-info-item {
+    @apply w-full
+    mb-6
+    space-y-2
+    sm:odd:mr-4
+    sm:w-[calc(50%_-_0.5rem)];
+  }
+}

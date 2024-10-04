@@ -1,0 +1,320 @@
+@layer components {
+  /*========================================
+    Outlined text in blue bg
+  ========================================*/
+  .floating-text-three {
+    @apply absolute
+    top-0
+    -left-3
+    flex
+    items-center
+    justify-start
+    w-full
+    z-0
+    xs:-left-6
+    lg:top-3
+    lg:left-20;
+  }
+
+  .floating-text-three label {
+    @apply inline-block
+    font-display
+    font-bold
+    text-[5rem]
+    opacity-[0.15]
+    xs:text-[9rem]
+    md:text-[10rem]
+    lg:text-[12.875rem];
+  }
+
+  @media (min-width: 489px) {
+    .floating-text-three label {
+      -webkit-text-stroke-width: 0.125rem;
+    }
+  }
+
+  /*========================================
+    Main page banner
+  ========================================*/
+  /* Zoom fix
+      Updated .#sticky-parallax-header */
+  #sticky-parallax-header {
+    @apply flex 
+    justify-center 
+    w-full
+    overflow-visible
+    shadow-[inset_0_0_1rem_0.75rem_rgba(0,_0,_0,_1)];
+  }
+
+  .scalable-banner-container {
+    @apply bg-primary-600
+    relative;
+  }
+
+  /* Fix - 29 Apr 2024
+    Updated .scalable-banner */
+  .scalable-banner {
+    @apply relative
+    w-full
+    will-change-transform
+    overflow-hidden
+    z-10
+    max-md:min-h-[calc(100vh_-_4.25rem)]
+    md:absolute
+    
+    /* before:content-[""]
+    before:block
+    before:absolute
+    before:-top-1
+    before:-left-1
+    before:w-[calc(100%_+_0.5rem)]
+    before:h-[calc(100%_+_0.5rem)]
+    before:z-10
+    before:bg-[linear-gradient(0deg,_rgba(0,_0,_0,_0.40)_0%,_rgba(0,_0,_0,_0.08)_33.86%)]
+    max-md:before:hidden */
+    
+    after:content-[""]
+    after:absolute
+    after:-top-1
+    after:-left-1
+    after:w-[calc(100%_+_0.5rem)]
+    after:h-[calc(100%_+_0.5rem)]
+    after:z-10
+    after:block
+    after:bg-[linear-gradient(180deg,_rgba(0,_0,_0,_0.70)_0%,_rgba(0,_0,_0,_0.14)_33.86%)]
+    max-md:after:hidden;
+  }
+
+  .scalable-banner img,
+  .scalable-banner video {
+    @apply w-full 
+    h-full 
+    object-cover
+    object-center;
+  }
+
+  .page-banner.v4.cd {
+    @apply absolute 
+    top-0
+    h-full
+    bg-transparent
+    md:before:hidden
+    md:after:hidden;
+  }
+
+  .page-banner-sub {
+    @apply relative
+    max-w-container-full-sm-p
+    px-6
+    py-14
+    mx-auto
+    z-10
+    md:pb-0;
+  }
+
+  .secondary-video-mobile {
+    @apply relative
+    block
+    w-full
+    my-6
+    z-0
+    md:hidden;
+  }
+
+  .page-banner-sub .floating-text-container {
+    @apply w-full
+    relative;
+  }
+
+  /* Zoom fix
+      Updated .page-banner-sub .floating-text-one */
+  .page-banner-sub .floating-text-one {
+    @apply relative
+    w-full
+    max-w-[16.5rem]
+    font-heading
+    text-h4-sm
+    text-white
+    font-bold
+    leading-tight
+    z-10
+    sm:text-h4
+    sm:max-w-[26rem]
+    xl:ml-[7rem];
+
+    text-shadow: 0 0.5rem 2.5rem rgb(0 0 0 / 0.5);
+  }
+
+  /* Zoom fix
+    Updated .page-banner-sub .floating-text-one */
+  .page-banner-sub .floating-text-two {
+    @apply relative
+    w-full
+    ml-auto
+    grid
+    gap-3.5
+    z-10
+    md:max-w-[19rem]
+    md:pb-[8.3125rem]
+    md:mt-[18rem]
+    xl:mt-[6rem];
+
+    text-shadow: 0 0.25rem 1.5rem rgb(0 0 0 / 0.4);
+  }
+
+  .page-banner-sub .floating-text-two .title {
+    @apply font-heading
+    text-h6-sm
+    text-white
+    font-bold
+    leading-tight
+    sm:text-h6;
+  }
+
+  .page-banner-sub .floating-text-two .detail label {
+    @apply block
+    text-white;
+  }
+
+  .page-banner-sub .floating-text-two .detail span {
+    @apply block
+    text-semantic-corn
+    font-bold;
+  }
+
+  .page-banner-sub .floating-text-two .banner-button {
+    @apply mt-4;
+  }
+
+  .page-banner-sub .floating-text-two .line-border {
+    @apply bg-white/30
+    w-full
+    h-[0.0625rem];
+  }
+
+  .page-banner-sub .floating-text-three {
+    @apply justify-end
+    -top-15
+    left-auto
+    -right-8
+    xs:justify-start
+    xs:left-12
+    xs:right-auto
+    xs:-top-20
+    md:top-auto
+    md:justify-end
+    md:left-auto
+    md:-right-12
+    md:bottom-[18rem]
+    lg:top-auto
+    lg:bottom-[17rem]
+    xl:-right-14
+    xl:bottom-18
+    xl:left-auto;
+  }
+
+  /*========================================
+    Overflow Section
+  ========================================*/
+  .cd-overflow-section {
+    @apply w-full
+    mx-auto
+    pt-14
+    pb-8
+    px-6 
+    bg-white 
+    z-30
+    md:relative
+    md:-top-16
+    md:-mb-16
+    md:max-w-[62.5rem]
+    md:px-18
+    md:pt-22
+    md:pb-11
+    
+    before:content-[""]
+    before:hidden
+    before:absolute
+    before:top-0
+    before:left-0
+    before:w-[min(100vw,_2560px)] /* Upper boundary limit */
+    before:mx-auto /* Upper boundary limit */
+    before:h-full
+    before:-z-[1]
+    before:bg-white
+    md:before:block;
+  }
+
+  .overflow-section-text {
+    @apply mb-6
+    max-w-[49rem]
+    font-heading
+    text-lg 
+    leading-6
+    md:mb-14  
+    md:text-2xl  
+    md:leading-10;
+  }
+
+  .overflow-section-alt-text {
+    @apply font-heading
+    text-red-600 
+    max-w-[49rem]
+    font-bold 
+    text-[1.25rem]
+    leading-6
+    md:leading-8 
+    md:text-xl;
+  }
+
+  /*========================================
+    Accordion section
+  ========================================*/
+
+  .accordion-content .paragraph-2.variant-2 {
+    @apply !mt-0 !mb-6;
+  }
+
+  /*========================================
+    Course outline scroller section
+  ========================================*/
+  .scroller-section-content {
+    @apply max-w-container-p mx-auto relative py-0 px-6;
+  }
+
+  .scroller-section-content h6 {
+    @apply font-heading text-primary-500 text-xl font-bold leading-8;
+  }
+
+  .course-detail-card {
+    @apply p-0
+    m-0
+    bg-white
+    rounded-xl
+    md:bg-primary-50
+    md:px-6
+    md:py-8 
+    md:mt-4
+    md:mb-8;
+  }
+
+  .course-detail-card:last-of-type {
+    @apply !mb-11;
+  }
+
+  .course-detail-card .badge-row {
+    @apply flex flex-wrap max-w-full gap-3 md:gap-4 mt-4 mb-10 md:mb-12;
+  }
+
+  .course-detail-card .badge.bigger-badge .badge-row {
+    @apply max-sm:grid;
+  }
+
+  .course-detail-card label {
+    @apply font-heading text-neutral-800 text-base font-bold leading-7;
+  }
+
+  .unique-clamp {
+    @apply line-clamp-4;
+  }
+}
