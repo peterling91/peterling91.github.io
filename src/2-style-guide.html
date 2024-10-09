@@ -1,0 +1,1266 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Examples and code samples of UI components used in this site"
+    />
+
+    <title>NYP | Style guide</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../dist/assets/favicon.png" />
+
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@700&display=swap"
+      rel="stylesheet"
+      crossorigin
+    />
+
+    <!-- Font awesome (icons) -->
+    <script
+      src="https://kit.fontawesome.com/81b5c79896.js"
+      crossorigin
+      async
+    ></script>
+
+    <!-- Lottie player -->
+    <script
+      src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+      crossorigin
+      async
+    ></script>
+
+    <!-- CSS -->
+    <link href="../dist/index.css" rel="stylesheet" />
+
+    <!-- JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"
+      crossorigin
+      async
+    ></script>
+    <script src="../dist/index.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- Section: Typography -->
+      <section>
+        <div class="flex p-8 gap-4 bg-neutral-700 text-white">
+          <span class="inline-block pr-4 border-r border-white/75">01</span>
+          <h2 class="h5">Typography</h2>
+        </div>
+
+        <div class="flex flex-col xl:flex-row">
+          <div class="inline-flex flex-col w-full px-10 py-10 break-all">
+            <span class="display-1">Display 1</span>
+            <span class="display-2">Display 2</span>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+            <span class="caption">Caption</span>
+            <p class="paragraph-1 max-w-sm">
+              Paragraph 1 - Regular Nanyang Polytechnic's (NYP) academic schools
+              offer quality education and training through more than 40
+              full-time diploma courses and common entry programmes.
+            </p>
+            <p class="paragraph-2 max-w-sm">
+              Paragraph 2 - Regular Nanyang Polytechnic's (NYP) academic schools
+              offer quality education and training through more than 40
+              full-time diploma courses and common entry programmes.
+            </p>
+            <p class="paragraph-3 max-w-sm">
+              Paragraph 3 - Regular Nanyang Polytechnic's (NYP) academic schools
+              offer quality education and training through more than 40
+              full-time diploma courses and common entry programmes.
+            </p>
+          </div>
+          <div class="w-full px-10 py-8 bg-neutral-200">
+            <pre
+              class="rounded-2xl bg-grey p-4 overflow-auto"
+            ><code class="language-html">&lt;span class="display-1"&gt;Display 1&lt;/span&gt;
+&lt;span class="display-2"&gt;Display 2&lt;/span&gt;
+
+&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+
+&lt;span class="h1"&gt;Heading 1&lt;/span&gt;
+&lt;span class="h2"&gt;Heading 2&lt;/span&gt;
+&lt;span class="h3"&gt;Heading 3&lt;/span&gt;
+&lt;span class="h4"&gt;Heading 4&lt;/span&gt;
+&lt;span class="h5"&gt;Heading 5&lt;/span&gt;
+&lt;span class="h6"&gt;Heading 6&lt;/span&gt;
+
+&lt;span class="caption"&gt;Caption&lt;/span&gt;
+
+&lt;p class="paragraph-1"&gt;
+  Paragraph 1 - Regular Nanyang Polytechnic's (NYP) academic schools
+  offer quality education and training through more than 40 full-time
+  diploma courses and common entry programmes.
+&lt;/p&gt;
+
+&lt;p class="paragraph-2"&gt;
+  Paragraph 2 - Regular Nanyang Polytechnic's (NYP) academic schools
+  offer quality education and training through more than 40 full-time
+  diploma courses and common entry programmes.
+&lt;/p&gt;
+
+&lt;p class="paragraph-3"&gt;
+  Paragraph 3 - Regular Nanyang Polytechnic's (NYP) academic schools
+  offer quality education and training through more than 40 full-time
+  diploma courses and common entry programmes.
+&lt;/p&gt;</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Outlined text -->
+      <section>
+        <div class="flex p-8 gap-4 bg-neutral-700 text-white">
+          <span class="inline-block pr-4 border-r border-white/75">02</span>
+          <h2 class="h5">Outlined text</h2>
+        </div>
+
+        <div class="flex flex-col lg:flex-row break-all">
+          <div class="flex flex-col w-full px-10 py-10">
+            <div class="flex py-2 gap-4 border-b border-neutral-800">
+              <span
+                class="inline-block pr-4 border-r text-xs border-neutral-800"
+                >02.1</span
+              >
+              <h3 class="caption">Black outline</h3>
+            </div>
+            <span class="display-1 text-outline">Display 1</span>
+            <span class="display-2 text-outline">Display 2</span>
+          </div>
+          <div
+            class="flex flex-col w-full px-10 py-10 bg-neutral-600 text-white"
+          >
+            <div class="flex py-2 gap-4 border-b border-white">
+              <span class="inline-block pr-4 border-r text-xs border-white"
+                >02.2</span
+              >
+              <h3 class="caption">White outline</h3>
+            </div>
+            <span class="display-1 text-outline outline-white">Display 1</span>
+            <span class="display-2 text-outline outline-white">Display 2</span>
+          </div>
+        </div>
+        <div class="px-10 py-8 bg-neutral-200">
+          <pre
+            class="rounded-2xl bg-grey p-4 overflow-auto"
+          ><code class="language-html">&lt;!-- Default outline --&gt;
+&lt;span class="display-1 text-outline"&gt;Display 1&lt;/span&gt;
+
+&lt;!-- White outline: add class "outline-white" --&gt;
+&lt;span class="display-1 text-outline outline-white"&gt;Display 1&lt;/span&gt;</code></pre>
+        </div>
+      </section>
+
+      <!-- Section: Buttons -->
+      <section>
+        <div class="flex p-8 gap-4 bg-neutral-700 text-white">
+          <span class="inline-block pr-4 border-r border-white/75">03</span>
+          <h2 class="h5">Buttons</h2>
+        </div>
+
+        <div class="px-10 py-10 bg-neutral-100">
+          <div class="flex py-2 gap-4 border-b border-neutral-800">
+            <span class="inline-block pr-4 border-r text-xs border-neutral-800"
+              >03.1</span
+            >
+            <h3 class="caption">Default</h3>
+          </div>
+          <div class="flex flex-wrap pt-10 pb-12 gap-2">
+            <button class="button-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-grey-dark">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-ghost-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-ghost-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-ghost-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-ghost-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-ghost-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-ghost-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-ghost-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-ghost-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-primary border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-secondary border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-tertiary border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-grey border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-grey-dark button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-ghost-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-ghost-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-ghost-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-ghost-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-ghost-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-ghost-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-ghost-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-ghost-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-primary button-icon border-0">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-secondary button-icon border-0">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-tertiary button-icon border-0">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-white-grey button-icon border-0">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="flex flex-wrap pb-8 space-x-6">
+            <button class="button-text-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button class="button-text-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button class="button-text-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button class="button-text-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button class="button-text-white">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+          <pre
+            class="rounded-2xl bg-grey p-4 overflow-auto"
+          ><code class="language-html">&lt;!-- Solid button --&gt;
+&lt;button class="button-primary"&gt;
+  &lt;i class="fa-regular fa-plus" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;span&gt;Button&lt;/span&gt;
+  &lt;i class="fa-solid fa-caret-down" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;!-- Icon button: add "button-icon" classs --&gt;
+&lt;button class="button-primary button-icon"&gt;
+  &lt;span class="visually-hidden"&gt;Add&lt;/span&gt;
+  &lt;i class="fa-regular fa-plus" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;!-- Text button --&gt;
+&lt;button class="button-text-primary"&gt;
+  &lt;i class="fa-regular fa-plus" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;span&gt;Button&lt;/span&gt;
+  &lt;i class="fa-regular fa-arrow-right" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+&lt;!-- No border: add class "border-0"  --&gt;
+&lt;button class="button-white-primary border-0"&gt;
+  &lt;i class="fa-regular fa-plus" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;span&gt;Button&lt;/span&gt;
+  &lt;i class="fa-solid fa-caret-down" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;
+
+ALL CLASSES
+SOLID: button-primary  /  button-secondary  /  button-grey /  button-grey-dark
+GHOST: button-ghost-primary  /  button-ghost-secondary  /  button-ghost-grey
+WHITE GHOST: button-white-ghost-primary  /  button-white-ghost-secondary  /  button-white-ghost-grey
+WHITE: button-white-primary  /  button-white-secondary  /  button-white-grey
+TEXT: button-text-primary  /  button-text-secondary  /  button-text-grey  /  button-text-white</code></pre>
+        </div>
+
+        <div class="px-10 py-10 bg-neutral-200">
+          <div class="flex py-2 gap-4 border-b border-neutral-800">
+            <span class="inline-block pr-4 border-r text-xs border-neutral-800"
+              >03.2</span
+            >
+            <h3 class="caption">Small</h3>
+          </div>
+          <div class="flex flex-wrap pt-10 pb-12 gap-2">
+            <button class="button-sm button-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-grey-dark">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-ghost-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-ghost-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-ghost-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-ghost-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-ghost-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-ghost-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-ghost-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-ghost-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-primary border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-secondary border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-tertiary border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-grey border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-grey-dark button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-ghost-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-ghost-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-ghost-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-ghost-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-ghost-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-ghost-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-ghost-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-ghost-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-primary button-icon border-0">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button
+              class="button-sm button-white-secondary button-icon border-0"
+            >
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button
+              class="button-sm button-white-tertiary button-icon border-0"
+            >
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button class="button-sm button-white-grey button-icon border-0">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+          <pre
+            class="rounded-2xl bg-grey p-4 overflow-auto"
+          ><code class="language-html">&lt;!-- Add "button-sm" class --&gt;
+&lt;button class="button-primary button-sm"&gt;
+  &lt;i class="fa-regular fa-plus" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;span&gt;Button&lt;/span&gt;
+  &lt;i class="fa-solid fa-caret-down" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+
+        <div class="px-10 py-10 bg-neutral-100">
+          <div class="flex py-2 gap-4 border-b border-neutral-800">
+            <span class="inline-block pr-4 border-r text-xs border-neutral-800"
+              >03.3</span
+            >
+            <h3 class="caption">Disabled</h3>
+          </div>
+          <div class="flex flex-wrap pt-10 pb-12 gap-2">
+            <button disabled class="button-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-grey-dark">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-ghost-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-ghost-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-ghost-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-ghost-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-ghost-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-ghost-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-ghost-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-ghost-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-primary border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-secondary border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-tertiary border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-grey border-0">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-solid fa-caret-down" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-grey-dark button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-ghost-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-ghost-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-ghost-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-ghost-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-ghost-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-ghost-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-ghost-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-ghost-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-primary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-secondary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-tertiary button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-grey button-icon">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-primary button-icon border-0">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button
+              disabled
+              class="button-white-secondary button-icon border-0"
+            >
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-tertiary button-icon border-0">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-white-grey button-icon border-0">
+              <span class="visually-hidden">Add</span>
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="flex flex-wrap pb-8 space-x-6">
+            <button disabled class="button-text-primary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-text-secondary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-text-tertiary">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-text-grey">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button disabled class="button-text-white">
+              <i class="fa-regular fa-plus" aria-hidden="true"></i>
+              <span>Button</span>
+              <i class="fa-regular fa-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+          <pre
+            class="rounded-2xl bg-grey p-4 overflow-auto"
+          ><code class="language-html">&lt;!-- Add "disabled" attribute --&gt;
+&lt;button class="button-primary" disabled&gt;
+  &lt;i class="fa-regular fa-plus" aria-hidden="true"&gt;&lt;/i&gt;
+  &lt;span&gt;Button&lt;/span&gt;
+  &lt;i class="fa-solid fa-caret-down" aria-hidden="true"&gt;&lt;/i&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+
+        <div class="px-10 py-10 bg-neutral-100">
+          <div class="flex py-2 gap-4 border-b border-neutral-800">
+            <span class="inline-block pr-4 border-r text-xs border-neutral-800"
+              >03.4</span
+            >
+            <h3 class="caption">External link</h3>
+          </div>
+          <div class="flex flex-wrap pt-10 pb-12 gap-2">
+            <button class="button-primary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-secondary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-tertiary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-grey external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-grey-dark external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-ghost-primary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-ghost-secondary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-ghost-tertiary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-ghost-grey external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-ghost-primary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-ghost-secondary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-ghost-tertiary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-ghost-grey external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-primary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-secondary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-tertiary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-grey external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-primary border-0 external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-secondary border-0 external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-tertiary border-0 external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-white-grey border-0 external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-primary button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-secondary button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-tertiary button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-grey button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-grey-dark button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-ghost-primary button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-ghost-secondary button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-ghost-tertiary button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-ghost-grey button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button
+              class="button-white-ghost-primary button-icon external-link"
+            >
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button
+              class="button-white-ghost-secondary button-icon external-link"
+            >
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button
+              class="button-white-ghost-tertiary button-icon external-link"
+            >
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-white-ghost-grey button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-white-primary button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-white-secondary button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-white-tertiary button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button class="button-white-grey button-icon external-link">
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button
+              class="button-white-primary button-icon border-0 external-link"
+            >
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button
+              class="button-white-secondary button-icon border-0 external-link"
+            >
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button
+              class="button-white-tertiary button-icon border-0 external-link"
+            >
+              <span class="visually-hidden">Button</span>
+            </button>
+            <button
+              class="button-white-grey button-icon border-0 external-link"
+            >
+              <span class="visually-hidden">Button</span>
+            </button>
+          </div>
+          <div class="flex flex-wrap pb-8 space-x-6">
+            <button class="button-text-primary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-text-secondary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-text-tertiary external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-text-grey external-link">
+              <span>Button</span>
+            </button>
+            <button class="button-text-white external-link">
+              <span>Button</span>
+            </button>
+          </div>
+          <pre
+            class="rounded-2xl bg-grey p-4 overflow-auto"
+          ><code class="language-html">&lt;!-- Add "external-link" class --&gt;
+&lt;a href="#" class="button-primary external-link"&gt;
+  &lt;span&gt;Button&lt;/span&gt;
+&lt;/a&gt;</code></pre>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-wrapper">
+          <!-- Social links -->
+          <div class="footer-social-links">
+            <span class="footer-links-header">Connect with NYP</span>
+            <ul>
+              <li>
+                <a class="footer-social-items" href="#">
+                  <span class="visually-hidden">Facebook</span>
+                  <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a class="footer-social-items" href="#">
+                  <span class="visually-hidden">Instagram</span>
+                  <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a class="footer-social-items" href="#">
+                  <span class="visually-hidden">X (Twitter)</span>
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a class="footer-social-items" href="#">
+                  <span class="visually-hidden">TikTok</span>
+                  <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a class="footer-social-items" href="#">
+                  <span class="visually-hidden">Youtube</span>
+                  <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li>
+                <a class="footer-social-items" href="#">
+                  <span class="visually-hidden">LinkedIn</span>
+                  <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-top-links">
+            <!-- Link (column 1) -->
+            <div class="footer-col footer-accordion">
+              <button
+                class="footer-links-header footer-accordion-button"
+                aria-expanded="false"
+              >
+                About us
+              </button>
+              <div class="footer-accordion-content">
+                <ul class="footer-links">
+                  <li>
+                    <a class="footer-links-item" href="#">About NYP</a>
+                  </li>
+                  <li>
+                    <a class="footer-links-item" href="#">Our people</a>
+                  </li>
+                  <li>
+                    <a class="footer-links-item" href="#">Media centre</a>
+                  </li>
+                  <li>
+                    <a class="footer-links-item external-link" href="#"
+                      >Careers</a
+                    >
+                  </li>
+                  <li>
+                    <a class="footer-links-item" href="#">Give</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Link (column 2) -->
+            <div class="footer-col footer-accordion">
+              <button
+                class="footer-links-header footer-accordion-button"
+                aria-expanded="false"
+              >
+                Contact
+              </button>
+              <div class="footer-accordion-content">
+                <ul class="footer-links">
+                  <li>
+                    <a class="footer-links-item" href="#">Contact us</a>
+                  </li>
+                  <li>
+                    <a class="footer-links-item external-link" href="#">FAQ</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Link (column 3) -->
+            <div class="footer-col footer-accordion">
+              <button
+                class="footer-links-header footer-accordion-button"
+                aria-expanded="false"
+              >
+                Related links
+              </button>
+              <div class="footer-accordion-content">
+                <ul class="footer-links">
+                  <li>
+                    <a class="footer-links-item external-link" href="#"
+                      >Library portal</a
+                    >
+                  </li>
+                  <li>
+                    <a class="footer-links-item external-link" href="#"
+                      >Student portal</a
+                    >
+                  </li>
+                  <li>
+                    <a class="footer-links-item external-link" href="#"
+                      >Staff portal</a
+                    >
+                  </li>
+                  <li>
+                    <a class="footer-links-item external-link" href="#"
+                      >Adjunct staff portal</a
+                    >
+                  </li>
+                  <li>
+                    <a class="footer-links-item external-link" href="#"
+                      >NYP International</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Link (column 4) -->
+            <div class="footer-col footer-accordion">
+              <button
+                class="footer-links-header footer-accordion-button"
+                aria-expanded="false"
+              >
+                View as
+              </button>
+              <div class="footer-accordion-content">
+                <ul class="footer-links">
+                  <li>
+                    <a class="footer-links-item" href="#">Student</a>
+                  </li>
+                  <li>
+                    <a class="footer-links-item" href="#">Adult learner</a>
+                  </li>
+                  <li>
+                    <a class="footer-links-item" href="#">Alumni</a>
+                  </li>
+                  <li>
+                    <a class="footer-links-item" href="#">Industry</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-wrapper">
+          <!-- Links -->
+          <ul class="footer-links">
+            <li>
+              <a class="footer-links-item" href="#">Privacy statement</a>
+            </li>
+            <li>
+              <a class="footer-links-item" href="#">Terms of use</a>
+            </li>
+            <li>
+              <a class="footer-links-item" href="#">Copyright & disclaimer</a>
+            </li>
+            <li>
+              <a class="footer-links-item external-link" href="#"
+                >Report vulnerability</a
+              >
+            </li>
+            <li>
+              <a class="footer-links-item" href="#">Sitemap</a>
+            </li>
+          </ul>
+
+          <!-- Copyright -->
+          <div class="footer-copyright">
+            <span>Copyright © 2023 NYP, Singapore. All rights reserved.</span>
+            <span>Last Updated 09 September 2023</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

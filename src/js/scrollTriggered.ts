@@ -5,7 +5,7 @@ import { gsap, ScrollTrigger, Flip, ScrollToPlugin } from "./registerGsap";
 import Lenis from "lenis";
 
 import { disableScroll, enableScroll, setLenisScroll } from "./utilites";
-import { isTouch, lenisMain } from ".";
+import { isTouch, lenisMain, disableFullHeight } from ".";
 
 export const scrollTriggered = (
   disableFullHeight: HTMLElement | null,
@@ -1046,6 +1046,7 @@ export const parallax = () => {
           start: start ? start : `top bottom`,
           end: end ? end : `bottom top`,
           scrub: 1,
+          anticipatePin: 1,
         });
 
         // let scrollAnimation = createScrollAnimation();
@@ -1074,6 +1075,7 @@ export const parallax = () => {
         start: start ? start : `top bottom`,
         end: end ? end : `bottom top`,
         scrub: 1,
+        anticipatePin: 1,
       });
 
       // let scrollAnimation = createScrollAnimation();
@@ -1117,11 +1119,8 @@ const smoothScrollAnimation = () => {
 
       setTimeout(() => {
         ScrollTrigger.refresh();
-        // ScrollTrigger.update();
-      }, 1000);
+      }, 300);
     };
-
-    resizeScroll();
 
     window.addEventListener("load", resizeScroll);
 
@@ -1129,7 +1128,6 @@ const smoothScrollAnimation = () => {
       if (window.innerWidth !== windowWidthPrev && !isTouch) {
         resizeScroll();
       }
-
       windowWidthPrev = window.innerWidth;
     });
 
@@ -1269,19 +1267,31 @@ export const pageBannerCircleAnimation = () => {
   if (!container) return;
 
   masks.forEach((mask) => {
-    gsap.delayedCall(0.5, () => {});
+    const media = gsap.matchMedia();
     const animation = gsap.timeline();
 
     animation.to(mask, {
       "--page-banner-mask-percent": () => "0%",
     });
 
-    ScrollTrigger.create({
-      animation: animation,
-      trigger: container,
-      start: `top top`,
-      end: `bottom -65%`,
-      scrub: 1,
+    media.add("(max-width: 1023.98px)", () => {
+      ScrollTrigger.create({
+        animation: animation,
+        trigger: container,
+        start: `top top`,
+        end: `bottom 0%`,
+        scrub: 1,
+      });
+    });
+
+    media.add("(min-width: 1024px)", () => {
+      ScrollTrigger.create({
+        animation: animation,
+        trigger: container,
+        start: `top top`,
+        end: `bottom -65%`,
+        scrub: 1,
+      });
     });
   });
 };
@@ -1961,22 +1971,70 @@ export const sustainabilityReport = () => {
       targetContainer?.getAttribute("data-target-bg");
     if (targetBackgroundValue) targetBackground = targetBackgroundValue;
 
+    if (targetContainer)
+      gsap.set(targetContainer, {
+        marginTop: window.innerHeight * -1.1,
+        position: "relative",
+        "--card-with-pop-up-image-container-display": "block",
+      });
+
+    if (target)
+      gsap.set(target, {
+        opacity: 0,
+        y: "-6.25rem",
+        backgroundColor: "rgba(227, 240, 231, 0)",
+      });
+
     // Circle transition
-    if (circle) {
+    if (circle && target) {
+      const circleMedia = gsap.matchMedia();
+
+      if (!circleLg) {
+        circleMedia.add("(max-width: 1023.98px)", () => {
+          gsap.set(circle, {
+            marginTop: "-9rem",
+          });
+        });
+
+        circleMedia.add("(min-width: 1024px)", () => {
+          gsap.set(circle, {
+            marginTop: "-6rem",
+          });
+        });
+      }
+
       const transitionAnimation = gsap.timeline();
 
       transitionAnimation.to(circle, {
-        scale: () => {
+        width: () => {
+          if (target)
+            return Math.round(
+              Math.max(window.innerWidth * 1.5, target.offsetHeight * 1.5),
+            );
           return Math.round(
-            Math.max(
-              (window.innerWidth / circle.offsetWidth) * 1.5,
-              (container.offsetHeight / circle.offsetWidth) * 1.5,
-            ),
+            Math.max(window.innerWidth * 1.5, container.offsetHeight * 1.5),
+          );
+        },
+        height: () => {
+          if (target)
+            return Math.round(
+              Math.max(window.innerWidth * 1.5, target.offsetHeight * 1.5),
+            );
+          return Math.round(
+            Math.max(window.innerWidth * 1.5, container.offsetHeight * 1.5),
+          );
+        },
+        top: () => {
+          if (target)
+            return Math.round(
+              Math.max(window.innerWidth * -0.75, target.offsetHeight * -0.75),
+            );
+          return Math.round(
+            Math.max(window.innerWidth * -0.75, container.offsetHeight * -0.75),
           );
         },
         ease: "power1.inOut",
         duration: 0.7,
-        force3D: false,
       });
 
       ScrollTrigger.create({
@@ -1992,48 +2050,48 @@ export const sustainabilityReport = () => {
         },
         toggleActions: "play none none reverse",
         onEnter: () => {
-          if (target) {
-            disableScroll();
+          gsap.set(targetContainer, { zIndex: 70 });
 
-            gsap.set(targetContainer, { zIndex: 70 });
+          gsap.to(target, {
+            opacity: 1,
+            y: 0,
+            "--sustainability-home-report-percent": "100%",
+            duration: 0.7,
+            ease: "power1.inOut",
+          });
 
-            gsap.to(target, {
-              opacity: 1,
-              y: 0,
-              "--sustainability-home-report-percent": "100%",
-              duration: 0.7,
-              ease: "power1.inOut",
-            });
-
-            gsap.to(target, {
-              backgroundColor: targetBackground,
-              delay: 0.5,
-              duration: 0.3,
-              ease: "power4.out",
-            });
-
-            setTimeout(() => {
-              enableScroll();
-            }, 400);
-          }
+          gsap.to(target, {
+            backgroundColor: targetBackground,
+            delay: 0.4,
+            duration: 0.3,
+            ease: "power4.out",
+          });
         },
         onEnterBack: () => {
           gsap.to(target, {
             opacity: 0,
             y: "6.25rem",
-            backgroundColor: "rgba(227, 240, 231, 0)",
             "--sustainability-home-report-percent": "0%",
+            duration: 0.7,
+            ease: "power1.inOut",
+          });
+
+          gsap.to(target, {
+            backgroundColor: "rgba(227, 240, 231, 0)",
             duration: 0.3,
             ease: "power4.out",
           });
 
           setTimeout(() => {
             gsap.set(targetContainer, { zIndex: 10 });
-          }, 300);
+          }, 700);
         },
       });
 
       if (circleLg) {
+        if (!disableFullHeight)
+          gsap.set(container, { height: window.innerHeight * 1.5 });
+
         const circleLgAnimation = gsap.timeline();
 
         circleLgAnimation.to(circleLg, {
@@ -2123,9 +2181,9 @@ export const sustainabilityLivingLabDiagram = () => {
   const point2 = `top -10%`;
   const point2b = `top -50%`;
   const point3 = `top -100%`;
-  const point4 = `top -170%`;
-  const point5 = `top -180%`;
-  const point6 = `top -240%`;
+  const point4 = `top -190%`;
+  const point5 = `top -200%`;
+  const point6 = `top -250%`;
 
   containers.forEach((container) => {
     const wrapper: HTMLElement | null = container.querySelector(
@@ -2289,6 +2347,15 @@ export const sustainabilityLivingLabDiagram = () => {
                 ease: "power1.inOut",
               });
             },
+            onLeaveBack: () => {
+              gsap.to(circle, {
+                backgroundColor: () => "#023e83",
+                borderColor: () => "#3cffc3",
+                opacity: () => 0,
+                duration: 0.3,
+                ease: "power1.inOut",
+              });
+            },
           });
 
           ScrollTrigger.create({
@@ -2300,9 +2367,11 @@ export const sustainabilityLivingLabDiagram = () => {
             snap: 1,
             onEnter: () => {
               if (target) {
+                disableScroll();
+
                 if (lenisMain) {
                   lenisMain.scrollTo(
-                    target.getBoundingClientRect().top + window.scrollY,
+                    target.getBoundingClientRect().top + window.scrollY + 2,
                     {
                       duration: 1.5,
                       lock: true,
@@ -2314,9 +2383,11 @@ export const sustainabilityLivingLabDiagram = () => {
                   gsap.to(window, {
                     duration: 1.5,
                     scrollTo:
-                      target.getBoundingClientRect().top + window.scrollY,
+                      target.getBoundingClientRect().top + window.scrollY + 2,
                   });
                 }
+
+                gsap.delayedCall(1.5, () => enableScroll());
               }
             },
           });
@@ -2442,6 +2513,16 @@ export const sustainabilityLivingLabSection = () => {
   const containers: NodeListOf<HTMLElement> =
     document.querySelectorAll(".three-circles");
 
+  if (containers.length <= 0) return;
+
+  window.addEventListener("load", () => {
+    gsap.to(window, {
+      duration: 0.1,
+      scrollTo: 0,
+    });
+    window.history.scrollRestoration = "manual";
+  });
+
   containers.forEach((container) => {
     const sections: NodeListOf<HTMLElement> = container.querySelectorAll(
       ".three-circles__section__wrapper--sub",
@@ -2451,7 +2532,7 @@ export const sustainabilityLivingLabSection = () => {
       const circleLg = section.querySelector(
         ".three-circles__section__circle--lg",
       );
-      const image = section.querySelector(
+      const image: HTMLElement | null = section.querySelector(
         ".three-circles__section__image__image",
       );
       const transitionCircle: HTMLElement | null = section.querySelector(
@@ -2602,7 +2683,7 @@ export const sustainabilityLivingLabSection = () => {
       }
 
       // Transition
-      if (transitionCircle && target) {
+      if (transitionCircle && target && image) {
         const containerHeight = Math.max(
           section.offsetHeight,
           window.innerHeight,
@@ -2611,15 +2692,27 @@ export const sustainabilityLivingLabSection = () => {
         const transitionAnimation = gsap.timeline();
 
         transitionAnimation.to(transitionCircle, {
-          scale: () =>
-            Math.round(
-              Math.max(
-                (window.innerWidth / transitionCircle.offsetWidth) * 2,
-                (containerHeight / transitionCircle.offsetWidth) * 3,
-              ),
-            ),
+          // scale: () =>
+          //   Math.round(
+          //     Math.max(
+          //       (window.innerWidth / transitionCircle.offsetWidth) * 2,
+          //       (containerHeight / transitionCircle.offsetWidth) * 3,
+          //     ),
+          //   ),
+          width: () =>
+            Math.round(Math.max(window.innerWidth * 2, containerHeight * 2)),
+          height: () =>
+            Math.round(Math.max(window.innerWidth * 2, containerHeight * 2)),
+          x: () =>
+            (Math.round(Math.max(window.innerWidth * 2, containerHeight * 2)) -
+              window.innerWidth) /
+              -2 -
+            transitionCircle.getBoundingClientRect().left,
+          y: () =>
+            (Math.round(Math.max(window.innerWidth * 2, containerHeight * 2)) -
+              window.innerHeight) /
+            -2,
           ease: "none",
-          force3D: true,
         });
 
         ScrollTrigger.create({
@@ -2628,12 +2721,13 @@ export const sustainabilityLivingLabSection = () => {
           start: `top -100%`,
           end: `top -180%`,
           scrub: 0.5,
-          snap: 1,
           onEnter: () => {
             if (target) {
+              disableScroll();
+
               if (lenisMain) {
                 lenisMain.scrollTo(
-                  target.getBoundingClientRect().top + window.scrollY,
+                  target.getBoundingClientRect().top + window.scrollY + 2,
                   {
                     duration: 1.5,
                     lock: true,
@@ -2644,9 +2738,12 @@ export const sustainabilityLivingLabSection = () => {
               } else {
                 gsap.to(window, {
                   duration: 1.5,
-                  scrollTo: target.getBoundingClientRect().top + window.scrollY,
+                  scrollTo:
+                    target.getBoundingClientRect().top + window.scrollY + 2,
                 });
               }
+
+              gsap.delayedCall(1.5, () => enableScroll());
             }
           },
         });

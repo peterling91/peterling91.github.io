@@ -1,5 +1,5 @@
 // GSAP (plugin): https://gsap.com/docs/v3/
-import { gsap , Flip} from "./registerGsap";
+import { gsap, Flip } from "./registerGsap";
 
 const SLIDE_DURATION = 1500;
 const TRANSITION_DURATION = 300;
@@ -139,7 +139,7 @@ const showSlide = (
       Flip.from(state, {
         ease: "power2.inOut",
         absolute: true,
-        scale: true,
+
         duration: 0.8,
         delay: delay ? delay : 0,
       });
@@ -280,8 +280,6 @@ const zoomPage = () => {
   let zoomY, zoomX, zoom, windowWidth, windowHeight;
 
   const setZoom = () => {
-    // zoomBaseValue = root.style.getPropertyValue("--zoom");
-    // zoomBase = zoomBaseValue ? parseFloat(zoomBaseValue) : 1;
     windowWidth = window.innerWidth;
     windowHeight = window.innerHeight;
     zoomX = 1;
@@ -289,14 +287,7 @@ const zoomPage = () => {
 
     if (windowHeight > 768) {
       zoomY = windowHeight / 768;
-
-      // if (windowWidth > 1200) {
-      //   zoomX = windowWidth / 1200;
-      // }
-
-      // if (windowWidth > 1800) {
-      //   zoomX = windowWidth / 856;
-      // }
+      zoomX = windowWidth / 1200;
     }
 
     zoom = Math.min(zoomX, zoomY);

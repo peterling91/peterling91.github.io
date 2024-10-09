@@ -1792,15 +1792,15 @@
   ========================================*/
   .button-container {
     @apply flex
-  flex-wrap
-  items-center
-  gap-x-2
-  gap-y-6
-  !mt-8;
+    flex-wrap
+    items-center
+    gap-x-2
+    gap-y-6
+    !mt-8;
   }
 
   .button-container *[class*="button-text"] {
     @apply mx-6
-  my-2;
+    my-2;
   }
 }

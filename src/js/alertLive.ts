@@ -2,6 +2,7 @@ export const alertLive = () => {
   const alert = document.querySelector(".alert-live > div");
 
   if (!alert) return;
+  const announcement = document.querySelector(".announcement-banner");
 
   const alertMobile = document.createElement("div");
   alertMobile.classList.add("alert-information");
@@ -13,5 +14,9 @@ export const alertLive = () => {
 
   alertMobile.append(alertMobileInner);
 
-  document.body.prepend(alertMobile);
+  if (announcement) {
+    announcement.insertAdjacentElement("afterend", alertMobile);
+  } else {
+    document.body.prepend(alertMobile);
+  }
 };

@@ -1466,16 +1466,21 @@ class carouselData {
 
 export class cursorPostion {
   clientX: number;
+  clientY: number;
   deltaX: number;
   isDragging: boolean;
 
   constructor() {
     this.clientX = 0;
+    this.clientY = 0;
     this.deltaX = 0;
     this.isDragging = false;
   }
   updateClient(clientX: number) {
     this.clientX = clientX;
+  }
+  updateClientY(clientY: number) {
+    this.clientY = clientY;
   }
   updateDelta(deltaX: number) {
     this.deltaX = deltaX;
@@ -1947,6 +1952,7 @@ const carousel = (
       if (isBreakpoint(data) && isBreakpoint(data) && data.totalSlides > 1) {
         // Cache the client X coordinates
         cursor.updateClient(e.touches[0].clientX);
+        cursor.updateClientY(e.touches[0].clientY);
         cursor.updateIsDragging(true);
       }
     });
@@ -1995,6 +2001,16 @@ const carousel = (
         setTimeout(() => {
           data.updateDisableMove(false);
         }, 502);
+      }
+    });
+
+    // Prevent page from scrolling up and down while swiping through carousel
+    carousel.addEventListener("touchmove", (e) => {
+      const moveX = e.touches[0].clientX - cursor.clientX;
+      const moveY = e.touches[0].clientY - cursor.clientY;
+
+      if (Math.abs(moveX) > Math.abs(moveY)) {
+        e.preventDefault(); // Prevents vertical scroll
       }
     });
   }

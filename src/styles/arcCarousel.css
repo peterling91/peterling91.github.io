@@ -167,4 +167,9 @@
   .arc-carousel .carousel-indicator-wrapper {
     @apply lg:hidden;
   }
+
+  .arc-carousel .card-hover,
+  .arc-carousel a.card {
+    @apply [&:not([disabled])]:active:shadow-none;
+  }
 }

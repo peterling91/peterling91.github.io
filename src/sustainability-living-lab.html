@@ -346,6 +346,7 @@
       >
         <div
           class="page-banner-wrapper full-height-navbar scroll-fixed-item scroll-fade-in"
+          data-scroll-fixed-trigger="#heroBanner"
           data-scroll-fixed-start="top top"
           data-scroll-fixed-end="bottom top"
           data-scroll-fade-in-trigger="heroBanner"
@@ -403,7 +404,7 @@
                 data-scroll-fade-in-duration="0.3"
               >
                 <div
-                  class="page-banner-scroll-down-inner parallax-item max-lg:-mb-8 md:mt-16"
+                  class="page-banner-scroll-down-inner parallax-item max-lg:-mb-24 lg:mt-16"
                   data-parallax-y="-200"
                   data-parallax-trigger="#heroBanner"
                   data-parallax-start="top top"
@@ -443,13 +444,17 @@
                 data-parallax-end="top -100%"
               >
                 <source
-                  media="(max-width: 1024px)"
+                  media="(max-width: 1023.98px)"
                   srcset="../dist/assets/sustainability-greenhouse.svg"
+                />
+                <source
+                  media="(max-width: 1535.98px)"
+                  srcset="../dist/assets/sustainability-greenhouse-banner.svg"
                 />
                 <img
                   src="../dist/assets/sustainability-greenhouse.svg"
                   alt=""
-                  width="744"
+                  width="830"
                   height="601"
                 />
               </picture>
@@ -469,13 +474,11 @@
         >
           <div
             class="three-circles__intro full-height overflow-hidden scroll-fixed-item"
-            data-scroll-fixed-end="300%"
+            data-scroll-fixed-end="320%"
             data-scroll-pin-spacing="true"
           >
             <div class="max-w-container-full-sm px-6 mx-auto">
-              <div
-                class="three-circles__chart"
-              >
+              <div class="three-circles__chart">
                 <div class="three-circles__chart__item">
                   <span
                     class="paragraph-2 leading-tight text-white font-bold xl:h6"

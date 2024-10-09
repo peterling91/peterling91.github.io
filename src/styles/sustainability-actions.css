@@ -1,45 +1,61 @@
 @layer components {
+  .card-with-pop-up-image-container + * {
+    @apply z-[60];
+  }
+
   .card-with-pop-up-image-container__inner {
     @apply bg-[var(--green-100)]
-  relative;
-  }
-
-  .sustainability-home-intro + .card-with-pop-up-image-container {
-    @apply -mt-[100dvh]
-  relative;
-  }
-
-  .sustainability-home-intro
-    + .card-with-pop-up-image-container
-    .card-with-pop-up-image-container__inner {
-    @apply bg-[rgba(227,_240,_231,_0)]
-  opacity-0
-  translate-y-[6.25rem]
-  z-[60]
-  will-change-auto;
+    relative
+    z-[60];
 
     --sustainability-home-report-percent: 0%;
 
     -webkit-mask-image: radial-gradient(
-      circle at 50% 0,
+      circle at 50% 1%,
       rgba(0, 0, 0, 1) var(--sustainability-home-report-percent),
-      rgba(0, 0, 0, 0.01) var(--sustainability-home-report-percent)
+      rgba(0, 0, 0, 0.1) var(--sustainability-home-report-percent)
     );
     mask-image: radial-gradient(
-      circle at 50% 0,
+      circle at 50% 1%,
       rgba(0, 0, 0, 1) var(--sustainability-home-report-percent),
-      rgba(0, 0, 0, 0.01) var(--sustainability-home-report-percent)
+      rgba(0, 0, 0, 0.1) var(--sustainability-home-report-percent)
     );
   }
 
-  .sustainability-home-intro + .card-with-pop-up-image-container {
+  @media (min-width: 640px) {
+    .card-with-pop-up-image-container__inner {
+      -webkit-mask-image: radial-gradient(
+        circle at 50% 6.5%,
+        rgba(0, 0, 0, 1) var(--sustainability-home-report-percent),
+        rgba(0, 0, 0, 0.1) var(--sustainability-home-report-percent)
+      );
+      mask-image: radial-gradient(
+        circle at 50% 6.5%,
+        rgba(0, 0, 0, 1) var(--sustainability-home-report-percent),
+        rgba(0, 0, 0, 0.1) var(--sustainability-home-report-percent)
+      );
+    }
+  }
+
+  .card-with-pop-up-image-container {
     @apply before:content-[""]
-  before:absolute
-  before:w-full
-  before:h-full
-  before:bg-neutral-800
-  before:-z-[1]
-  before:top-[125vh];
+    before:absolute
+    before:w-full
+    before:h-full
+    before:bg-neutral-800
+    before:-z-[1]
+    before:top-[110vh];
+  }
+
+  .card-with-pop-up-image-container::before {
+    --card-with-pop-up-image-container-display: "none";
+    display: var(--card-with-pop-up-image-container-display);
+  }
+
+  [data-disable-full-height]
+  .card-with-pop-up-image-container {
+    @apply before:top-0
+    lg:before:top-0;
   }
 
   .card-with-pop-up-image {
@@ -70,9 +86,9 @@
 
   .card-with-pop-up-image__container {
     @apply absolute
-  w-0
-  h-0
-  overflow-visible;
+    w-0
+    h-0
+    overflow-visible;
   }
 
   .card-with-pop-up-image__image {
@@ -225,10 +241,10 @@
   @media (hover: hover) {
     .blue-red-cards .card {
       @apply hover:text-white
-    [&:not([disabled])]:hover:bg-primary-600
-    [&:not([disabled])]:hover:even:bg-secondary-700
-    [&:not([disabled])]:active:bg-primary-700
-    [&:not([disabled])]:active:even:bg-secondary-800;
+      [&:not([disabled])]:hover:bg-primary-600
+      [&:not([disabled])]:hover:even:bg-secondary-700
+      [&:not([disabled])]:active:bg-primary-700
+      [&:not([disabled])]:active:even:bg-secondary-800;
     }
 
     .blue-red-cards .card:not([disabled]):hover .card-description {

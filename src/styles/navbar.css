@@ -22,7 +22,7 @@
     delay-[250ms] /* Scroll fix - increase delay to 250ms */
     will-change-transform;
 
-    transition-property: background-color, border-color, box-shadow, transform;
+    transition-property: background-color, border, box-shadow, transform;
     /* transition-delay: 200ms, 200ms, 200ms, 200ms; */
   }
 
@@ -1118,7 +1118,7 @@
   @apply /* relative */
   /* -mb-[4.25rem] */
   bg-transparent
-  border-white/0
+  border-0
   shadow-none;
 }
 

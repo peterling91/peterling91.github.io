@@ -44,6 +44,7 @@ import { emptyLink } from "./links";
 import { playVideoSafari } from "./playVideoSafari";
 import { lazyloadVideo } from "./lazyload";
 import { imageSetWidthHeight } from "./imageSetWidthHeight";
+import { announcement } from "./announcement";
 
 /* Carousels */
 import { carouselAll } from "./carousel";
@@ -124,7 +125,7 @@ window.addEventListener("resize", resetLenis);
 loading(lenisMain);
 
 const body: HTMLBodyElement | null = document.querySelector("body");
-const disableFullHeight: HTMLElement | null = document.querySelector(
+export const disableFullHeight: HTMLElement | null = document.querySelector(
   "[data-disable-full-height]",
 );
 const isFirefox = navigator.userAgent.toLowerCase().includes("firefox");
@@ -164,6 +165,7 @@ alertLive();
 weGo(disableFullHeight);
 emptyLink();
 playVideoSafari();
+announcement();
 
 /* Carousels */
 carouselFull(isFirefox);
@@ -180,10 +182,7 @@ radioToggle();
 /* Scroll components */
 infiniteMarqueeScrollText();
 infiniteMarqueeScrollLogo();
-scrollTriggered(
-  disableFullHeight,
-  lenisMain
-); /* Updated for sustainability */
+scrollTriggered(disableFullHeight, lenisMain); /* Updated for sustainability */
 
 /* How you'll learn */
 pcm(); /* Updated for sustainability */

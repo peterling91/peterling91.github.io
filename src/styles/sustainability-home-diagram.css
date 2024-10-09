@@ -236,8 +236,7 @@
     --green-blob-size-md: 30rem;
     --green-blob-size: 41.8125rem;
 
-    @apply 
-    max-w-full
+    @apply max-w-full
     aspect-[1.1168_/_1]
     w-[var(--green-blob-size-sm)]
     lg:w-[var(--green-blob-size-md)]
@@ -257,17 +256,23 @@
     w-[var(--green-blob-size-sm)]
     h-[var(--green-blob-size-sm)]
     left-[calc(50dvw_-_15rem)]
-    top-[calc(30dvh_-_15rem)]
+    top-[calc(30vh_-_15rem)]
 
     lg:w-[var(--green-blob-size-md)]
     lg:h-[var(--green-blob-size-md)]
     lg:left-[calc(50dvw_-_15rem)]
-    lg:top-[calc(30dvh_-_15rem)]
+    lg:top-[calc(30vh_-_15rem)]
 
     xl:w-[var(--green-blob-size)]
     xl:h-[var(--green-blob-size)]
     xl:left-[calc(50dvw_-_20.90625rem)]
-    xl:top-[calc(30dvh_-_20.90625rem)];
+    xl:top-[calc(30vh_-_20.90625rem)];
+  }
+
+  [data-disable-full-height] .sustainability-green-blob--fixed {
+    @apply top-0
+    lg:top-0
+    xl:top-0;
   }
 
   .sustainability-green-blob--fixed .green-blob {

@@ -1,22 +1,18 @@
 @layer components {
   #cursor {
     @apply pointer-events-none
-  /* mix-blend-screen */
-  /* mt-6
-  ml-4 */
-  mt-2.5
-  ml-1.5
-  fixed
-  block
-  rounded-none
-  origin-center
-  top-0
-  left-0
-  z-[1000];
-  }
-
-  #cursor.hide {
-    @apply scale-0;
+    /* mix-blend-screen */
+    /* mt-6
+    ml-4 */
+    mt-2.5
+    ml-1.5
+    fixed
+    block
+    rounded-none
+    origin-center
+    top-0
+    left-0
+    z-[1000];
   }
 
   #cursor span {
@@ -28,4 +24,8 @@
     bg-[var(--green-500)]
     origin-center;
   }
+}
+
+#cursor.hide {
+  @apply scale-0;
 }

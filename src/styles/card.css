@@ -437,16 +437,9 @@
     duration-200;
   }
 
-  .card-hover:not([disabled]):active .card-image-text-white,
-  a.card:not([disabled]):active .card-image-text-white {
+  .card-hover:not([disabled]):hover .card-image-text-white,
+  a.card:not([disabled]):hover .card-image-text-white {
     @apply opacity-100;
-  }
-
-  @media (hover: hover) {
-    .card-hover:not([disabled]):hover .card-image-text-white,
-    a.card:not([disabled]):hover .card-image-text-white {
-      @apply opacity-100;
-    }
   }
 
   .card-image-text::before {

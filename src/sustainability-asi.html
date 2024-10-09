@@ -346,6 +346,7 @@
       >
         <div
           class="page-banner-wrapper full-height-navbar scroll-fixed-item scroll-fade-in"
+          data-scroll-fixed-trigger="#heroBanner"
           data-scroll-fixed-start="top top"
           data-scroll-fixed-end="bottom top"
           data-scroll-fade-in-trigger="heroBanner"
@@ -405,7 +406,7 @@
                 data-scroll-fade-in-duration="0.3"
               >
                 <div
-                  class="page-banner-scroll-down-inner parallax-item max-lg:-mb-8 md:mt-16"
+                  class="page-banner-scroll-down-inner parallax-item max-lg:-mb-24 lg:mt-16"
                   data-parallax-y="-200"
                   data-parallax-trigger="#heroBanner"
                   data-parallax-start="top top"
@@ -445,13 +446,17 @@
                 data-parallax-end="top -100%"
               >
                 <source
-                  media="(max-width: 1024px)"
+                  media="(max-width: 1023.98px)"
                   srcset="../dist/assets/sustainability-greenbulb.svg"
                 />
+                <source
+                  media="(max-width: 1535.98px)"
+                  srcset="../dist/assets/sustainability-greenbulb-banner.svg"
+                />
                 <img
-                  src="../dist/assets/sustainability-greenbulb-banner.svg"
+                  src="../dist/assets/sustainability-greenbulb.svg"
                   alt=""
-                  width="744"
+                  width="820"
                   height="601"
                 />
               </picture>

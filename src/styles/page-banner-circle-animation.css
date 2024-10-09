@@ -11,12 +11,12 @@
 
     -webkit-mask-image: radial-gradient(
       circle,
-      rgba(0, 0, 0, 0.01) var(--page-banner-mask-percent),
+      rgba(0, 0, 0, 0) var(--page-banner-mask-percent),
       rgba(0, 0, 0, 1) var(--page-banner-mask-percent)
     );
     mask-image: radial-gradient(
       circle,
-      rgba(0, 0, 0, 0.01) var(--page-banner-mask-percent),
+      rgba(0, 0, 0, 0) var(--page-banner-mask-percent),
       rgba(0, 0, 0, 1) var(--page-banner-mask-percent)
     );
   }

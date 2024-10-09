@@ -85,6 +85,10 @@
     max-md:after:hidden;
   }
 
+  [data-disable-full-height] .scalable-banner {
+    @apply max-md:min-h-max;
+  }
+
   .scalable-banner img,
   .scalable-banner video {
     @apply w-full 

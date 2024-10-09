@@ -85,7 +85,9 @@
     left-[31.882%]
     top-[0.125rem]
     z-[100]
-    scale-[var(--circle-transition-scale)];
+    scale-[var(--circle-transition-scale)]
+    will-change-transform
+    origin-center;
 }
 
 @media (hover: hover) {

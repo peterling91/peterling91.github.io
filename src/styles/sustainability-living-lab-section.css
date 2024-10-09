@@ -11,7 +11,11 @@
   }
 
   #threeCirclesSection1 {
-    @apply -mt-[75dvh];
+    @apply -mt-[75vh];
+  }
+
+  [data-disable-full-height] #threeCirclesSection1 {
+    @apply mt-0;
   }
 
   .three-circles__section {
@@ -37,6 +41,7 @@
     /* lg:pt-[7.6875rem]
     lg:pb-[7.375rem] */
     md:py-20
+    lg:flex
     lg:flex-row
     lg:items-center
     lg:justify-between;
@@ -308,22 +313,23 @@
 
     @apply aspect-square
     right-10
-    -bottom-5
+    top-[100%]
     z-20
     w-[var(--circle-sm-size-xs)]
 
     xs:w-[var(--circle-sm-size-sm)]
 
-    md:-bottom-18
+    md:top-[110%]
 
     lg:w-[var(--circle-sm-size)]
-    lg:-bottom-6;
+    lg:top-[90%];
   }
 
   .three-circles__section--2 .three-circles__section__circle--sm {
     @apply right-auto
     left-6
-    -bottom-5
+    top-auto
+    -bottom-4
     z-0
 
     md:-bottom-16
@@ -334,7 +340,6 @@
 
   .three-circles__section--3 .three-circles__section__circle--sm {
     @apply right-auto
-    bottom-auto
     -left-6
     top-[10rem]
     w-[var(--circle-sm-3-size-xs)]

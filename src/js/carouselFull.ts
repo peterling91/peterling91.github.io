@@ -432,6 +432,7 @@ export const carouselFull = (isFirefox: boolean) => {
     slidesWrapper.addEventListener("touchstart", (e) => {
       // Cache the client X coordinates
       cursor.updateClient(e.touches[0].clientX);
+      cursor.updateClientY(e.touches[0].clientY);
       cursor.updateIsDragging(true);
     });
 
@@ -464,6 +465,16 @@ export const carouselFull = (isFirefox: boolean) => {
         cursor,
         true,
       );
+    });
+
+    // Prevent page from scrolling up and down while swiping through carousel
+    carousel.addEventListener("touchmove", (e) => {
+      const moveX = e.touches[0].clientX - cursor.clientX;
+      const moveY = e.touches[0].clientY - cursor.clientY;
+
+      if (Math.abs(moveX) > Math.abs(moveY)) {
+        e.preventDefault(); // Prevents vertical scroll
+      }
     });
   }
 };

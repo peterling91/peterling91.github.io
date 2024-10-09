@@ -90,6 +90,7 @@ function switchActiveCard(
 class _carouselData {
   activeIndex: number;
   startX: number;
+  startY: number;
   moveX: number;
   isDragging: boolean;
   isFirefox: boolean;
@@ -97,6 +98,7 @@ class _carouselData {
   constructor() {
     this.activeIndex = 0;
     this.startX = 0;
+    this.startY = 0;
     this.moveX = 0;
     this.isDragging = false;
     this.isFirefox = false;
@@ -106,6 +108,9 @@ class _carouselData {
   }
   updateStartX(startX: number) {
     this.startX = startX;
+  }
+  updateStartY(startY: number) {
+    this.startY = startY;
   }
   updateMoveX(moveX: number) {
     this.moveX = moveX;
@@ -236,6 +241,7 @@ export const arcCarousel = (isFirefox: boolean): void => {
     carousel.addEventListener("touchstart", (e) => {
       if (getBreakpoint("max-lg")) {
         carouselData.updateStartX(e.touches[0].clientX);
+        carouselData.updateStartY(e.touches[0].clientY);
         carouselData.updateIsDragging(true);
       }
     });
@@ -243,6 +249,14 @@ export const arcCarousel = (isFirefox: boolean): void => {
     carousel.addEventListener("touchmove", (e) => {
       if (getBreakpoint("max-lg")) {
         carouselData.updateMoveX(e.touches[0].clientX);
+
+        // Prevent page from scrolling up and down while swiping through carousel
+        const moveX = e.touches[0].clientX - carouselData.startX;
+        const moveY = e.touches[0].clientY - carouselData.startY;
+
+        if (Math.abs(moveX) > Math.abs(moveY)) {
+          e.preventDefault(); // Prevents vertical scroll
+        }
       }
     });
 

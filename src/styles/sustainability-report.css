@@ -9,10 +9,15 @@
     w-[calc(100%_-_2rem)]
     h-[14.87rem]
     mx-4
-    -mt-20
+    mt-[22vh]
     sm:h-[24.5rem]
     md:gap-8
-    md:mt-14;
+    md:mt-[22vh];
+  }
+
+  [data-disable-full-height] .circle-deco {
+    @apply mt-[22%]
+    md:mt-[22%];
   }
 
   .circle-deco--empty {
@@ -44,19 +49,22 @@
   }
 
   .circle-deco__circle {
-    @apply w-6
+    @apply absolute
+    w-6
     h-6
-    -mt-8
-    mb-8
+    top-0
     shrink-0
     bg-[var(--green-100)]
     rounded-full
     z-[100]
-    will-change-auto
     sm:w-12
-    sm:h-12
-    md:-mt-20
-    md:mb-20;
+    sm:h-12;
+  }
+
+  .sustainability-home-report + .circle-deco__circle {
+    @apply top-auto
+    bottom-[20%]
+    sm:bottom-[30%];
   }
 
   .sustainability-home-report {
@@ -72,7 +80,6 @@
     py-6
     pl-10
     pr-6
-    mt-10
     transition-colors
     duration-300
     ease-in-out
@@ -80,7 +87,6 @@
     sm:py-8
     sm:pl-18
     sm:pr-16
-    md:mt-24
     active:bg-primary-700;
   }
 
