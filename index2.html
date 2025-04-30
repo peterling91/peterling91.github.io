@@ -11,6 +11,7 @@
       >
         <span class="visually-hidden">Play sticker mini game</span>
         <video
+          id="clickMeVideo"
           autoplay=""
           loop=""
           muted=""
@@ -21,17 +22,29 @@
           height="640"
           class="click-me lazyvideo"
         >
-        <source
-          src="/img/Click_me_for_surprise.mp4"
-          type="video/mp4"
-        />
-          <source
-          src="/img/Click_me_for_surprise.webm"
-          type="video/webm"
-          />
+
         </video>
       </button>
-
+      <script>
+      const video = document.getElementById("clickMeVideo");
+    
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+    
+      if (isIOS) {
+        const mp4Source = document.createElement("source");
+        mp4Source.src = "/img/Click_me_for_surprise.mp4";
+        mp4Source.type = "video/mp4";
+        video.appendChild(mp4Source);
+      } else {
+        const webmSource = document.createElement("source");
+        webmSource.src = "/img/Click_me_for_surprise.webm";
+        webmSource.type = "video/webm";
+        video.appendChild(webmSource);
+      }
+    
+      // Optional: Reload the video to apply the new source
+      video.load();
+    </script>
       <!-- Dialog -->
       <dialog
         class="dialog max-w-container border-0"
